@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{{ title }}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1>{{ title }}</h1>
-    <p>Welcome to {{ title }}</p>
-  </body>
+<head>
+	<title>{{ title }}</title>
+	<link rel='stylesheet' href='/stylesheets/style.css'/>
+	<script type="text/javascript" src="/javascripts/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="/javascripts/clientApp.js"></script>
+</head>
+<body>
+	<h1>{{ title }}</h1>
+	<p>Welcome to {{ title }}</p>
+	<form>
+		<input name="token" type="hidden" value="{{token}}"/>
+		<input name="type" type="hidden" value=""/>
+		<input name="to" id="ipt-to" type="text" value="" placeholder="To" />
+		<input name="from" id="ipt-from" type="text" value="" placeholder="From" />
+		<input name="text" id="ipt-text" type="text" value="" placeholder="Text" />
+		<input type="submit" value="Submit"/>
+	</form>
+</body>
 </html>

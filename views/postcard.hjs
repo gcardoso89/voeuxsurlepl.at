@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ title }}</title>
+	<link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<p>Id: {{ cardid }}</p>
+<p>From: {{ from }}</p>
+<p>To: {{ to }}</p>
+<p>Text: {{ text }}</p>
+<p>Type: {{ type }}</p>
+</body>
+</html>
