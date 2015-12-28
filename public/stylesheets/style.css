@@ -1,6 +1,56 @@
+@font-face {
+	font-family: 'Playfair Display';
+	src: url('../fonts/PlayfairDisplay-Bold.eot');
+	src: url('../fonts/PlayfairDisplay-Bold.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/PlayfairDisplay-Bold.woff') format('woff'),
+	url('../fonts/PlayfairDisplay-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Playfair Display';
+	src: url('../fonts/PlayfairDisplay-Regular.eot');
+	src: url('../fonts/PlayfairDisplay-Regular.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/PlayfairDisplay-Regular.woff') format('woff'),
+	url('../fonts/PlayfairDisplay-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Circular Std Book';
+	src: url('../fonts/CircularStd-Book.eot');
+	src: url('../fonts/CircularStd-Book.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/CircularStd-Book.woff') format('woff'),
+	url('../fonts/CircularStd-Book.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Circular Std';
+	src: url('../fonts/CircularStd-Black.eot');
+	src: url('../fonts/CircularStd-Black.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/CircularStd-Black.woff') format('woff'),
+	url('../fonts/CircularStd-Black.ttf') format('truetype');
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Circular Std';
+	src: url('../fonts/CircularStd-Bold.eot');
+	src: url('../fonts/CircularStd-Bold.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/CircularStd-Bold.woff') format('woff'),
+	url('../fonts/CircularStd-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Playfair Display", Helvetica, Arial, sans-serif;
 }
 
 a {
