@@ -1,21 +1,64 @@
 <!DOCTYPE html>
-<html>
+<!--[if IE 7]>
+<html class="ie-old no-anim" lang="fr-FR"><![endif]-->
+<!--[if IE 8]>
+<html class="ie-old no-anim" lang="fr-FR"><![endif]-->
+<!--[if IE 9]>
+<html class="ie-old no-anim" lang="fr-FR"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="fr-FR"><!--<![endif]-->
 <head>
 	<title>{{ title }}</title>
-	<link rel='stylesheet' href='/stylesheets/style.css'/>
-	<script type="text/javascript" src="/javascripts/jquery-2.1.4.min.js"></script>
-	<script type="text/javascript" src="/javascripts/clientApp.js"></script>
+	<link rel='stylesheet' href='/css/normalize.css'/>
+	<link rel='stylesheet' href='/css/style.css'/>
+	<script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="/js/typed.min.js"></script>
+	<script type="text/javascript" src="/js/clientApp.js"></script>
 </head>
 <body>
-	<h1>{{ title }}</h1>
-	<p>Welcome to {{ title }}</p>
-	<form>
-		<input name="token" type="hidden" value="{{token}}"/>
-		<input name="type" type="hidden" value=""/>
-		<input name="to" id="ipt-to" type="text" value="" placeholder="To" />
-		<input name="from" id="ipt-from" type="text" value="" placeholder="From" />
-		<input name="text" id="ipt-text" type="text" value="" placeholder="Text" />
-		<input type="submit" value="Submit"/>
-	</form>
+<div id="base">
+	<div class="structure">
+
+		<aside>
+			<nav id="menu-type">
+				<h2><span>Choisissez le destinataire de vos vœux</span></h2>
+				<a href="/?type=client" class="ic-client"><span>Client</span></a>
+				<a href="/?type=agence" class="ic-agence"><span>Agence</span></a>
+				<a href="/?type=prospect" class="ic-prospect"><span>Prospect</span></a>
+				<a href="/?type=boss" class="ic-boss"><span>Boss</span></a>
+				<a href="/?type=comptable-banquier" class="ic-comptable-banquier"><span>Comptable / Banquier</span></a>
+				<a href="/?type=famille" class="ic-famille"><span>Famille</span></a>
+				<a href="/?type=enfants" class="ic-enfants"><span>Enfants</span></a>
+				<a href="/?type=belle-famille" class="ic-belle-famille"><span>Belle famille</span></a>
+				<a href="/?type=cible-amoureuse" class="ic-cible-amoureuse"><span>Cible amoureuse</span></a>
+				<a href="/?type=ex" class="ic-ex"><span>Ex</span></a>
+			</nav>
+		</aside>
+
+		<main>
+			<head>
+				<ul>
+					<li><a href="#">restart</a></li>
+					<li><a href="#">destinaraire</a></li>
+					<li><a href="#">message</a></li>
+					<li><a href="#">expéditeur</a></li>
+					<li><a href="#">ok</a></li>
+				</ul>
+			</head>
+
+		</main>
+
+	</div>
+</div>
+
+
+<form>
+	<input name="token" type="hidden" value="{{token}}"/>
+	<input name="type" id="ipt-type" type="hidden" value=""/>
+	<input name="to" type="hidden" id="ipt-to" type="text" value="" placeholder="To"/>
+	<input name="from" type="hidden" id="ipt-from" type="text" value="" placeholder="From"/>
+	<input name="text" type="hidden" id="ipt-text" type="text" value="" placeholder="Text"/>
+</form>
+
 </body>
 </html>

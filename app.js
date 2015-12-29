@@ -63,15 +63,15 @@ app.use(function (err, req, res, next) {
 	});
 });
 
-postcardModel.onError(function(err){
+postcardModel.onError(function (err) {
 
-	if ( enviromnent !== 'development' ){
+	if (enviromnent !== 'development') {
 		slack.send({
 			text: "@gcardoso BD Error: " + err,
 			channel: '#voeux-4aout',
 			username: 'Voeux 4août',
 			link_names: 1
-		}, function(err){
+		}, function (err) {
 			console.log("Slack error access")
 		});
 	}

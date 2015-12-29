@@ -1,0 +1,55 @@
+@mixin base-background() {
+
+	background: #f1ebe5;
+
+	@for $i from 1 through length($types) {
+		$type: nth($types, $i);
+		$colour: nth($colours, $i);
+
+		&.bg-#{$type} {
+			background: -moz-linear-gradient(left, #f1ebe5 0%, #f1ebe5 50%, $colour 50%, $colour 50%, $colour 100%);
+			background: -webkit-linear-gradient(left, #f1ebe5 0%, #f1ebe5 50%, $colour 50%, $colour 50%, $colour 100%);
+			background: linear-gradient(to right, #f1ebe5 0%, #f1ebe5 50%, $colour 50%, $colour 50%, $colour 100%);
+		}
+
+	}
+
+}
+
+@mixin base-background-ie() {
+
+	@for $i from 1 through length($types) {
+		$type: nth($types, $i);
+
+		&.bg-#{$type}:after {
+			background: nth($colours, $i);
+		}
+
+	}
+
+}
+
+@mixin icon-background() {
+
+	-webkit-background-size: cover;
+	background-size: 80% auto;
+	background-repeat:no-repeat;
+	background-position:center top;
+	
+	@for $i from 1 through length($types) {
+		$type: nth($types, $i);
+		$image: nth($bgImages, $i);
+		$colour: nth($colours, $i);
+
+		&.ic-#{$type} {
+			background-image:url('/images/' + $image + '.svg');
+			&.sel, &:hover {
+				background-image:url('/images/' + $image + '_sel.svg');
+				background-color: $colour;
+				background-position:center 5px;
+			}
+		}
+
+	}
+
+}
