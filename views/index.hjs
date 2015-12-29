@@ -16,9 +16,20 @@
 	<script type="text/javascript" src="/js/clientApp.js"></script>
 </head>
 <body>
+<div id="preload">
+	<img src="/images/01_agence_sel.svg" width="1" height="1" />
+	<img src="/images/02_client_sel.svg" width="1" height="1" />
+	<img src="/images/03_banquier_sel.svg" width="1" height="1" />
+	<img src="/images/04_ex_sel.svg" width="1" height="1" />
+	<img src="/images/05_boss_sel.svg" width="1" height="1" />
+	<img src="/images/06_belle-famille_sel.svg" width="1" height="1" />
+	<img src="/images/07_enfants_sel.svg" width="1" height="1" />
+	<img src="/images/08_cible amoureuse_sel.svg" width="1" height="1" />
+	<img src="/images/09_prospect_sel.svg" width="1" height="1" />
+	<img src="/images/10_famille_sel.svg" width="1" height="1" />
+</div>
 <div id="base">
 	<div class="structure">
-
 		<aside>
 			<nav id="menu-type">
 				<h2><span>Choisissez le destinataire de vos vœux</span></h2>

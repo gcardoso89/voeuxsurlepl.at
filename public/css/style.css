@@ -433,6 +433,10 @@ body {
   background: #f1ebe5;
 }
 
+#preload {
+  display: none;
+}
+
 #base {
   position: absolute;
   left: 0;
