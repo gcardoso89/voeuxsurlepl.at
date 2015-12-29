@@ -444,60 +444,8 @@ body {
   width: 100%;
   height: 100%;
   min-height: 100%;
-  background: #f1ebe5;
 }
-#base.bg-client {
-  background: -moz-linear-gradient(left, #f1ebe5 0%, #f1ebe5 50%, #b8d4ec 50%, #b8d4ec 50%, #b8d4ec 100%);
-  background: -webkit-linear-gradient(left, #f1ebe5 0%, #f1ebe5 50%, #b8d4ec 50%, #b8d4ec 50%, #b8d4ec 100%);
-  background: linear-gradient(to right, #f1ebe5 0%, #f1ebe5 50%, #b8d4ec 50%, #b8d4ec 50%, #b8d4ec 100%);
-}
-#base.bg-agence {
-  background: -moz-linear-gradient(left, #f1ebe5 0%, #f1ebe5 50%, #b9dabb 50%, #b9dabb 50%, #b9dabb 100%);
-  background: -webkit-linear-gradient(left, #f1ebe5 0%, #f1ebe5 50%, #b9dabb 50%, #b9dabb 50%, #b9dabb 100%);
-  background: linear-gradient(to right, #f1ebe5 0%, #f1ebe5 50%, #b9dabb 50%, #b9dabb 50%, #b9dabb 100%);
-}
-#base.bg-prospect {
-  background: -moz-linear-gradient(left, #f1ebe5 0%, #f1ebe5 50%, #d52685 50%, #d52685 50%, #d52685 100%);
-  background: -webkit-linear-gradient(left, #f1ebe5 0%, #f1ebe5 50%, #d52685 50%, #d52685 50%, #d52685 100%);
-  background: linear-gradient(to right, #f1ebe5 0%, #f1ebe5 50%, #d52685 50%, #d52685 50%, #d52685 100%);
-}
-#base.bg-boss {
-  background: -moz-linear-gradient(left, #f1ebe5 0%, #f1ebe5 50%, #b2dbd7 50%, #b2dbd7 50%, #b2dbd7 100%);
-  background: -webkit-linear-gradient(left, #f1ebe5 0%, #f1ebe5 50%, #b2dbd7 50%, #b2dbd7 50%, #b2dbd7 100%);
-  background: linear-gradient(to right, #f1ebe5 0%, #f1ebe5 50%, #b2dbd7 50%, #b2dbd7 50%, #b2dbd7 100%);
-}
-#base.bg-comptable-banquier {
-  background: -moz-linear-gradient(left, #f1ebe5 0%, #f1ebe5 50%, #f1ccde 50%, #f1ccde 50%, #f1ccde 100%);
-  background: -webkit-linear-gradient(left, #f1ebe5 0%, #f1ebe5 50%, #f1ccde 50%, #f1ccde 50%, #f1ccde 100%);
-  background: linear-gradient(to right, #f1ebe5 0%, #f1ebe5 50%, #f1ccde 50%, #f1ccde 50%, #f1ccde 100%);
-}
-#base.bg-famille {
-  background: -moz-linear-gradient(left, #f1ebe5 0%, #f1ebe5 50%, #d9d7d8 50%, #d9d7d8 50%, #d9d7d8 100%);
-  background: -webkit-linear-gradient(left, #f1ebe5 0%, #f1ebe5 50%, #d9d7d8 50%, #d9d7d8 50%, #d9d7d8 100%);
-  background: linear-gradient(to right, #f1ebe5 0%, #f1ebe5 50%, #d9d7d8 50%, #d9d7d8 50%, #d9d7d8 100%);
-}
-#base.bg-enfants {
-  background: -moz-linear-gradient(left, #f1ebe5 0%, #f1ebe5 50%, #f8d500 50%, #f8d500 50%, #f8d500 100%);
-  background: -webkit-linear-gradient(left, #f1ebe5 0%, #f1ebe5 50%, #f8d500 50%, #f8d500 50%, #f8d500 100%);
-  background: linear-gradient(to right, #f1ebe5 0%, #f1ebe5 50%, #f8d500 50%, #f8d500 50%, #f8d500 100%);
-}
-#base.bg-belle-famille {
-  background: -moz-linear-gradient(left, #f1ebe5 0%, #f1ebe5 50%, #4f4291 50%, #4f4291 50%, #4f4291 100%);
-  background: -webkit-linear-gradient(left, #f1ebe5 0%, #f1ebe5 50%, #4f4291 50%, #4f4291 50%, #4f4291 100%);
-  background: linear-gradient(to right, #f1ebe5 0%, #f1ebe5 50%, #4f4291 50%, #4f4291 50%, #4f4291 100%);
-}
-#base.bg-cible-amoureuse {
-  background: -moz-linear-gradient(left, #f1ebe5 0%, #f1ebe5 50%, #ea332f 50%, #ea332f 50%, #ea332f 100%);
-  background: -webkit-linear-gradient(left, #f1ebe5 0%, #f1ebe5 50%, #ea332f 50%, #ea332f 50%, #ea332f 100%);
-  background: linear-gradient(to right, #f1ebe5 0%, #f1ebe5 50%, #ea332f 50%, #ea332f 50%, #ea332f 100%);
-}
-#base.bg-ex {
-  background: -moz-linear-gradient(left, #f1ebe5 0%, #f1ebe5 50%, #164164 50%, #164164 50%, #164164 100%);
-  background: -webkit-linear-gradient(left, #f1ebe5 0%, #f1ebe5 50%, #164164 50%, #164164 50%, #164164 100%);
-  background: linear-gradient(to right, #f1ebe5 0%, #f1ebe5 50%, #164164 50%, #164164 50%, #164164 100%);
-}
-
-.ie-old #base:after {
+#base:after {
   content: ".";
   display: block;
   font-size: 0;
@@ -508,35 +456,39 @@ body {
   width: 50%;
   height: 100%;
   left: 50%;
+  -moz-transition: background 0.4s ease-out;
+  -o-transition: background 0.4s ease-out;
+  -webkit-transition: background 0.4s ease-out;
+  transition: background 0.4s ease-out;
 }
-.ie-old #base.bg-client:after {
+#base.bg-client:after {
   background: #b8d4ec;
 }
-.ie-old #base.bg-agence:after {
+#base.bg-agence:after {
   background: #b9dabb;
 }
-.ie-old #base.bg-prospect:after {
+#base.bg-prospect:after {
   background: #d52685;
 }
-.ie-old #base.bg-boss:after {
+#base.bg-boss:after {
   background: #b2dbd7;
 }
-.ie-old #base.bg-comptable-banquier:after {
+#base.bg-comptable-banquier:after {
   background: #f1ccde;
 }
-.ie-old #base.bg-famille:after {
+#base.bg-famille:after {
   background: #d9d7d8;
 }
-.ie-old #base.bg-enfants:after {
+#base.bg-enfants:after {
   background: #f8d500;
 }
-.ie-old #base.bg-belle-famille:after {
+#base.bg-belle-famille:after {
   background: #4f4291;
 }
-.ie-old #base.bg-cible-amoureuse:after {
+#base.bg-cible-amoureuse:after {
   background: #ea332f;
 }
-.ie-old #base.bg-ex:after {
+#base.bg-ex:after {
   background: #164164;
 }
 

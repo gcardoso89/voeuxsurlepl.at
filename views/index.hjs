@@ -11,9 +11,6 @@
 	<title>{{ title }}</title>
 	<link rel='stylesheet' href='/css/normalize.css'/>
 	<link rel='stylesheet' href='/css/style.css'/>
-	<script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
-	<script type="text/javascript" src="/js/typed.min.js"></script>
-	<script type="text/javascript" src="/js/clientApp.js"></script>
 </head>
 <body>
 <div id="preload">
@@ -33,16 +30,16 @@
 		<aside>
 			<nav id="menu-type">
 				<h2><span>Choisissez le destinataire de vos vœux</span></h2>
-				<a href="/?type=client" class="ic-client"><span>Client</span></a>
-				<a href="/?type=agence" class="ic-agence"><span>Agence</span></a>
-				<a href="/?type=prospect" class="ic-prospect"><span>Prospect</span></a>
-				<a href="/?type=boss" class="ic-boss"><span>Boss</span></a>
-				<a href="/?type=comptable-banquier" class="ic-comptable-banquier"><span>Comptable / Banquier</span></a>
-				<a href="/?type=famille" class="ic-famille"><span>Famille</span></a>
-				<a href="/?type=enfants" class="ic-enfants"><span>Enfants</span></a>
-				<a href="/?type=belle-famille" class="ic-belle-famille"><span>Belle famille</span></a>
-				<a href="/?type=cible-amoureuse" class="ic-cible-amoureuse"><span>Cible amoureuse</span></a>
-				<a href="/?type=ex" class="ic-ex"><span>Ex</span></a>
+				<a href="/?type=client" data-type="client" class="ic-client"><span>Client</span></a>
+				<a href="/?type=agence" data-type="agence" class="ic-agence"><span>Agence</span></a>
+				<a href="/?type=prospect" data-type="prospect" class="ic-prospect"><span>Prospect</span></a>
+				<a href="/?type=boss" data-type="boss" class="ic-boss"><span>Boss</span></a>
+				<a href="/?type=comptable-banquier" data-type="comptable-banquier" class="ic-comptable-banquier"><span>Comptable / Banquier</span></a>
+				<a href="/?type=famille" data-type="famille" class="ic-famille"><span>Famille</span></a>
+				<a href="/?type=enfants" data-type="enfants" class="ic-enfants"><span>Enfants</span></a>
+				<a href="/?type=belle-famille" data-type="belle-famille" class="ic-belle-famille"><span>Belle famille</span></a>
+				<a href="/?type=cible-amoureuse" data-type="cible-amoureuse" class="ic-cible-amoureuse"><span>Cible amoureuse</span></a>
+				<a href="/?type=ex" data-type="ex" class="ic-ex"><span>Ex</span></a>
 			</nav>
 		</aside>
 
@@ -62,7 +59,6 @@
 	</div>
 </div>
 
-
 <form>
 	<input name="token" type="hidden" value="{{token}}"/>
 	<input name="type" id="ipt-type" type="hidden" value=""/>
@@ -70,6 +66,10 @@
 	<input name="from" type="hidden" id="ipt-from" type="text" value="" placeholder="From"/>
 	<input name="text" type="hidden" id="ipt-text" type="text" value="" placeholder="Text"/>
 </form>
+
+<script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="/js/typed.min.js"></script>
+<script type="text/javascript" src="/js/clientApp.js"></script>
 
 </body>
 </html>

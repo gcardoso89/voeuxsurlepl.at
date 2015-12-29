@@ -1,4 +1,4 @@
-@mixin base-background() {
+@mixin base-background-gradient() {
 
 	background: #f1ebe5;
 
@@ -16,7 +16,24 @@
 
 }
 
-@mixin base-background-ie() {
+@mixin base-background($transition) {
+
+	&:after{
+		content: ".";
+		display: block;
+		font-size: 0;
+		text-indent: -9999px;
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		width: 50%;
+		height: 100%;
+		left: 50%;
+		@if ($transition){
+			@include transition($transition);
+		}
+
+	}
 
 	@for $i from 1 through length($types) {
 		$type: nth($types, $i);
