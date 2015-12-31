@@ -1,4 +1,5 @@
 @import "_fonts";
+@include placeholder();
 
 body {
 	font-size: 1.0em;
@@ -18,7 +19,7 @@ body {
 	min-height: 100%;
 
 
-	@include base-background(background 0.4s ease-out);
+	@include base-background(0.4s);
 
 }
 
@@ -31,10 +32,18 @@ body {
 	position: relative;
 	z-index: 2;
 
-	> main, > aside{
+	main, aside{
 		width: 50%;
 		display: table-cell;
 		height: 100%;
+	}
+
+	main{
+		background-color: #f1ebe5;
+		vertical-align: middle;
+	}
+
+	aside{
 		vertical-align: middle;
 	}
 
@@ -92,6 +101,7 @@ body {
 		overflow:hidden;
 		@include transition(background-color 0.2s ease-out, color 0.2s ease-out, background-position 0.2s ease-out);
 		@include icon-background();
+
 		&.sel, &:hover{
 			color:#fff;
 			>span{
@@ -112,4 +122,157 @@ body {
 
 	}
 
+}
+
+#head-nav{
+	font-family: 'Circular Std', Helvetica, sans-serif;
+	font-size: 0.75em;
+	font-weight: 900;
+	text-align: center;
+	margin-top:5%;
+
+	a {
+		color:#000;
+		display: inline-block;
+		text-decoration: none;
+		line-height: 1.5;
+		padding:0 2px;
+		margin-left:8px;
+		margin-right:8px;
+
+		&:hover, &.sel{
+			text-decoration: none;
+			border-bottom: 2px solid;
+			margin-bottom: -2px;
+		}
+
+	}
+
+}
+
+main {
+
+	.wrapper{
+
+
+
+		position: relative;
+		margin:13% 5% 39%;
+		min-height: $sectionMinHeight;
+
+		section{
+			position: absolute;
+			left:0;
+			top:0;
+			opacity:0;
+			z-index: 1;
+			min-height: $sectionMinHeight;
+			width: 100%;
+			@include transition(opacity 0.4s ease-out);
+			&.show{
+				opacity: 1;
+				z-index: 10;
+			}
+
+			input[type='text']{
+				width: 80%;
+				height: 70px;
+				text-align: center;
+				border:none;
+				background: none;
+				font-family: 'Playfair Display', "Times New Roman", serif;
+				font-weight: 700;
+				margin: ($sectionMinHeight - 70)/2 auto 0;
+				font-size: 2.8125em;
+				color:#fff;
+				display: block;
+			}
+
+			input[type='text']:focus{
+				outline:none;
+			}
+
+		}
+
+	}
+
+}
+
+#message-container{
+
+	position: relative;
+
+	.msg-receiver{
+		font-family: 'Playfair Display', "Times New Roman", serif;
+		font-weight: 700;
+		font-size: 2.875em;
+		text-align: center;
+		color:#fff;
+		padding:20px 0 60px;
+	}
+
+	.msg-cont{
+		//min-height: $sectionMinHeight;
+		font-family: 'Circular Std', Helvetica, sans-serif;
+		font-weight: 700;
+		font-size:1.625em;
+		color:#fff;
+		text-align: center;
+	}
+
+	.msg-nav {
+		width: 100%;
+		position: absolute;
+		bottom: 20px;
+		text-align: center;
+
+		ul{
+			margin:0;
+			padding:0;
+			list-style: none;
+		}
+
+		li {
+			margin: 0 15px;
+			display: inline-block;
+			zoom: 1;
+			*display: inline;
+			list-style: none;
+
+			a {
+				width: 7px;
+				height: 7px;
+				display: block;
+				background: rgba(0,0,0,0.4);
+				cursor: pointer;
+				text-indent: -9999px;
+				-webkit-border-radius: 20px;
+				-moz-border-radius: 20px;
+				border-radius: 20px;
+
+				&:hover, &.active{
+					border:2px solid #fff;
+					margin:-2px;
+				}
+
+			}
+		}
+	}
+
+	textarea{
+		width: 100%;
+		background: none;
+		resize: none;
+		border: none;
+		height: 300px;
+		display: none;
+	}
+
+}
+
+#message-typed{
+	min-height: 200px;
+	overflow: visible;
+	white-space: pre-wrap;
+	@include transform(translate3d(0,0,0));
 }

@@ -16,30 +16,71 @@
 
 }
 
-@mixin base-background($transition) {
+@mixin base-background($transitionDuration) {
 
-	&:after{
+	&:after {
 		content: ".";
 		display: block;
 		font-size: 0;
 		text-indent: -9999px;
-		position: absolute;
+		position: fixed;
 		z-index: 1;
 		top: 0;
 		width: 50%;
 		height: 100%;
 		left: 50%;
-		@if ($transition){
-			@include transition($transition);
+		@if ($transitionDuration){
+			@include transition(background $transitionDuration ease-out);
 		}
 
 	}
 
+	main {
+		@if ($transitionDuration){
+			@include transition(color $transitionDuration ease-out,background-color $transitionDuration ease-out);
+		}
+	}
+
+	#message-container .message-nav a{
+		@if ($transitionDuration){
+			@include transition(background $transitionDuration ease-out);
+		}
+	}
+
+	#head-nav{
+		a {
+			@if ($transitionDuration){
+				@include transition(color $transitionDuration ease-out,border-color $transitionDuration ease-out);
+			}
+		}
+	}
+
 	@for $i from 1 through length($types) {
 		$type: nth($types, $i);
+		$colour: nth($colours, $i);
+		$fontColour: nth($fontColours, $i);
 
 		&.bg-#{$type}:after {
-			background: nth($colours, $i);
+			background: $colour;
+		}
+
+		&.bg-#{$type} {
+			main {
+				color: $fontColour;
+				background-color: $colour;
+			}
+
+			#message-container .message-nav a{
+				background: $fontColour;
+			}
+
+			#head-nav{
+				a {
+					color:$fontColour;
+					border-color:$fontColour;
+				}
+			}
+
 		}
 
 	}
@@ -50,22 +91,48 @@
 
 	-webkit-background-size: cover;
 	background-size: 80% auto;
-	background-repeat:no-repeat;
-	background-position:center top;
-	
+	background-repeat: no-repeat;
+	background-position: center top;
+
 	@for $i from 1 through length($types) {
 		$type: nth($types, $i);
 		$image: nth($bgImages, $i);
 		$colour: nth($colours, $i);
 
 		&.ic-#{$type} {
-			background-image:url('/images/' + $image + '.svg');
+			background-image: url('/images/' + $image + '.svg');
 			&.sel, &:hover {
-				background-image:url('/images/' + $image + '_sel.svg');
+				background-image: url('/images/' + $image + '_sel.svg');
 				background-color: $colour;
-				background-position:center 5px;
+				background-position: center 5px;
 			}
 		}
+
+	}
+
+}
+
+@mixin placeholder(){
+
+	.placeholder{
+		color:rgba(255,255,255,0.6);
+		font-family: 'Playfair Display', "Times New Roman", serif;
+		font-weight: 700;
+	}
+
+	::-webkit-input-placeholder {
+		@extend .placeholder;
+	}
+
+	:-moz-placeholder { /* Firefox 18- */
+
+	}
+
+	::-moz-placeholder {  /* Firefox 19+ */
+
+	}
+
+	:-ms-input-placeholder {
 
 	}
 
