@@ -41,7 +41,10 @@ var ImageGenerator = {
 		fs.exists(imageUrl, function(err){
 
 			if ( err ){
-				that._webshot(url, imageUrl, options, function(err) {
+				that._webshot(url, imageUrl, options, function(err, coisas) {
+					console.log(imageUrl);
+					console.log(err);
+					console.log(coisas);
 					cb(imageUrl,err);
 				});
 			} else {
