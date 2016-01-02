@@ -38,19 +38,17 @@ var ImageGenerator = {
 		options['screenSize'] = this._dimensionsGuide[type];
 		options['shotSize'] = this._dimensionsGuide[type];
 
-		console.log(imageUrl);
-
 		fs.exists(imageUrl, function(err){
 
-			console.log(imageUrl);
+			console.log("exists: " + err);
 
 			if ( err ){
 				that._webshot(url, imageUrl, options, function(err, coisas) {
-					console.log(imageUrl);
+					console.log("webshot: " + err);
 					cb(imageUrl,err);
 				});
 			} else {
-				console.log(imageUrl);
+				console.log("not err: " + err);
 				cb(imageUrl,err);
 			}
 
