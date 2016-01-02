@@ -67,6 +67,7 @@ p{
 		position: relative;
 		padding-top:24%;
 		padding-bottom: 1.5%;
+		color:$blueTextTitle;
 	}
 
 	> h2 {
@@ -82,7 +83,6 @@ p{
 		}
 		span{
 			font-size:2em;
-			color:$blueTextTitle;
 			font-family:$playfairFontFamily;
 			line-height: 1.1;
 			display: block;
@@ -96,11 +96,18 @@ p{
 			box-sizing: border-box;
 			padding:32px 40px 30px 15px;
 		}
+		i {
+			font-size:1.4em;
+			position: absolute;
+			right: 20px;
+			top:50%;
+			@include transform(translate(0,-50%));
+
+		}
 	}
 
 	> a {
 		width: 30%;
-		color:$blueTextIcon;
 		text-decoration: none;
 		overflow:hidden;
 		@include transition(background-color 0.2s ease-out, color 0.2s ease-out, background-position 0.2s ease-out);
@@ -161,7 +168,21 @@ p{
 			}
 
 		}
+	}
 
+	.icon-restart{
+		cursor: pointer;
+		margin-top: -6px;
+		vertical-align: -3px;
+		font-size:1.4em;
+		margin-left:8px;
+		margin-right:8px;
+
+		&:hover{
+			text-decoration: none;
+			border-bottom: none;
+			margin-bottom: 0;
+		}
 	}
 
 }
@@ -367,7 +388,7 @@ main {
 			font-size:1.0em;
 			text-transform: uppercase;
 			margin-bottom: 20px;
-			font-weight: 900;
+			font-weight: bold;
 		}
 
 		.lk{
@@ -389,6 +410,13 @@ main {
 			font-size:(36/16)+em;
 			margin-bottom: 70px;
 			font-weight: 700;
+		}
+
+		.social-lks a {
+			color: inherit;
+			text-decoration: none;
+			font-size: 1.625em;
+			padding: 0 7px;
 		}
 
 	}

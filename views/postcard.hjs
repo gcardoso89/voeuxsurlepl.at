@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>{{ title }}</title>
+	<title>Cher {{ receiver }}</title>
 	<link rel='stylesheet' href='/css/postcard.css'/>
+
+	<meta name="description" content="{{ message }}" />
 
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@4aout">
@@ -11,7 +13,18 @@
 	<meta name="twitter:description" content="{{ message }}">
 	<meta name="twitter:image" content="http://voeux-4aout.rhcloud.com/sharedimages/twitter/{{ cardid }}">
 
+	<meta property="og:url" content="http://voeux-4aout.rhcloud.com/{{ cardid }}" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Cher {{ receiver }}" />
+	<meta property="og:description" content="{{ message }}" />
+	<meta property="og:image" content="http://voeux-4aout.rhcloud.com/sharedimages/facebook/{{ cardid }}" />
+
+	<meta itemprop="name" content="Cher {{ receiver }}">
+	<meta itemprop="description" content="{{ message }}">
+	<meta itemprop="image" content="http://voeux-4aout.rhcloud.com/sharedimages/gplus/{{ cardid }}">
+
 </head>
+
 <body class="bg-{{ type }}">
 <p>Id: {{ cardid }}</p>
 

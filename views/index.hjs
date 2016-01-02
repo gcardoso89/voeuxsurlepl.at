@@ -29,7 +29,7 @@
 	<div class="structure">
 		<aside>
 			<nav id="menu-type">
-				<h2><span>Choisissez le destinataire de vos vœux</span></h2>
+				<h2><span>Choisissez le destinataire de vos vœux</span><i class="icon-arrow-right"></i></h2>
 				<a href="/?type=client" data-type="client" class="ic-client"><span>Client</span></a>
 				<a href="/?type=agence" data-type="agence" class="ic-agence"><span>Agence</span></a>
 				<a href="/?type=prospect" data-type="prospect" class="ic-prospect"><span>Prospect</span></a>
@@ -46,7 +46,7 @@
 
 		<main>
 			<header id="head-nav">
-				<a href="#" data-action="restart">restart</a>
+				<span data-action="restart" class="icon-restart"></span>
 				<a href="#" data-target="receiver">destinataire</a>
 				<a href="#" data-target="message">message</a>
 				<a href="#" data-target="sender">expéditeur</a>
@@ -95,11 +95,12 @@
 						<div class="sep">
 							<p class="sub-tit">PARTAGEZ VOS VŒUX</p>
 							<div class="social-lks">
-								<a href="#" id="final-mail"></a>
-								<a href="#" id="final-facebook"></a>
-								<a href="#" id="final-twitter"></a>
-								<a href="#" id="final-gplus"></a>
-								<a href="#" id="final-tumblr"></a>
+								<a href="#" id="social-mail" class="icon-mail"></a>
+								<a href="#" id="social-facebook" class="icon-facebook"></a>
+								<a href="#" id="social-twitter" class="icon-twitter"></a>
+								<a href="https://plus.google.com/share?url={URL}" onclick="javascript:window.open(this.href,
+  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" id="social-gplus" class="icon-googleplus"></a>
+								<a href="#" id="social-tumblr" class="icon-tumblr"></a>
 							</div>
 						</div>
 					</div>
@@ -112,11 +113,26 @@
 <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="/js/typed.min.js"></script>
 <script type="text/javascript" src="/js/clientApp.js"></script>
+<script>
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId      : '882255391895782',
+			xfbml      : true,
+			version    : 'v2.5'
+		});
+	};
+
+	(function(d, s, id){
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) {return;}
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_US/sdk.js";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+</script>
 <script type="text/javascript">
 	$(function () {
-
 		voeuxApp.init( {{{messages}}} );
-
 	});
 </script>
 

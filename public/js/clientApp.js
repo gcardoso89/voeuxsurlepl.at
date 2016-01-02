@@ -27,6 +27,7 @@ var voeuxApp = {
 		this._typeMenu = new voeuxApp.TypeMenu();
 		this._menu = new voeuxApp.Menu();
 		this._msgSlider = new voeuxApp.MessageSlider();
+		this._socialLinks = new voeuxApp.SocialLinks();
 
 		this._iptSender = $('#ipt-sender');
 		this._iptReceiver = $('#ipt-receiver');
@@ -147,6 +148,8 @@ var voeuxApp = {
 			//var url = 'http://voeuxsurlepl.at/' + data.cardId;
 			var url = 'http://localhost:3000/' + data.cardId;
 			var text = 'voeuxsurlepl.at/' + data.cardId;
+
+			this._socialLinks.setSocialLinks(data.cardId);
 
 			this._finalLink.attr('href', url);
 			this._finalLink.text(text);
@@ -451,6 +454,99 @@ var voeuxApp = {
 	};
 
 	voeuxApp.MessageSlider = MessageSlider;
+
+})();
+
+
+(function(){
+
+	'use strict';
+
+	function SocialLinks(){
+
+		this._shareUrl = null;
+		this._baseUrl = 'http://voeux-4aout.rhcloud.com/';
+
+		this._twitter = $('#social-twitter');
+		this._facebook = $('#social-facebook');
+		this._mail = $('#social-mail');
+		this._tumblr = $('#social-tumblr');
+		this._gplus = $('#social-gplus');
+
+	}
+
+	SocialLinks.prototype = {
+
+		_setTwitterLink : function(){
+
+			/*var width = 575,
+				height = 400,
+				left = ($(window).width() - width) / 2,
+				top = ($(window).height() - height) / 2,
+				opts = 'status=1' +
+					',width=' + width +
+					',height=' + height +
+					',top=' + top +
+					',left=' + left;
+
+			window.open(url, 'twitter', opts);*/
+
+
+			var baseUrl = 'https://twitter.com/intent/tweet';
+			var shareUrl = encodeURIComponent(this._shareUrl);
+			baseUrl += '?url=' + shareUrl;
+			baseUrl += "&text=" + encodeURIComponent("Teste");
+
+			this._twitter.bind('click', function(e){
+
+				e.preventDefault();
+
+				var width = 575,
+					height = 400,
+					left = ($(window).width() - width) / 2,
+					top = ($(window).height() - height) / 2,
+					opts = 'status=1' +
+						',width=' + width +
+						',height=' + height +
+						',top=' + top +
+						',left=' + left;
+
+				window.open(baseUrl, 'twitter', opts);
+
+				return false;
+
+			});
+
+		},
+
+		_setFacebookLink : function(){
+
+			var that = this;
+
+			this._facebook.bind('click', function(e){
+
+				e.preventDefault();
+
+				FB.ui({
+					method: 'share',
+					href: that._shareUrl
+				}, function(response){
+					console.log(response);
+				});
+
+			});
+
+		},
+
+		setSocialLinks : function(shareId){
+			this._shareUrl = this._baseUrl + shareId;
+			this._setTwitterLink();
+			this._setFacebookLink();
+		}
+
+	}
+
+	voeuxApp.SocialLinks = SocialLinks;
 
 })();
 
