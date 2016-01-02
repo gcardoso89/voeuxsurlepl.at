@@ -6,6 +6,10 @@ body {
 	background: #f1ebe5;
 }
 
+p{
+	margin:0;
+}
+
 #preload {
 	display: none;
 }
@@ -79,7 +83,7 @@ body {
 		span{
 			font-size:2em;
 			color:$blueTextTitle;
-			font-family:'Playfair Display', 'Times New Roman', serif;
+			font-family:$playfairFontFamily;
 			line-height: 1.1;
 			display: block;
 			position: absolute;
@@ -115,7 +119,7 @@ body {
 			display: block;
 			width: 100%;
 			text-align: center;
-			font-family:'Circular Std', Helvetica, sans-serif;
+			font-family:$circularFontFamily;
 			font-weight: bold;
 			@include transition(transform 0.2s ease-out);
 		}
@@ -125,7 +129,7 @@ body {
 }
 
 #head-nav{
-	font-family: 'Circular Std', Helvetica, sans-serif;
+	font-family: $circularFontFamily;
 	font-size: 0.75em;
 	font-weight: 900;
 	text-align: center;
@@ -180,7 +184,7 @@ main {
 				text-align: center;
 				border:none;
 				background: none;
-				font-family: 'Playfair Display', "Times New Roman", serif;
+				font-family: $playfairFontFamily;
 				font-weight: 700;
 				margin: ($sectionMinHeight - 70)/2 auto 0;
 				font-size: 2.8125em;
@@ -200,20 +204,25 @@ main {
 
 #message-container{
 
+	$fontSize: 46;
+	$fontSizeEm: $fontSize/16;
+	$msgReceiverHeight: 130;
+
 	position: relative;
 
 	.msg-receiver{
-		font-family: 'Playfair Display', "Times New Roman", serif;
+		font-family: $playfairFontFamily;
 		font-weight: 700;
-		font-size: 2.875em;
+		font-size: $fontSizeEm+em;
 		text-align: center;
 		color:#fff;
-		padding:20px 0 60px;
+		min-height: $msgReceiverHeight+px;
+		line-height: 1.1em;
 	}
 
 	.msg-cont{
 		//min-height: $sectionMinHeight;
-		font-family: 'Circular Std', Helvetica, sans-serif;
+		font-family: $circularFontFamily;
 		font-weight: 700;
 		font-size:1.625em;
 		color:#fff;
@@ -264,8 +273,15 @@ main {
 		background: none;
 		resize: none;
 		border: none;
-		height: 300px;
+		height: $sectionMinHeight - $msgReceiverHeight;
 		display: none;
+		padding: 0;
+		margin: 0;
+		outline: 0;
+		text-align: center;
+		&:focus{
+			outline: 0;
+		}
 	}
 
 }
@@ -275,4 +291,93 @@ main {
 	overflow: visible;
 	white-space: pre-wrap;
 	@include transform(translate3d(0,0,0));
+}
+
+.button-cont {
+	position: absolute;
+	left: 0;
+	bottom: -40px;
+	width: 100%;
+	text-align:center;
+}
+
+.btn {
+	display: inline-block;
+	color: #fff;
+	font-size: 0.8125em;
+	font-family: $playfairFontFamily;
+	white-space: nowrap;
+	padding: 4px 17px;
+	border: 2px solid #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	margin-left:20px;
+	font-weight:bold;
+	line-height:1.3;
+
+	&:hover{
+		background: rgba(255,255,255,0.25);
+	}
+
+	&:first-child{
+		margin-left:0;
+	}
+
+}
+
+
+
+#final-block{
+
+	font-family: $circularFontFamily;
+	text-align: center;
+
+	&.success{
+		.box-success{
+			@include transform(scale(1,1));
+		}
+	}
+
+	.box-success{
+		background: #fff;
+		width: 73%;
+		padding:80px 7px 0;
+		min-height: $sectionMinHeight;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		margin:0 auto;
+		@include transition(transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275));
+		@include transform(scale(0,0));
+
+		.sub-tit{
+			font-size:1.0em;
+			text-transform: uppercase;
+			margin-bottom: 20px;
+			font-weight: 900;
+		}
+
+		.lk{
+			font-size:(14/16)+em;
+			font-weight: normal;
+			color:inherit;
+			text-decoration:none;
+			&:hover{
+				text-decoration:underline;
+			}
+		}
+
+		.sep{
+			margin-bottom: 40px;
+		}
+
+		.tit{
+			font-family: $playfairFontFamily;
+			font-size:(36/16)+em;
+			margin-bottom: 70px;
+			font-weight: 700;
+		}
+
+	}
+
 }

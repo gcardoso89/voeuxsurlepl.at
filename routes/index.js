@@ -11,7 +11,15 @@ router.get('/', function (req, res, next) {
 		ip: req.headers["x-forwarded-for"] || req.connection.remoteAddress
 	}, process.env.VOEUX_FORM_SECRET);
 
-	res.render('index', { title: "Express", token: token });
+	postcardModel.getAllMessages(function(messages, err){
+		if (err || messages.length === 0) {
+			res.redirect(301, "/");
+		} else {
+			res.render('index', { title: "Express", token: token, messages:JSON.stringify(messages) });
+		}
+	});
+
+
 });
 
 router.post('/savePostcard', function (req, res, next) {

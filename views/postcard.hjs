@@ -7,11 +7,11 @@
 <body>
 <p>Id: {{ cardid }}</p>
 
-<p>From: {{ from }}</p>
+<p>From: {{ sender }}</p>
 
-<p>To: {{ to }}</p>
+<p>To: {{ receiver }}</p>
 
-<p>Text: {{ text }}</p>
+<p>Text: {{ message }}</p>
 
 <p>Type: {{ type }}</p>
 </body>

@@ -12,6 +12,7 @@
 	<link rel='stylesheet' href='/css/style.css'/>
 </head>
 <body>
+<input name="token" type="hidden" id="ipt-token" value="{{token}}"/>
 <div id="preload">
 	<img src="/images/01_agence_sel.svg" width="1" height="1"/>
 	<img src="/images/02_client_sel.svg" width="1" height="1"/>
@@ -54,12 +55,15 @@
 			<div class="wrapper">
 				<section data-section="receiver">
 					<input type="text" id="ipt-receiver" placeholder="Destinataire" />
+					<div class="button-cont">
+						<a href="#" data-target="message" class="btn">Valider</a>
+					</div>
 				</section>
 				<section data-section="message" id="message-container">
 					<div class="msg-receiver">
 						Cherr <span id="receiver-zone"></span>,
 					</div>
-					<div class="msg-cont">
+					<div class="msg-cont" id="message-typed-container">
 						<span id="message-typed"></span>
 						<textarea name="hid-message" id="message-edit"></textarea>
 					</div>
@@ -70,29 +74,51 @@
 							<li><a href="#">3</a></li>
 						</ul>
 					</div>
+					<div class="button-cont">
+						<a href="#" data-action="edit" class="btn">Modifier</a>
+						<a href="#" data-target="sender" class="btn">Valider</a>
+					</div>
 				</section>
 				<section data-section="sender">
 					<input type="text" id="ipt-sender" placeholder="Expéditeur" />
+					<div class="button-cont">
+						<a href="#" data-action="create" data-target="final" class="btn">Valider</a>
+					</div>
 				</section>
-				<section data-section="final">
-
+				<section id="final-block" data-section="final">
+					<div class="box-success">
+						<p class="tit">Votre carte de vœux</p>
+						<div class="sep">
+							<p class="sub-tit">SUIVEZ LE LIEN CI-DESSUS</p>
+							<a href="#" id="final-link" target="_blank" class="lk">voeuxsurlepl.at/<span></span></a>
+						</div>
+						<div class="sep">
+							<p class="sub-tit">PARTAGEZ VOS VŒUX</p>
+							<div class="social-lks">
+								<a href="#" id="final-mail"></a>
+								<a href="#" id="final-facebook"></a>
+								<a href="#" id="final-twitter"></a>
+								<a href="#" id="final-gplus"></a>
+								<a href="#" id="final-tumblr"></a>
+							</div>
+						</div>
+					</div>
 				</section>
 			</div>
 		</main>
 	</div>
 </div>
 
-<form>
-	<input name="token" type="hidden" value="{{token}}"/>
-	<input name="type" id="form-type" type="hidden" value=""/>
-	<input name="to" type="hidden" id="form-receiver" type="text" value="" placeholder="To"/>
-	<input name="from" type="hidden" id="form-sender" type="text" value="" placeholder="From"/>
-	<input name="text" type="hidden" id="form-message" type="text" value="" placeholder="Text"/>
-</form>
-
 <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="/js/typed.min.js"></script>
 <script type="text/javascript" src="/js/clientApp.js"></script>
+<script type="text/javascript">
+	$(function () {
+
+		voeuxApp.init( {{{messages}}} );
+
+	});
+</script>
 
 </body>
 </html>

@@ -1,28 +1,14 @@
-$(function () {
-
-	var submitBtn = $('input[type=submit]', $('form'));
-	submitBtn.bind('click.ContactForm', function (e) {
-		e.preventDefault();
-		$.ajax({
-			type: "POST",
-			url: "/savePostcard",
-			data: $('form').serialize(),
-			success: function (data) {
-				console.log(data);
-			},
-			error: function () {
-				console.log("ERRO");
-			}
-		});
-	});
-
-	voeuxApp.init();
-
-});
-
 var voeuxApp = {
-	init: function () {
-		new this.App();
+	init: function (messagesArray) {
+
+		var messagesObj = {};
+
+		for (var i = 0; i < messagesArray.length; i++) {
+			var messageElement = messagesArray[i];
+			messagesObj[messageElement.name] = messageElement.messages;
+		}
+
+		new this.App(messagesObj);
 	}
 };
 
@@ -30,62 +16,13 @@ var voeuxApp = {
 
 	'use strict';
 
-	function App() {
+	function App(messages) {
 
 		var that = this;
 
-		this._messages = {
-			'client': [
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed leo tellus. Praesent interdum, mauris at dictum vehicula, lacus sapien consequat ipsum, et sollicitudin ante mi sit amet enim.',
-				'Aliquam erat volutpat. Aliquam lacinia congue magna sit amet hendrerit.',
-				'Proin vehicula auctor lectus, vel posuere est venenatis eu. Integer leo felis'
-			],
-			'agence': [
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed leo tellus. Praesent interdum, mauris at dictum vehicula, lacus sapien consequat ipsum, et sollicitudin ante mi sit amet enim.',
-				'Aliquam erat volutpat. Aliquam lacinia congue magna sit amet hendrerit.',
-				'Proin vehicula auctor lectus, vel posuere est venenatis eu. Integer leo felis'
-			],
-			'prospect': [
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed leo tellus. Praesent interdum, mauris at dictum vehicula, lacus sapien consequat ipsum, et sollicitudin ante mi sit amet enim.',
-				'Aliquam erat volutpat. Aliquam lacinia congue magna sit amet hendrerit.',
-				'Proin vehicula auctor lectus, vel posuere est venenatis eu. Integer leo felis'
-			],
-			'boss': [
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed leo tellus. Praesent interdum, mauris at dictum vehicula, lacus sapien consequat ipsum, et sollicitudin ante mi sit amet enim.',
-				'Aliquam erat volutpat. Aliquam lacinia congue magna sit amet hendrerit.',
-				'Proin vehicula auctor lectus, vel posuere est venenatis eu. Integer leo felis'
-			],
-			'comptable-banquier': [
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed leo tellus. Praesent interdum, mauris at dictum vehicula, lacus sapien consequat ipsum, et sollicitudin ante mi sit amet enim.',
-				'Aliquam erat volutpat. Aliquam lacinia congue magna sit amet hendrerit.',
-				'Proin vehicula auctor lectus, vel posuere est venenatis eu. Integer leo felis'
-			],
-			'famille': [
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed leo tellus. Praesent interdum, mauris at dictum vehicula, lacus sapien consequat ipsum, et sollicitudin ante mi sit amet enim.',
-				'Aliquam erat volutpat. Aliquam lacinia congue magna sit amet hendrerit.',
-				'Proin vehicula auctor lectus, vel posuere est venenatis eu. Integer leo felis'
-			],
-			'enfants': [
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed leo tellus. Praesent interdum, mauris at dictum vehicula, lacus sapien consequat ipsum, et sollicitudin ante mi sit amet enim.',
-				'Aliquam erat volutpat. Aliquam lacinia congue magna sit amet hendrerit.',
-				'Proin vehicula auctor lectus, vel posuere est venenatis eu. Integer leo felis'
-			],
-			'belle-famille': [
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed leo tellus. Praesent interdum, mauris at dictum vehicula, lacus sapien consequat ipsum, et sollicitudin ante mi sit amet enim.',
-				'Aliquam erat volutpat. Aliquam lacinia congue magna sit amet hendrerit.',
-				'Proin vehicula auctor lectus, vel posuere est venenatis eu. Integer leo felis'
-			],
-			'cible-amoureuse': [
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed leo tellus. Praesent interdum, mauris at dictum vehicula, lacus sapien consequat ipsum, et sollicitudin ante mi sit amet enim.',
-				'Aliquam erat volutpat. Aliquam lacinia congue magna sit amet hendrerit.',
-				'Proin vehicula auctor lectus, vel posuere est venenatis eu. Integer leo felis'
-			],
-			'ex': [
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed leo tellus. Praesent interdum, mauris at dictum vehicula, lacus sapien consequat ipsum, et sollicitudin ante mi sit amet enim.',
-				'Aliquam erat volutpat. Aliquam lacinia congue magna sit amet hendrerit.',
-				'Proin vehicula auctor lectus, vel posuere est venenatis eu. Integer leo felis'
-			]
-		};
+		this._messages = messages;
+
+
 
 		this._typedSelector = '#message-typed';
 		this._typeMenu = new voeuxApp.TypeMenu();
@@ -94,20 +31,47 @@ var voeuxApp = {
 
 		this._iptSender = $('#ipt-sender');
 		this._iptReceiver = $('#ipt-receiver');
+		this._iptToken = $('#ipt-token');
 
+		this._typedContainer = $('#message-typed-container');
 		this._msgReceiverZone = $('#receiver-zone');
+
+		this._editMessageBtn = $('[data-action="edit"]');
+		this._editMessageArea = $('#message-edit');
+
+		this._createBtn = $('[data-action="create"]');
+		this._restartBtn = $('[data-action="restart"]');
+
 
 		this._typeMenuItems = this._typeMenu.getItems();
 		this._typeMenuItems.bind('click', function (e) {
 			that._onTypeSelection(e, $(this));
 		});
 
+		this._customMessageActive = false;
+		this._currentId = 0;
+
+		this._finalBlock = $('#final-block');
+		this._finalLink = $('#final-link');
+
 		this._menu.onShowMessageSection(function () {
 			that._onShowMessageSection();
 		});
 
-		this._msgSlider.onChangeMessageItem(function(newId){
+		this._msgSlider.onChangeMessageItem(function (newId) {
 			that._onChangeMessageItem(newId);
+		});
+
+		this._editMessageBtn.bind('click', function (e) {
+			that._onEditMessageBtnClick(e);
+		});
+
+		this._createBtn.bind('click', function(e){
+			that._onCreateButtonClick(e);
+		});
+
+		this._restartBtn.bind('click', function(e){
+			that._onRestartButtonClick(e);
 		});
 
 	}
@@ -120,19 +84,97 @@ var voeuxApp = {
 
 		_onShowMessageSection: function () {
 			this._msgReceiverZone.empty();
-			this._msgSlider.activateItem(0);
 			this._msgReceiverZone.text(this._iptReceiver.val());
+			if ( !this._customMessageActive ){
+				this._msgSlider.activateItem(0);
+			}
 		},
 
-		_onChangeMessageItem : function(newId){
+		_onChangeMessageItem: function (newId) {
 			this.showTypedMessage(newId);
 		},
 
-		showTypedMessage : function(id){
+		_onEditMessageBtnClick: function (evt) {
+			evt.preventDefault();
+			this._customMessageActive = true;
+			$(this._typedSelector).typed('reset');
+			this._editMessageArea.val(this._messages[ this._typeMenu.getCurrentType() ][ this._currentId ]);
+			this._editMessageArea.css( "display", "block");
+			this._editMessageArea.focus();
+
+		},
+
+		_resetEditMessageArea : function(){
+			if ( this._customMessageActive ){
+				this._editMessageArea.hide();
+				this._editMessageArea.val();
+				this._customMessageActive = false;
+			}
+		},
+
+		_onCreateButtonClick : function(evt){
+
+			evt.preventDefault();
+			var that = this;
 			var currentType = this._typeMenu.getCurrentType();
+			var card = {};
+
+			card.token = this._iptToken.val();
+			card.type = currentType;
+			if ( this._customMessageActive ){
+				card.message = this._editMessageArea.val();
+			} else {
+				card.message = this._messages[ currentType ][ this._currentId ];
+			}
+			card.sender = this._iptSender.val();
+			card.receiver = this._iptReceiver.val();
+
+			$.ajax({
+				type: "POST",
+				url: "/savePostcard",
+				data: card,
+				success: function (data) {
+					that._onSaveCardSuccess(data);
+				},
+				error: function () {
+					console.log("ERRO");
+				}
+			});
+
+		},
+
+		_onSaveCardSuccess : function(data){
+
+			//var url = 'http://voeuxsurlepl.at/' + data.cardId;
+			var url = 'http://localhost:3000/' + data.cardId;
+			var text = 'voeuxsurlepl.at/' + data.cardId;
+
+			this._finalLink.attr('href', url);
+			this._finalLink.text(text);
+
+			this._finalBlock.addClass('success');
+
+			this._restartForm();
+
+		},
+
+		_restartForm : function(){
+			this._iptSender.val('');
+			this._iptReceiver.val('');
+			this._resetEditMessageArea();
+		},
+
+		_onRestartButtonClick : function(evt){
+			evt.preventDefault();
+			location.reload(true);
+		},
+
+		showTypedMessage: function (id) {
+			this._currentId = id;
+			this._resetEditMessageArea();
 			$(this._typedSelector).typed('reset');
 			$(this._typedSelector).typed({
-				strings: [this._messages[currentType][id]]
+				strings: [this._messages[ this._typeMenu.getCurrentType() ][ this._currentId ]]
 			});
 		}
 
@@ -232,9 +274,14 @@ var voeuxApp = {
 		this._cont = $('main');
 		this._navCont = $('#head-nav');
 		this._items = $('a[data-target]', this._navCont);
+		this._btns = $('.btn[data-target]', this.cont);
 		this._sections = $('section[data-section]', this._cont);
 
 		this._items.bind('click', function (e) {
+			that._onItemsClick(e, $(this));
+		});
+
+		this._btns.bind('click', function (e) {
 			that._onItemsClick(e, $(this));
 		});
 
@@ -253,15 +300,15 @@ var voeuxApp = {
 		},
 
 		_onItemsClick: function (evt, element) {
-			this._items.removeClass('sel');
-			element.addClass('sel');
+			evt.preventDefault();
 			var sectionToShow = element.data('target');
+			this._items.removeClass('sel');
+			this._items.filter('[data-target="' + sectionToShow + '"]').addClass('sel');
 			this.showSection(sectionToShow);
-
 		},
 
 		showSection: function (sectionToShow) {
-			this._sections.removeClass('show');
+			this._sections.removeClass('show success');
 			var section = this._sections.filter('[data-section="' + sectionToShow + '"]');
 			section.stop(true, false);
 			section.addClass('show');
@@ -284,11 +331,11 @@ var voeuxApp = {
 
 })();
 
-(function(){
+(function () {
 
 	'use strict';
 
-	function MessageSlider(){
+	function MessageSlider() {
 
 		var that = this;
 
@@ -300,7 +347,7 @@ var voeuxApp = {
 		this._navCont = $('.msg-nav', this._cont);
 		this._items = $('a', this._navCont);
 
-		this._items.bind('click', function(e){
+		this._items.bind('click', function (e) {
 			that._onItemsClick(e, $(this));
 		})
 
@@ -308,17 +355,17 @@ var voeuxApp = {
 
 	MessageSlider.prototype = {
 
-		_callOnChangeMessageItem : function(newId){
+		_callOnChangeMessageItem: function (newId) {
 			for (var i = 0; i < this._callbacks.length; i++) {
 				this._callbacks[i](newId);
 			}
 		},
 
-		_onItemsClick : function(evt, element){
+		_onItemsClick: function (evt, element) {
 			this.activateItem(element.closest('li').index());
 		},
 
-		activateItem : function(newId){
+		activateItem: function (newId) {
 			this._previousId = this._currentId;
 			this._currentId = newId;
 			this._items.removeClass('active');
@@ -326,15 +373,15 @@ var voeuxApp = {
 			this._callOnChangeMessageItem(newId);
 		},
 
-		getPreviousId : function(){
+		getPreviousId: function () {
 			return this._previousId;
 		},
 
-		getCurrentId : function(){
+		getCurrentId: function () {
 			return this._currentId;
 		},
 
-		onChangeMessageItem : function(callback){
+		onChangeMessageItem: function (callback) {
 			this._callbacks.push(callback);
 		}
 

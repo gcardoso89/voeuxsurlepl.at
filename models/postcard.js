@@ -22,6 +22,29 @@ var PostcardModel = {
 
 	},
 
+	getAllMessages : function(cb){
+
+		var messages = [];
+
+		mongo.connect(this._mongoURL, function (err, db) {
+
+			if (err != null) {
+				that._callErrors(err);
+				cb(messages, err);
+				return;
+			}
+
+			var collection = db.collection('type_messages');
+			collection.find({}).toArray(function (err, docs) {
+				messages = docs;
+				cb(messages, err);
+				db.close();
+			});
+
+		});
+
+	},
+
 	getById: function (id, cb) {
 
 		var that = this;
@@ -60,10 +83,10 @@ var PostcardModel = {
 
 			var collection = db.collection('cards');
 			collection.insertOne({
-				to: body.to,
-				from: body.from,
+				receiver: body.receiver,
+				sender: body.sender,
 				cardid: body.cardid,
-				text: body.text,
+				message: body.message,
 				type : body.type
 			}, function (err, result) {
 				if (err === null && result.result.n === 1) {

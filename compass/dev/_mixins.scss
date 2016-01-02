@@ -41,6 +41,12 @@
 		}
 	}
 
+	#final-block {
+		@if ($transitionDuration){
+			@include transition(color $transitionDuration ease-out);
+		}
+	}
+
 	#message-container .message-nav a{
 		@if ($transitionDuration){
 			@include transition(background $transitionDuration ease-out);
@@ -68,6 +74,9 @@
 			main {
 				color: $fontColour;
 				background-color: $colour;
+			}
+			#final-block {
+				color: $colour;
 			}
 
 			#message-container .message-nav a{
@@ -116,7 +125,7 @@
 
 	.placeholder{
 		color:rgba(255,255,255,0.6);
-		font-family: 'Playfair Display', "Times New Roman", serif;
+		font-family: $playfairFontFamily;
 		font-weight: 700;
 	}
 
