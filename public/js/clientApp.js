@@ -531,8 +531,71 @@ var voeuxApp = {
 					method: 'share',
 					href: that._shareUrl
 				}, function(response){
-					console.log(response);
+
 				});
+
+			});
+
+		},
+
+		_setMailLink : function(){
+			this._mail.attr('href','mailto:?subject=Voeux&body=' + this._shareUrl );
+		},
+
+		_setGPlusLink : function(){
+
+			var baseUrl = 'https://plus.google.com/share';
+			var shareUrl = encodeURIComponent(this._shareUrl);
+			baseUrl += '?url=' + shareUrl;
+
+			this._gplus.bind('click', function(e){
+
+				e.preventDefault();
+
+				var width = 600,
+					height = 600,
+					left = ($(window).width() - width) / 2,
+					top = ($(window).height() - height) / 2,
+					opts = 'status=1' +
+						',width=' + width +
+						',height=' + height +
+						',top=' + top +
+						',left=' + left;
+
+				window.open(baseUrl, 'Google Plus', opts);
+
+				return false;
+
+			});
+
+		},
+
+		_setTumblrLink : function(){
+
+			var baseUrl = 'https://www.tumblr.com/widgets/share/tool';
+			var shareUrl = encodeURIComponent(this._shareUrl);
+			baseUrl += '?posttype=link';
+			baseUrl += '&content=' + shareUrl;
+			baseUrl += '&title=Title';
+			baseUrl += '&caption=Description';
+
+			this._tumblr.bind('click', function(e){
+
+				e.preventDefault();
+
+				var width = 540,
+					height = 600,
+					left = ($(window).width() - width) / 2,
+					top = ($(window).height() - height) / 2,
+					opts = 'status=1' +
+						',width=' + width +
+						',height=' + height +
+						',top=' + top +
+						',left=' + left;
+
+				window.open(baseUrl, 'Tumblr', opts);
+
+				return false;
 
 			});
 
@@ -542,6 +605,9 @@ var voeuxApp = {
 			this._shareUrl = this._baseUrl + shareId;
 			this._setTwitterLink();
 			this._setFacebookLink();
+			this._setMailLink();
+			this._setGPlusLink();
+			this._setTumblrLink();
 		}
 
 	}

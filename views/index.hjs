@@ -98,8 +98,7 @@
 								<a href="#" id="social-mail" class="icon-mail"></a>
 								<a href="#" id="social-facebook" class="icon-facebook"></a>
 								<a href="#" id="social-twitter" class="icon-twitter"></a>
-								<a href="https://plus.google.com/share?url={URL}" onclick="javascript:window.open(this.href,
-  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" id="social-gplus" class="icon-googleplus"></a>
+								<a href="#" id="social-gplus" class="icon-googleplus"></a>
 								<a href="#" id="social-tumblr" class="icon-tumblr"></a>
 							</div>
 						</div>
