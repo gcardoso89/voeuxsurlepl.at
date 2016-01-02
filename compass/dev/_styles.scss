@@ -150,6 +150,18 @@ p{
 			margin-bottom: -2px;
 		}
 
+		&.inactive{
+			opacity:0.4;
+			cursor: default;
+
+			&:hover{
+				text-decoration: none;
+				border-bottom: none;
+				margin-bottom: 0;
+			}
+
+		}
+
 	}
 
 }
@@ -331,6 +343,7 @@ main {
 
 	font-family: $circularFontFamily;
 	text-align: center;
+	background: url('../images/voeux_loader.gif') no-repeat center center;
 
 	&.success{
 		.box-success{

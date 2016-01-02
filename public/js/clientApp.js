@@ -23,7 +23,6 @@ var voeuxApp = {
 		this._messages = messages;
 
 
-
 		this._typedSelector = '#message-typed';
 		this._typeMenu = new voeuxApp.TypeMenu();
 		this._menu = new voeuxApp.Menu();
@@ -66,11 +65,11 @@ var voeuxApp = {
 			that._onEditMessageBtnClick(e);
 		});
 
-		this._createBtn.bind('click', function(e){
+		this._createBtn.bind('click', function (e) {
 			that._onCreateButtonClick(e);
 		});
 
-		this._restartBtn.bind('click', function(e){
+		this._restartBtn.bind('click', function (e) {
 			that._onRestartButtonClick(e);
 		});
 
@@ -85,7 +84,7 @@ var voeuxApp = {
 		_onShowMessageSection: function () {
 			this._msgReceiverZone.empty();
 			this._msgReceiverZone.text(this._iptReceiver.val());
-			if ( !this._customMessageActive ){
+			if (!this._customMessageActive) {
 				this._msgSlider.activateItem(0);
 			}
 		},
@@ -99,20 +98,20 @@ var voeuxApp = {
 			this._customMessageActive = true;
 			$(this._typedSelector).typed('reset');
 			this._editMessageArea.val(this._messages[ this._typeMenu.getCurrentType() ][ this._currentId ]);
-			this._editMessageArea.css( "display", "block");
+			this._editMessageArea.css("display", "block");
 			this._editMessageArea.focus();
 
 		},
 
-		_resetEditMessageArea : function(){
-			if ( this._customMessageActive ){
+		_resetEditMessageArea: function () {
+			if (this._customMessageActive) {
 				this._editMessageArea.hide();
 				this._editMessageArea.val();
 				this._customMessageActive = false;
 			}
 		},
 
-		_onCreateButtonClick : function(evt){
+		_onCreateButtonClick: function (evt) {
 
 			evt.preventDefault();
 			var that = this;
@@ -121,7 +120,7 @@ var voeuxApp = {
 
 			card.token = this._iptToken.val();
 			card.type = currentType;
-			if ( this._customMessageActive ){
+			if (this._customMessageActive) {
 				card.message = this._editMessageArea.val();
 			} else {
 				card.message = this._messages[ currentType ][ this._currentId ];
@@ -143,7 +142,7 @@ var voeuxApp = {
 
 		},
 
-		_onSaveCardSuccess : function(data){
+		_onSaveCardSuccess: function (data) {
 
 			//var url = 'http://voeuxsurlepl.at/' + data.cardId;
 			var url = 'http://localhost:3000/' + data.cardId;
@@ -158,13 +157,14 @@ var voeuxApp = {
 
 		},
 
-		_restartForm : function(){
+		_restartForm: function () {
 			this._iptSender.val('');
 			this._iptReceiver.val('');
+			this._menu.blockStatesAfterSend();
 			this._resetEditMessageArea();
 		},
 
-		_onRestartButtonClick : function(evt){
+		_onRestartButtonClick: function (evt) {
 			evt.preventDefault();
 			location.reload(true);
 		},
@@ -271,11 +271,19 @@ var voeuxApp = {
 		var that = this;
 
 		this._callbacks = [];
+		this._menuState = {
+			'receiver': 1,
+			'message': 0,
+			'sender': 0,
+			'final': 0
+		};
 		this._cont = $('main');
 		this._navCont = $('#head-nav');
 		this._items = $('a[data-target]', this._navCont);
-		this._btns = $('.btn[data-target]', this.cont);
+		this._btns = $('.btn[data-target]', this._cont);
 		this._sections = $('section[data-section]', this._cont);
+
+		this._iptReceiver = $('#ipt-receiver');
 
 		this._items.bind('click', function (e) {
 			that._onItemsClick(e, $(this));
@@ -284,6 +292,12 @@ var voeuxApp = {
 		this._btns.bind('click', function (e) {
 			that._onItemsClick(e, $(this));
 		});
+
+		this._iptReceiver.bind('keyup', function (e) {
+			that._onIptReceiverKeyUp($(this));
+		});
+
+		this._processStates();
 
 	}
 
@@ -302,12 +316,61 @@ var voeuxApp = {
 		_onItemsClick: function (evt, element) {
 			evt.preventDefault();
 			var sectionToShow = element.data('target');
-			this._items.removeClass('sel');
-			this._items.filter('[data-target="' + sectionToShow + '"]').addClass('sel');
-			this.showSection(sectionToShow);
+			if (this._menuState[sectionToShow]) {
+				this.showSection(sectionToShow);
+			}
+		},
+
+		_onIptReceiverKeyUp: function (element) {
+			if (element.val() !== '') {
+				this.changeMenuState('message', 1);
+			} else {
+				this.changeMenuState('message', 0);
+			}
+		},
+
+		_processStates : function(){
+
+			for (var i = 0; i < this._items.length; i++) {
+				var item = this._items.eq(i);
+				var section = item.data('target');
+				if ( this._menuState[section] ){
+					item.removeClass('inactive');
+				} else {
+					item.addClass('inactive');
+				}
+			}
+
+		},
+
+		blockStatesAfterSend : function(){
+			this._menuState['message'] = 0;
+			this._menuState['sender'] = 0;
+			this._menuState['receiver'] = 0;
+			this._processStates();
+		},
+
+		changeMenuState: function (section, state) {
+			if (this._menuState.hasOwnProperty(section)) {
+				this._menuState[section] = state;
+				if ( section === 'message' && state === 0 ){
+					this._menuState['sender'] = 0;
+					this._menuState['final'] = 0;
+				}
+				this._processStates();
+			}
 		},
 
 		showSection: function (sectionToShow) {
+
+			if ( sectionToShow === 'message' ){
+				this.changeMenuState('sender',1);
+			} else if (sectionToShow === 'sender'){
+				this.changeMenuState('final',1);
+			}
+
+			this._items.removeClass('sel');
+			this._items.filter('[data-target="' + sectionToShow + '"]').addClass('sel');
 			this._sections.removeClass('show success');
 			var section = this._sections.filter('[data-section="' + sectionToShow + '"]');
 			section.stop(true, false);

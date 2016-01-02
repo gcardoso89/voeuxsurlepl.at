@@ -54,6 +54,9 @@
 	}
 
 	#head-nav{
+		opacity:0;
+		@include transform(translate3d(0,-40px,0));
+		@include transition(opacity $transitionDuration ease-out, transform $transitionDuration ease-out);
 		a {
 			@if ($transitionDuration){
 				@include transition(color $transitionDuration ease-out,border-color $transitionDuration ease-out);
@@ -84,6 +87,8 @@
 			}
 
 			#head-nav{
+				opacity:1;
+				@include transform(translate3d(0,0,0));
 				a {
 					color:$fontColour;
 					border-color:$fontColour;

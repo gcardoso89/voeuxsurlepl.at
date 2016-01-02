@@ -50,7 +50,7 @@
 				<a href="#" data-target="receiver">destinataire</a>
 				<a href="#" data-target="message">message</a>
 				<a href="#" data-target="sender">expéditeur</a>
-				<a href="#" data-target="final">ok !</a>
+				<a href="#" data-action="create" data-target="final">ok !</a>
 			</header>
 			<div class="wrapper">
 				<section data-section="receiver">

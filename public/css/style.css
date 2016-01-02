@@ -537,6 +537,17 @@ p {
   -webkit-transition: background 0.4s ease-out;
   transition: background 0.4s ease-out;
 }
+#base #head-nav {
+  opacity: 0;
+  -moz-transform: translate3d(0, -40px, 0);
+  -ms-transform: translate3d(0, -40px, 0);
+  -webkit-transform: translate3d(0, -40px, 0);
+  transform: translate3d(0, -40px, 0);
+  -moz-transition: opacity 0.4s ease-out, -moz-transform 0.4s ease-out;
+  -o-transition: opacity 0.4s ease-out, -o-transform 0.4s ease-out;
+  -webkit-transition: opacity 0.4s ease-out, -webkit-transform 0.4s ease-out;
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
 #base #head-nav a {
   -moz-transition: color 0.4s ease-out, border-color 0.4s ease-out;
   -o-transition: color 0.4s ease-out, border-color 0.4s ease-out;
@@ -556,6 +567,13 @@ p {
 #base.bg-client #message-container .message-nav a {
   background: #7e94a5;
 }
+#base.bg-client #head-nav {
+  opacity: 1;
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
 #base.bg-client #head-nav a {
   color: #7e94a5;
   border-color: #7e94a5;
@@ -572,6 +590,13 @@ p {
 }
 #base.bg-agence #message-container .message-nav a {
   background: #9ebaa0;
+}
+#base.bg-agence #head-nav {
+  opacity: 1;
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 #base.bg-agence #head-nav a {
   color: #9ebaa0;
@@ -590,6 +615,13 @@ p {
 #base.bg-prospect #message-container .message-nav a {
   background: #b42372;
 }
+#base.bg-prospect #head-nav {
+  opacity: 1;
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
 #base.bg-prospect #head-nav a {
   color: #b42372;
   border-color: #b42372;
@@ -606,6 +638,13 @@ p {
 }
 #base.bg-boss #message-container .message-nav a {
   background: #98bbb8;
+}
+#base.bg-boss #head-nav {
+  opacity: 1;
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 #base.bg-boss #head-nav a {
   color: #98bbb8;
@@ -624,6 +663,13 @@ p {
 #base.bg-comptable-banquier #message-container .message-nav a {
   background: #e3a7bf;
 }
+#base.bg-comptable-banquier #head-nav {
+  opacity: 1;
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
 #base.bg-comptable-banquier #head-nav a {
   color: #e3a7bf;
   border-color: #e3a7bf;
@@ -640,6 +686,13 @@ p {
 }
 #base.bg-famille #message-container .message-nav a {
   background: #b9b9b9;
+}
+#base.bg-famille #head-nav {
+  opacity: 1;
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 #base.bg-famille #head-nav a {
   color: #b9b9b9;
@@ -658,6 +711,13 @@ p {
 #base.bg-enfants #message-container .message-nav a {
   background: #eab61a;
 }
+#base.bg-enfants #head-nav {
+  opacity: 1;
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
 #base.bg-enfants #head-nav a {
   color: #eab61a;
   border-color: #eab61a;
@@ -674,6 +734,13 @@ p {
 }
 #base.bg-belle-famille #message-container .message-nav a {
   background: #45387d;
+}
+#base.bg-belle-famille #head-nav {
+  opacity: 1;
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 #base.bg-belle-famille #head-nav a {
   color: #45387d;
@@ -692,6 +759,13 @@ p {
 #base.bg-cible-amoureuse #message-container .message-nav a {
   background: #c32f27;
 }
+#base.bg-cible-amoureuse #head-nav {
+  opacity: 1;
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
 #base.bg-cible-amoureuse #head-nav a {
   color: #c32f27;
   border-color: #c32f27;
@@ -708,6 +782,13 @@ p {
 }
 #base.bg-ex #message-container .message-nav a {
   background: #10342b;
+}
+#base.bg-ex #head-nav {
+  opacity: 1;
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 #base.bg-ex #head-nav a {
   color: #10342b;
@@ -917,6 +998,15 @@ p {
   border-bottom: 2px solid;
   margin-bottom: -2px;
 }
+#head-nav a.inactive {
+  opacity: 0.4;
+  cursor: default;
+}
+#head-nav a.inactive:hover {
+  text-decoration: none;
+  border-bottom: none;
+  margin-bottom: 0;
+}
 
 main .wrapper {
   position: relative;
@@ -1067,6 +1157,7 @@ main .wrapper section input[type='text']:focus {
 #final-block {
   font-family: "Circular Std", Helvetica, sans-serif;
   text-align: center;
+  background: url("../images/voeux_loader.gif") no-repeat center center;
 }
 #final-block.success .box-success {
   -moz-transform: scale(1, 1);
