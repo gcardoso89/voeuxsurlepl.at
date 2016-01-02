@@ -69,6 +69,12 @@ var PostcardModel = {
 
 	},
 
+	checkIfExistsId : function(id,cb){
+		this.getById(id, function(elements, err){
+			cb(elements.length > 0);
+		});
+	},
+
 	addNewCard: function (body, cb) {
 
 		var that = this;

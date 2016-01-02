@@ -3,8 +3,6 @@ var router = express.Router();
 var postcardModel = require('../models/postcard');
 var jwt = require('jwt-simple');
 var shortid = require('shortid');
-var imageGenerator = require('../modules/imageGenerator');
-var path = require('path');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -53,15 +51,8 @@ router.post('/savePostcard', function (req, res, next) {
 	}
 });
 
-router.get('/sharedimages', function (req, res, next) {
-	imageGenerator.generateImageFromUrl('http://www.google.com', function(imageUrl, err){
-		if (!err){
-			res.sendFile(path.join(__dirname,'../',imageUrl));
-		} else {
-			res.render('error')
-		}
-
-	});
+router.get('/static/:postcardid_static', function (req, res, next) {
+	return false;
 });
 
 router.get('/:postcardid', function (req, res, next) {
@@ -70,7 +61,7 @@ router.get('/:postcardid', function (req, res, next) {
 
 router.param('postcardid', function (req, res, next, postcardid) {
 
-	if ( postcardid === 'robots.txt' || postcardid === 'favicon.ico' ){
+	if ( postcardid === 'robots.txt' || postcardid === 'favicon.ico' || postcardid === 'sharedimages' ){
 		return false;
 	}
 
@@ -79,6 +70,18 @@ router.param('postcardid', function (req, res, next, postcardid) {
 			res.redirect(301, "/");
 		} else {
 			res.render('postcard', postcard[0]);
+		}
+	});
+
+});
+
+router.param('postcardid_static', function (req, res, next, postcardid) {
+
+	postcardModel.getById(postcardid, function (postcard, err) {
+		if (err || postcard.length === 0) {
+			res.render('error');
+		} else {
+			res.render('postcard_static', postcard[0]);
 		}
 	});
 

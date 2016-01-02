@@ -1,0 +1,71 @@
+@font-face {
+  font-family: 'Playfair Display';
+  src: url("../fonts/PlayfairDisplay-Bold.eot");
+  src: url("../fonts/PlayfairDisplay-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/PlayfairDisplay-Bold.woff") format("woff"), url("../fonts/PlayfairDisplay-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+body {
+  margin: 0;
+}
+body.bg-client {
+  background: #b8d4ec;
+  color: #7e94a5;
+}
+body.bg-agence {
+  background: #b9dabb;
+  color: #9ebaa0;
+}
+body.bg-prospect {
+  background: #d52685;
+  color: #b42372;
+}
+body.bg-boss {
+  background: #b2dbd7;
+  color: #98bbb8;
+}
+body.bg-comptable-banquier {
+  background: #f1ccde;
+  color: #e3a7bf;
+}
+body.bg-famille {
+  background: #d9d7d8;
+  color: #b9b9b9;
+}
+body.bg-enfants {
+  background: #f8d500;
+  color: #eab61a;
+}
+body.bg-belle-famille {
+  background: #4f4291;
+  color: #45387d;
+}
+body.bg-cible-amoureuse {
+  background: #ea332f;
+  color: #c32f27;
+}
+body.bg-ex {
+  background: #164164;
+  color: #10342b;
+}
+
+#greetings-title {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: table;
+  width: 100%;
+  height: 100%;
+  font-family: "Playfair Display", "Times New Roman", serif;
+  font-size: 3.125em;
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+}
+#greetings-title div {
+  display: table-cell;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  padding: 0 30px;
+}

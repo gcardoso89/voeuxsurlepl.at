@@ -61,7 +61,7 @@
 				</section>
 				<section data-section="message" id="message-container">
 					<div class="msg-receiver">
-						Cherr <span id="receiver-zone"></span>,
+						Cher <span id="receiver-zone"></span>,
 					</div>
 					<div class="msg-cont" id="message-typed-container">
 						<span id="message-typed"></span>

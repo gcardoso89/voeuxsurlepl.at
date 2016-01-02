@@ -2,17 +2,25 @@
 <html>
 <head>
 	<title>{{ title }}</title>
-	<link rel='stylesheet' href='/stylesheets/style.css'/>
+	<link rel='stylesheet' href='/css/postcard.css'/>
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@4aout">
+	<meta name="twitter:creator" content="@4aout">
+	<meta name="twitter:title" content="Cher {{ receiver }}">
+	<meta name="twitter:description" content="{{ message }}">
+	<meta name="twitter:image" content="http://voeux-4aout.rhcloud.com/sharedimages/twitter/{{ cardid }}">
+
 </head>
-<body>
+<body class="bg-{{ type }}">
 <p>Id: {{ cardid }}</p>
 
 <p>From: {{ sender }}</p>
 
-<p>To: {{ receiver }}</p>
+<p id="greetings-title">Cher {{ receiver }}</p>
 
 <p>Text: {{ message }}</p>
 
-<p>Type: {{ type }}</p>
+<p>Type: </p>
 </body>
 </html>

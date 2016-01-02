@@ -16,6 +16,7 @@ if (!production) {
 }
 
 var index = require('./routes/index');
+var sharedimages = require('./routes/sharedimages')(enviromnent);
 var postcardModel = require('./models/postcard');
 
 // view engine setup
@@ -31,6 +32,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+app.use('/sharedimages', sharedimages);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -43,7 +45,7 @@ app.use(function (req, res, next) {
 
 // development error handler
 // will print stacktrace
-if (app.get('env') === 'development') {
+if (enviromnent === 'development') {
 	app.use(function (err, req, res, next) {
 		res.status(err.status || 500);
 		res.render('error', {

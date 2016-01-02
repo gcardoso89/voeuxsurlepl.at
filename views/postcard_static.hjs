@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Voeux | Cher {{ receiver }}</title>
+	<link rel='stylesheet' href='/css/postcard_static.css'/>
+</head>
+<body class="bg-{{ type }}">
+	<div id="greetings-title"><div>Cher {{ receiver }}</div></div>
+</body>
+</html>
