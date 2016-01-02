@@ -6,3 +6,5 @@ voeux/
 voeux/*
 npm-debug.log
 compass/.sass-cache
+images
+images/*
