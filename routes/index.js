@@ -11,6 +11,8 @@ router.get('/', function (req, res, next) {
 		ip: req.headers["x-forwarded-for"] || req.connection.remoteAddress
 	}, process.env.VOEUX_FORM_SECRET);
 
+	console.log("SAVING:" + token);
+
 	postcardModel.getAllMessages(function(messages, err){
 		if (err || messages.length === 0) {
 			res.status(500).render('error');
@@ -27,6 +29,8 @@ router.post('/savePostcard', function (req, res, next) {
 	var token = jwt.encode({
 		ip: req.headers["x-forwarded-for"] || req.connection.remoteAddress
 	}, process.env.VOEUX_FORM_SECRET);
+
+	console.log("SAVING:" + token);
 
 	if (req.body.token == token) {
 
