@@ -725,6 +725,11 @@ main .wrapper > div {
   -webkit-transition: -webkit-transform 0.8s ease-out, top 0.8s ease-out;
   transition: transform 0.8s ease-out, top 0.8s ease-out;
 }
+@media all and (max-width: 380px) {
+  #second-step .title {
+    font-size: 2.5em;
+  }
+}
 #second-step .title.go-up {
   -moz-transform: translate(0, 0);
   -ms-transform: translate(0, 0);
@@ -740,6 +745,16 @@ main .wrapper > div {
   font-family: "Circular Std", Helvetica, sans-serif;
   font-size: 2.25em;
   font-weight: bold;
+}
+@media all and (max-width: 550px) {
+  #second-step .message {
+    font-size: 1.875em;
+  }
+}
+@media all and (max-width: 380px) {
+  #second-step .message {
+    font-size: 1.5em;
+  }
 }
 #second-step #greetings-title, #second-step #greetings-message {
   overflow: visible;

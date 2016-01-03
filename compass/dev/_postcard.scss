@@ -106,6 +106,9 @@ main{
 	.title{
 		font-family: $playfairFontFamily;
 		font-size:(50/16)+em;
+		@media all and (max-width: 380px ){
+			font-size: (40/16)+em;
+		}
 		color:#fff;
 		text-align: center;
 		font-weight: 700;
@@ -129,6 +132,12 @@ main{
 		font-family: $circularFontFamily;
 		font-size: (36/16)+em;
 		font-weight: bold;
+		@media all and (max-width: 550px ){
+			font-size: (30/16)+em;
+		}
+		@media all and (max-width: 380px ){
+			font-size: (24/16)+em;
+		}
 	}
 
 	#greetings-title, #greetings-message{
