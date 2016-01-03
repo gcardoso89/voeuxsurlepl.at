@@ -302,11 +302,13 @@ main {
 	.wrapper{
 
 		position: relative;
-		margin:13% 5% 39%;
+		margin:13% 5% 0;
+		padding-bottom:39%;
 		min-height: $sectionMinHeight;
 
 		@media all and (max-width: 749px){
-			margin:10% 5% 30%;
+			margin:6% 5% 0;
+			padding-bottom:30%;
 		}
 
 		section{
@@ -368,19 +370,56 @@ main {
 		color:#fff;
 		min-height: $msgReceiverHeight+px;
 		line-height: 1.1em;
+		@media all and (max-width:749px){
+			padding-top: 4%;
+		}
+		@media all and (max-width:450px){
+			font-size:(38/16)+em;
+			min-height: 90px;
+		}
 	}
 
 	.msg-cont{
-		//min-height: $sectionMinHeight;
 		font-family: $circularFontFamily;
 		font-weight: 700;
 		font-size:1.625em;
 		@media all and (max-width:1024px) and (min-width: 750px){
 			font-size:1.375em;
 		}
+		@media all and (max-width:450px){
+			font-size:1.375em;
+		}
 		color:#fff;
 		text-align: center;
 		padding:0 10%;
+	}
+
+	.msg-slide{
+		font-size:0.6125em;
+		color:inherit;
+		position: absolute;
+		top:50%;
+		text-decoration: none;
+		text-align: center;
+		@include transform(translate(0, -50%));
+		line-height: 1.1;
+		&:hover{
+			color:#fff;
+		}
+		&.left{
+			left: -5px;
+		}
+		&.right{
+			right: -5px;
+		}
+		i{
+			font-size: 2.75em;
+			display: block;
+			margin-bottom: 5px;
+		}
+		@media all and (max-width: 419px){
+			display: none;
+		}
 	}
 
 	.msg-nav {
@@ -455,30 +494,7 @@ main {
 	text-align:center;
 }
 
-.btn {
-	display: inline-block;
-	color: #fff;
-	font-size: 0.8125em;
-	font-family: $playfairFontFamily;
-	white-space: nowrap;
-	padding: 4px 17px;
-	border: 2px solid #fff;
-	text-decoration: none;
-	text-transform: uppercase;
-	margin-left:20px;
-	font-weight:bold;
-	line-height:1.3;
-
-	&:hover{
-		background: rgba(255,255,255,0.25);
-	}
-
-	&:first-child{
-		margin-left:0;
-	}
-
-}
-
+@include button();
 
 
 #final-block{
@@ -554,6 +570,42 @@ main {
 			padding: 0 7px;
 		}
 
+	}
+
+}
+
+#footer{
+
+	color:#f1ebe5;
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+	left: 0;
+	> a{
+		font-size:0.75em;
+		line-height: 1.825em;
+		font-family: $circularFontFamily;
+
+		&:hover{
+			border-bottom: 2px solid;
+			margin-bottom: -2px;
+		}
+	}
+
+	.footer-lks{
+		float:right;
+		font-size:1.25em;
+		a {
+			padding:2px 3px;
+			margin:0 2px
+		}
+
+	}
+
+	a {
+		display: inline-block;
+		color:inherit;
+		text-decoration: none;
 	}
 
 }

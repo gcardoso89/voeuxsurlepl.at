@@ -395,8 +395,8 @@ th {
 
 @font-face {
   font-family: 'icomoon';
-  src: url("../fonts/icomoon.eot?awml6v");
-  src: url("../fonts/icomoon.eot?awml6v#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?awml6v") format("truetype"), url("../fonts/icomoon.woff?awml6v") format("woff"), url("../fonts/icomoon.svg?awml6v#icomoon") format("svg");
+  src: url("../fonts/icomoon.eot?g05r0n");
+  src: url("../fonts/icomoon.eot?g05r0n#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?g05r0n") format("truetype"), url("../fonts/icomoon.woff?g05r0n") format("woff"), url("../fonts/icomoon.svg?g05r0n#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -414,27 +414,27 @@ th {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-facebook:before {
+.icon-twitter:before {
   content: "\e900";
 }
 
-.icon-googleplus:before {
+.icon-facebook:before {
   content: "\e901";
 }
 
-.icon-mail:before {
+.icon-googleplus:before {
   content: "\e902";
 }
 
-.icon-restart:before {
+.icon-tumblr:before {
   content: "\e903";
 }
 
-.icon-tumblr:before {
+.icon-mail:before {
   content: "\e904";
 }
 
-.icon-twitter:before {
+.icon-restart:before {
   content: "\e905";
 }
 
@@ -591,6 +591,13 @@ p {
   -webkit-transition: color 0.4s ease-out, background-color 0.4s ease-out;
   transition: color 0.4s ease-out, background-color 0.4s ease-out;
 }
+#base #footer {
+  opacity: 0;
+  -moz-transition: opacity 0.4s ease-out, color 0.4s ease-out;
+  -o-transition: opacity 0.4s ease-out, color 0.4s ease-out;
+  -webkit-transition: opacity 0.4s ease-out, color 0.4s ease-out;
+  transition: opacity 0.4s ease-out, color 0.4s ease-out;
+}
 #base #final-block {
   -moz-transition: color 0.4s ease-out;
   -o-transition: color 0.4s ease-out;
@@ -627,6 +634,10 @@ p {
   color: #7e94a5;
   background-color: #b8d4ec;
 }
+#base.bg-client #footer {
+  color: #7e94a5;
+  opacity: 1;
+}
 #base.bg-client #final-block {
   color: #b8d4ec;
 }
@@ -650,6 +661,10 @@ p {
 #base.bg-agence main {
   color: #9ebaa0;
   background-color: #b9dabb;
+}
+#base.bg-agence #footer {
+  color: #9ebaa0;
+  opacity: 1;
 }
 #base.bg-agence #final-block {
   color: #b9dabb;
@@ -675,6 +690,10 @@ p {
   color: #b42372;
   background-color: #d52685;
 }
+#base.bg-prospect #footer {
+  color: #b42372;
+  opacity: 1;
+}
 #base.bg-prospect #final-block {
   color: #d52685;
 }
@@ -698,6 +717,10 @@ p {
 #base.bg-boss main {
   color: #98bbb8;
   background-color: #b2dbd7;
+}
+#base.bg-boss #footer {
+  color: #98bbb8;
+  opacity: 1;
 }
 #base.bg-boss #final-block {
   color: #b2dbd7;
@@ -723,6 +746,10 @@ p {
   color: #e3a7bf;
   background-color: #f1ccde;
 }
+#base.bg-comptable-banquier #footer {
+  color: #e3a7bf;
+  opacity: 1;
+}
 #base.bg-comptable-banquier #final-block {
   color: #f1ccde;
 }
@@ -746,6 +773,10 @@ p {
 #base.bg-famille main {
   color: #b9b9b9;
   background-color: #d9d7d8;
+}
+#base.bg-famille #footer {
+  color: #b9b9b9;
+  opacity: 1;
 }
 #base.bg-famille #final-block {
   color: #d9d7d8;
@@ -771,6 +802,10 @@ p {
   color: #eab61a;
   background-color: #f8d500;
 }
+#base.bg-enfants #footer {
+  color: #eab61a;
+  opacity: 1;
+}
 #base.bg-enfants #final-block {
   color: #f8d500;
 }
@@ -794,6 +829,10 @@ p {
 #base.bg-belle-famille main {
   color: #45387d;
   background-color: #4f4291;
+}
+#base.bg-belle-famille #footer {
+  color: #45387d;
+  opacity: 1;
 }
 #base.bg-belle-famille #final-block {
   color: #4f4291;
@@ -819,6 +858,10 @@ p {
   color: #c32f27;
   background-color: #ea332f;
 }
+#base.bg-cible-amoureuse #footer {
+  color: #c32f27;
+  opacity: 1;
+}
 #base.bg-cible-amoureuse #final-block {
   color: #ea332f;
 }
@@ -842,6 +885,10 @@ p {
 #base.bg-ex main {
   color: #10342b;
   background-color: #164164;
+}
+#base.bg-ex #footer {
+  color: #10342b;
+  opacity: 1;
 }
 #base.bg-ex #final-block {
   color: #164164;
@@ -1257,12 +1304,14 @@ p {
 }
 main .wrapper {
   position: relative;
-  margin: 13% 5% 39%;
+  margin: 13% 5% 0;
+  padding-bottom: 39%;
   min-height: 430px;
 }
 @media all and (max-width: 749px) {
   main .wrapper {
-    margin: 10% 5% 30%;
+    margin: 6% 5% 0;
+    padding-bottom: 30%;
   }
 }
 main .wrapper section {
@@ -1315,6 +1364,17 @@ main .wrapper section input[type='text']:focus {
   min-height: 130px;
   line-height: 1.1em;
 }
+@media all and (max-width: 749px) {
+  #message-container .msg-receiver {
+    padding-top: 4%;
+  }
+}
+@media all and (max-width: 450px) {
+  #message-container .msg-receiver {
+    font-size: 2.375em;
+    min-height: 90px;
+  }
+}
 #message-container .msg-cont {
   font-family: "Circular Std", Helvetica, sans-serif;
   font-weight: 700;
@@ -1326,6 +1386,43 @@ main .wrapper section input[type='text']:focus {
 @media all and (max-width: 1024px) and (min-width: 750px) {
   #message-container .msg-cont {
     font-size: 1.375em;
+  }
+}
+@media all and (max-width: 450px) {
+  #message-container .msg-cont {
+    font-size: 1.375em;
+  }
+}
+#message-container .msg-slide {
+  font-size: 0.6125em;
+  color: inherit;
+  position: absolute;
+  top: 50%;
+  text-decoration: none;
+  text-align: center;
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  line-height: 1.1;
+}
+#message-container .msg-slide:hover {
+  color: #fff;
+}
+#message-container .msg-slide.left {
+  left: -5px;
+}
+#message-container .msg-slide.right {
+  right: -5px;
+}
+#message-container .msg-slide i {
+  font-size: 2.75em;
+  display: block;
+  margin-bottom: 5px;
+}
+@media all and (max-width: 419px) {
+  #message-container .msg-slide {
+    display: none;
   }
 }
 #message-container .msg-nav {
@@ -1496,4 +1593,34 @@ main .wrapper section input[type='text']:focus {
   text-decoration: none;
   font-size: 1.625em;
   padding: 0 7px;
+}
+
+#footer {
+  color: #f1ebe5;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  left: 0;
+}
+#footer > a {
+  font-size: 0.75em;
+  line-height: 1.825em;
+  font-family: "Circular Std", Helvetica, sans-serif;
+}
+#footer > a:hover {
+  border-bottom: 2px solid;
+  margin-bottom: -2px;
+}
+#footer .footer-lks {
+  float: right;
+  font-size: 1.25em;
+}
+#footer .footer-lks a {
+  padding: 2px 3px;
+  margin: 0 2px;
+}
+#footer a {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
 }

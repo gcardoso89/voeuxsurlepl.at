@@ -4,6 +4,7 @@
 	<title>Cher {{ receiver }}</title>
 	<link rel='stylesheet' href='/css/postcard.css'/>
 
+	<meta name="title" content="Cher {{ receiver }}" />
 	<meta name="description" content="{{ message }}" />
 
 	<meta name="twitter:card" content="summary_large_image">
@@ -23,17 +24,46 @@
 	<meta itemprop="description" content="{{ message }}">
 	<meta itemprop="image" content="http://voeux-4aout.rhcloud.com/sharedimages/gplus/{{ cardid }}">
 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 
 <body class="bg-{{ type }}">
-<p>Id: {{ cardid }}</p>
 
-<p>From: {{ sender }}</p>
+<main>
+	<div class="wrapper">
+		<div>
+			<section id="first-step">
+				<div class="type ic-{{ type }}"></div>
+				<p>{{ sender }} sent you a message.</p>
+				<a href="#" class="btn">Play message</a>
+			</section>
+			<section id="second-step">
+				<div>
+					<div class="title">
+						<span id="greetings-title"></span>
+					</div>
+					<div class="message">
+						<span id="greetings-message"></span>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+</main>
 
-<p id="greetings-title">Cher {{ receiver }}</p>
+<script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="/js/typed.min.js"></script>
+<script type="text/javascript" src="/js/clientCard.js"></script>
 
-<p>Text: {{ message }}</p>
+<script type="text/javascript">
+	$(function () {
+		voeuxCard.init( {
+			receiver : 'Cher {{{receiver}}},',
+			message : '{{ message }}'
+		} );
+	});
+</script>
 
-<p>Type: </p>
 </body>
 </html>

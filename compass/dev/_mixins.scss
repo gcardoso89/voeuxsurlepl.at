@@ -45,6 +45,13 @@
 		}
 	}
 
+	#footer{
+		opacity: 0;
+		@if ($transitionDuration){
+			@include transition(opacity $transitionDuration ease-out, color $transitionDuration ease-out)
+		}
+	}
+
 	#final-block {
 		@if ($transitionDuration){
 			@include transition(color $transitionDuration ease-out);
@@ -81,6 +88,10 @@
 			main {
 				color: $fontColour;
 				background-color: $colour;
+			}
+			#footer{
+				color:$fontColour;
+				opacity: 1;
 			}
 			#final-block {
 				color: $colour;

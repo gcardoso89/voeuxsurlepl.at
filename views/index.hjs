@@ -10,6 +10,7 @@
 <head>
 	<title>{{  }}</title>
 	<link rel='stylesheet' href='/css/style.css'/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <input name="token" type="hidden" id="ipt-token" value="{{token}}"/>
@@ -55,7 +56,10 @@
 			</header>
 			<div class="wrapper">
 				<section data-section="receiver">
-					<input type="text" id="ipt-receiver" placeholder="Destinataire" />
+					<form action="?" id="form-receiver">
+						<input type="text" id="ipt-receiver" placeholder="Destinataire" autocomplete="off" />
+						<input type="submit" style="opacity: 0;" />
+					</form>
 					<div class="button-cont">
 						<a href="#" data-target="message" class="btn">Valider</a>
 					</div>
@@ -75,13 +79,18 @@
 							<li><a href="#">3</a></li>
 						</ul>
 					</div>
+					<a href="#" id="message-right" class="msg-slide right"><i class="icon-arrow-right"></i>message<br />préc.</a>
+					<a href="#" id="message-left" class="msg-slide left"><i class="icon-arrow-left"></i>message<br />suiv.</a>
 					<div class="button-cont">
 						<a href="#" data-action="edit" class="btn">Modifier</a>
 						<a href="#" data-target="sender" class="btn">Valider</a>
 					</div>
 				</section>
 				<section data-section="sender">
-					<input type="text" id="ipt-sender" placeholder="Expéditeur" />
+					<form action="?" id="form-sender">
+						<input type="text" id="ipt-sender" placeholder="Expéditeur" autocomplete="off" />
+						<input type="submit" style="opacity: 0;" />
+					</form>
 					<div class="button-cont">
 						<a href="#" data-action="create" data-target="final" class="btn">Valider</a>
 					</div>
@@ -105,6 +114,14 @@
 						</div>
 					</div>
 				</section>
+				<footer id="footer">
+					<a href="http://4aout.fr/" target="_blank">©4aout</a>
+					<div class="footer-lks">
+						<a href="mailto:bonjour@4aout.fr" target="_blank" class="icon-mail"></a>
+						<a href="https://www.facebook.com/4aout" target="_blank" class="icon-facebook"></a>
+						<a href="https://twitter.com/4aout" target="_blank" class="icon-twitter"></a>
+					</div>
+				</footer>
 			</div>
 		</main>
 	</div>

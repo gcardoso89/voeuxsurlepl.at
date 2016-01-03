@@ -65,11 +65,15 @@ router.param('postcardid', function (req, res, next, postcardid) {
 		return false;
 	}
 
-	postcardModel.getById(postcardid, function (postcard, err) {
-		if (err || postcard.length === 0) {
+	postcardModel.getById(postcardid, function (postcards, err) {
+		if (err || postcards.length === 0) {
 			res.redirect(301, "/");
 		} else {
-			res.render('postcard', postcard[0]);
+			var postcard = postcards[0];
+			if ( postcard.sender === '' ){
+				postcard.sender = 'Anonymous';
+			}
+			res.render('postcard', postcard);
 		}
 	});
 

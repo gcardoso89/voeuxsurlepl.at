@@ -31,7 +31,9 @@ var voeuxApp = {
 		this._msgSlider = new voeuxApp.MessageSlider();
 		this._socialLinks = new voeuxApp.SocialLinks();
 
+		this._formSender = $('#form-sender');
 		this._iptSender = $('#ipt-sender');
+		this._formReceiver = $('#form-receiver');
 		this._iptReceiver = $('#ipt-receiver');
 		this._iptToken = $('#ipt-token');
 
@@ -76,12 +78,31 @@ var voeuxApp = {
 			that._onRestartButtonClick(e);
 		});
 
+		this._formSender.bind('submit', function(e) {
+			that._onFalseFormSubmit(e, 'final');
+			that._onCreateButtonClick(e);
+			that._iptSender.blur();
+			return false;
+		});
+
+		this._formReceiver.bind('submit', function(e) {
+			that._onFalseFormSubmit(e, 'message');
+			that._iptReceiver.blur();
+			return false;
+		});
+
 	}
 
 	App.prototype = {
 
+		_onFalseFormSubmit : function(e, sectionToShow){
+			e.preventDefault();
+			e.stopPropagation();
+			this._menu.showSection(sectionToShow);
+		},
+
 		_onTypeSelection: function (evt, element) {
-			this._menu.goToItem(0);
+			this._menu.showSection('receiver', this._typeMenu.getScrollDuration());
 		},
 
 		_onShowMessageSection: function () {
@@ -160,8 +181,7 @@ var voeuxApp = {
 
 		_onSaveCardSuccess: function (data) {
 
-			//var url = 'http://voeuxsurlepl.at/' + data.cardId;
-			var url = 'http://localhost:3000/' + data.cardId;
+			var url = 'http://' + location.host + '/' + data.cardId;
 			var text = 'voeuxsurlepl.at/' + data.cardId;
 
 			this._socialLinks.setSocialLinks(data.cardId);
@@ -210,6 +230,7 @@ var voeuxApp = {
 
 		var that = this;
 
+		this._scrollToDuration = null;
 		this._base = $('#base');
 		this._cont = $('#menu-type');
 		this._main = $('main');
@@ -234,6 +255,8 @@ var voeuxApp = {
 			that._resizeHandler();
 		});
 
+		this._resizeHandler();
+
 	}
 
 	TypeMenu.prototype = {
@@ -249,7 +272,8 @@ var voeuxApp = {
 			this._itemLocked = type;
 			this._resizeHandler();
 			if ( this._win.width() < 750 ){
-				this._scrollable.animate({scrollTop : this._main.offset().top });
+				this._scrollable.stop(true, false);
+				this._scrollable.animate({scrollTop : this._main.offset().top }, this._scrollToDuration);
 			}
 
 		},
@@ -257,6 +281,9 @@ var voeuxApp = {
 		_resizeHandler : function(){
 			if (this._win.width() < 750 && this._itemLocked){
 				this._main.addClass('show');
+				this._scrollToDuration = 1200;
+			} else {
+				this._scrollToDuration = null;
 			}
 		},
 
@@ -289,6 +316,10 @@ var voeuxApp = {
 
 		getCurrentType: function () {
 			return this._itemLocked;
+		},
+
+		getScrollDuration: function(){
+			return this._scrollToDuration;
 		}
 
 	};
@@ -351,9 +382,7 @@ var voeuxApp = {
 		_onItemsClick: function (evt, element) {
 			evt.preventDefault();
 			var sectionToShow = element.data('target');
-			if (this._menuState[sectionToShow]) {
-				this.showSection(sectionToShow);
-			}
+			this.showSection(sectionToShow);
 		},
 
 		_onIptReceiverKeyUp: function (element) {
@@ -400,7 +429,11 @@ var voeuxApp = {
 			}
 		},
 
-		showSection: function (sectionToShow) {
+		showSection: function (sectionToShow, waitToFocus) {
+
+			if (!this._menuState[sectionToShow]) {
+				return false;
+			}
 
 			if ( sectionToShow === 'message' ){
 				this.changeMenuState('sender',1);
@@ -416,7 +449,13 @@ var voeuxApp = {
 			section.addClass('show');
 
 			if (sectionToShow === 'receiver' || sectionToShow === 'sender') {
-				$('input[type="text"]', section).focus();
+				if ( waitToFocus ){
+					setTimeout(function(){
+						$('input[type="text"]', section).focus();
+					}, waitToFocus)
+				} else {
+					$('input[type="text"]', section).focus();
+				}
 			} else if (sectionToShow === 'message') {
 				this._callOnShowMessageSectionCallbacks();
 			}
@@ -447,15 +486,39 @@ var voeuxApp = {
 		this._currentId = null;
 		this._cont = $('#message-container');
 		this._navCont = $('.msg-nav', this._cont);
+		this._slideLeft = $('#message-left');
+		this._slideRight = $('#message-right');
 		this._items = $('a', this._navCont);
 
 		this._items.bind('click', function (e) {
 			that._onItemsClick(e, $(this));
-		})
+		});
+
+		this._slideLeft.bind('click', function(e){
+			that._slideCount(e, -1);
+		});
+
+		this._slideRight.bind('click', function(e){
+			that._slideCount(e, 1);
+		});
 
 	}
 
 	MessageSlider.prototype = {
+
+		_slideCount : function(e, count){
+
+			e.preventDefault();
+			var totalItems = this._items.length;
+			if ( this._currentId + count === totalItems ){
+				this.activateItem(0)
+			} else if ( this._currentId + count < 0 ){
+				this.activateItem(totalItems-1);
+			} else {
+				this.activateItem(this._currentId+count);
+			}
+
+		},
 
 		_callOnChangeMessageItem: function (newId) {
 			for (var i = 0; i < this._callbacks.length; i++) {
@@ -502,7 +565,7 @@ var voeuxApp = {
 	function SocialLinks(){
 
 		this._shareUrl = null;
-		this._baseUrl = 'http://voeux-4aout.rhcloud.com/';
+		this._baseUrl = 'http://' + location.host + '/';
 
 		this._twitter = $('#social-twitter');
 		this._facebook = $('#social-facebook');
