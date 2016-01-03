@@ -11,7 +11,8 @@ router.get('/', function (req, res, next) {
 		ip: req.headers["x-forwarded-for"] || req.connection.remoteAddress
 	}, process.env.VOEUX_FORM_SECRET);
 
-	console.log("SAVING:" + token);
+	console.log(req.headers["x-forwarded-for"]);
+	console.log(req.connection.remoteAddress);
 
 	postcardModel.getAllMessages(function(messages, err){
 		if (err || messages.length === 0) {
@@ -30,7 +31,8 @@ router.post('/savePostcard', function (req, res, next) {
 		ip: req.headers["x-forwarded-for"] || req.connection.remoteAddress
 	}, process.env.VOEUX_FORM_SECRET);
 
-	console.log("SAVING:" + token);
+	console.log("SAVING:" + req.headers["x-forwarded-for"]);
+	console.log("SAVING:" + req.connection.remoteAddress);
 
 	if (req.body.token == token) {
 
