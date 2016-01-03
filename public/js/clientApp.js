@@ -21,7 +21,9 @@ var voeuxApp = {
 		var that = this;
 
 		this._messages = messages;
-
+		this.ajaxReq = null;
+		this._isSubmiting = false;
+		this._submited = false;
 
 		this._typedSelector = '#message-typed';
 		this._typeMenu = new voeuxApp.TypeMenu();
@@ -115,6 +117,13 @@ var voeuxApp = {
 		_onCreateButtonClick: function (evt) {
 
 			evt.preventDefault();
+
+			if ( !this._menu.checkIfCanCreateCard() || this._isSubmiting || this._submited ){
+				return false;
+			}
+
+			this._isSubmiting = true;
+
 			var that = this;
 			var currentType = this._typeMenu.getCurrentType();
 			var card = {};
@@ -129,15 +138,21 @@ var voeuxApp = {
 			card.sender = this._iptSender.val();
 			card.receiver = this._iptReceiver.val();
 
-			$.ajax({
+			if ( this.ajaxReq ){
+				this.ajaxReq.abort();
+			}
+
+			this.ajaxReq = $.ajax({
 				type: "POST",
 				url: "/savePostcard",
 				data: card,
 				success: function (data) {
 					that._onSaveCardSuccess(data);
+					that._isSubmiting = false;
+					that._submited = true;
 				},
 				error: function () {
-					console.log("ERRO");
+					that._isSubmiting = false;
 				}
 			});
 
@@ -197,8 +212,11 @@ var voeuxApp = {
 
 		this._base = $('#base');
 		this._cont = $('#menu-type');
+		this._main = $('main');
 		this._items = $('a', this._cont);
 		this._itemLocked = null;
+		this._scrollable = $('html,body');
+		this._win = $(window);
 
 		this._items.bind('click', function (e) {
 			that._onItemsClick(e, $(this));
@@ -210,6 +228,10 @@ var voeuxApp = {
 
 		this._items.bind('mouseleave', function (e) {
 			that._onItemsOut(e, $(this));
+		});
+
+		this._win.bind('resize', function(){
+			that._resizeHandler();
 		});
 
 	}
@@ -225,7 +247,17 @@ var voeuxApp = {
 			element.addClass('sel');
 			this.selectBaseBackground(type);
 			this._itemLocked = type;
+			this._resizeHandler();
+			if ( this._win.width() < 750 ){
+				this._scrollable.animate({scrollTop : this._main.offset().top });
+			}
 
+		},
+
+		_resizeHandler : function(){
+			if (this._win.width() < 750 && this._itemLocked){
+				this._main.addClass('show');
+			}
 		},
 
 		_onItemsHover: function (evt, element) {
@@ -346,6 +378,10 @@ var voeuxApp = {
 
 		},
 
+		checkIfCanCreateCard : function(){
+			return !!this._menuState['final'];
+		},
+
 		blockStatesAfterSend : function(){
 			this._menuState['message'] = 0;
 			this._menuState['sender'] = 0;
@@ -374,7 +410,7 @@ var voeuxApp = {
 
 			this._items.removeClass('sel');
 			this._items.filter('[data-target="' + sectionToShow + '"]').addClass('sel');
-			this._sections.removeClass('show success');
+			this._sections.removeClass('show');
 			var section = this._sections.filter('[data-section="' + sectionToShow + '"]');
 			section.stop(true, false);
 			section.addClass('show');
@@ -428,6 +464,7 @@ var voeuxApp = {
 		},
 
 		_onItemsClick: function (evt, element) {
+			evt.preventDefault();
 			this.activateItem(element.closest('li').index());
 		},
 
@@ -574,10 +611,11 @@ var voeuxApp = {
 
 			var baseUrl = 'https://www.tumblr.com/widgets/share/tool';
 			var shareUrl = encodeURIComponent(this._shareUrl);
-			baseUrl += '?posttype=link';
+			baseUrl += '?shareSource=legacy';
+			baseUrl += '&canonicalUrl=';
+			baseUrl += '&url=' + shareUrl;
+			baseUrl += '&posttype=link';
 			baseUrl += '&content=' + shareUrl;
-			baseUrl += '&title=Title';
-			baseUrl += '&caption=Description';
 
 			this._tumblr.bind('click', function(e){
 

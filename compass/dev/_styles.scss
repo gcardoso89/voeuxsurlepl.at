@@ -36,19 +36,44 @@ p{
 	position: relative;
 	z-index: 2;
 
+	@media all and (max-width: 749px) {
+		display: block;
+	}
+
 	main, aside{
 		width: 50%;
 		display: table-cell;
 		height: 100%;
+		@media all and (max-width: 749px) {
+			width:auto;
+			height: auto;
+			&:after{
+				content:".";
+				clear: both;
+				height: 0;
+				display: block;
+				visibility: hidden;
+				overflow: hidden;
+
+			}
+		}
 	}
 
 	main{
 		background-color: #f1ebe5;
 		vertical-align: middle;
+		@media all and (max-width: 749px) {
+			display: none;
+			vertical-align: top;
+		}
 	}
 
 	aside{
 		vertical-align: middle;
+		@media all and (max-width: 749px) {
+			vertical-align: top;
+			display: block;
+		}
 	}
 
 }
@@ -56,7 +81,14 @@ p{
 #menu-type {
 	width: 100%;
 	margin-left: -3.3333%;
-
+	@media all and (max-width: 749px) {
+		padding-top: 3.3333%;
+		padding-right: 3.3333%;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		margin-left: 0;
+	}
 	> a, > h2 {
 		float: left;
 		background: #fff;
@@ -66,16 +98,31 @@ p{
 		box-sizing: border-box;
 		position: relative;
 		padding-top:24%;
+		@media all and (max-width: 419px) {
+			padding-top: 37%;
+		}
 		padding-bottom: 1.5%;
 		color:$blueTextTitle;
 	}
 
 	> h2 {
 		width: 63.3333%;
+		@media all and (max-width: 419px) {
+			width: 96.66666%;
+		}
 		font-size:1em;
 		&:after{
 			content:".";
 			font-size:0.8125em;
+			@media all and (max-width: 970px) and (min-width: 750px) {
+				font-size:0.6875em;
+			}
+			@media all and (max-width: 770px) and (min-width: 750px) {
+				font-size:0.625em;
+			}
+			@media all and (max-width: 465px) and (min-width: 420px) {
+				font-size:0.6875em;
+			}
 			overflow: hidden;
 			text-indent: -9999px;
 			display: block;
@@ -83,6 +130,21 @@ p{
 		}
 		span{
 			font-size:2em;
+			@media all and (max-width: 970px) and (min-width: 750px) {
+				font-size:1.625em;
+			}
+			@media all and (max-width: 749px) and (min-width: 420px){
+				font-size:2.25em;
+			}
+			@media all and (max-width: 600px) and (min-width: 420px){
+				font-size:2em;
+			}
+			@media all and (max-width: 540px) and (min-width: 420px){
+				font-size:1.825em;
+			}
+			@media all and (max-width: 465px) and (min-width: 420px){
+				font-size:1.625em;
+			}
 			font-family:$playfairFontFamily;
 			line-height: 1.1;
 			display: block;
@@ -94,20 +156,47 @@ p{
 			-webkit-box-sizing: border-box;
 			-moz-box-sizing: border-box;
 			box-sizing: border-box;
-			padding:32px 40px 30px 15px;
+			padding:7% 22% 8% 6%;
+			@media all and (max-width: 419px) {
+				text-align: center;
+				padding:7% 7% 8% 7%;
+				font-size:1.825em;
+
+			}
+			@media all and (max-width: 370px) {
+				padding:5% 7% 5% 7%;
+				font-size: 1.675em;
+			}
 		}
 		i {
 			font-size:1.4em;
 			position: absolute;
-			right: 20px;
-			top:50%;
-			@include transform(translate(0,-50%));
 
+			&.icon-arrow-right{
+				right: 20px;
+				top:50%;
+				@include transform(translate(0,-50%));
+				@media all and (max-width: 419px) {
+					display: none;
+				}
+			}
+			&.icon-arrow-bottom{
+				display: none;
+				bottom:5px;
+				left: 50%;
+				@include transform(translate(-50%,0%));
+				@media all and (max-width: 419px) {
+					display: block;
+				}
+			}
 		}
 	}
 
 	> a {
 		width: 30%;
+		@media all and (max-width: 419px) {
+			width: 46.6666%;
+		}
 		text-decoration: none;
 		overflow:hidden;
 		@include transition(background-color 0.2s ease-out, color 0.2s ease-out, background-position 0.2s ease-out);
@@ -123,6 +212,15 @@ p{
 		>span{
 			line-height: 1.4;
 			font-size:0.8125em;
+			@media all and (max-width: 970px) and (min-width: 750px) {
+				font-size:0.6875em;
+			}
+			@media all and (max-width: 770px) and (min-width: 750px) {
+				font-size:0.625em;
+			}
+			@media all and (max-width: 465px) and (min-width: 420px){
+				font-size:0.6875em;
+			}
 			display: block;
 			width: 100%;
 			text-align: center;
@@ -141,6 +239,10 @@ p{
 	font-weight: 900;
 	text-align: center;
 	margin-top:5%;
+
+	@media all and (max-width: 749px){
+		margin-top:0;
+	}
 
 	a {
 		color:#000;
@@ -189,13 +291,23 @@ p{
 
 main {
 
+	@media all and (max-width: 749px){
+		padding-top:40px;
+		display: none;
+		&.show{
+			display: block;
+		}
+	}
+
 	.wrapper{
-
-
 
 		position: relative;
 		margin:13% 5% 39%;
 		min-height: $sectionMinHeight;
+
+		@media all and (max-width: 749px){
+			margin:10% 5% 30%;
+		}
 
 		section{
 			position: absolute;
@@ -243,6 +355,11 @@ main {
 
 	position: relative;
 
+	padding-bottom:40px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
 	.msg-receiver{
 		font-family: $playfairFontFamily;
 		font-weight: 700;
@@ -258,14 +375,18 @@ main {
 		font-family: $circularFontFamily;
 		font-weight: 700;
 		font-size:1.625em;
+		@media all and (max-width:1024px) and (min-width: 750px){
+			font-size:1.375em;
+		}
 		color:#fff;
 		text-align: center;
+		padding:0 10%;
 	}
 
 	.msg-nav {
 		width: 100%;
 		position: absolute;
-		bottom: 20px;
+		bottom: 10px;
 		text-align: center;
 
 		ul{
@@ -375,6 +496,12 @@ main {
 	.box-success{
 		background: #fff;
 		width: 73%;
+		@media all and (max-width: 540px){
+			width: 80%;
+		}
+		@media all and (max-width: 480px){
+			width: 87%;
+		}
 		padding:80px 7px 0;
 		min-height: $sectionMinHeight;
 		-webkit-box-sizing: border-box;
@@ -387,7 +514,7 @@ main {
 		.sub-tit{
 			font-size:1.0em;
 			text-transform: uppercase;
-			margin-bottom: 20px;
+			margin-bottom: 4%;
 			font-weight: bold;
 		}
 
@@ -402,14 +529,22 @@ main {
 		}
 
 		.sep{
-			margin-bottom: 40px;
+			margin-bottom: 15%;
 		}
 
 		.tit{
 			font-family: $playfairFontFamily;
 			font-size:(36/16)+em;
-			margin-bottom: 70px;
+			@media all and (max-width: 910px) and (min-width:750px){
+				font-size:(32/16)+em;
+				margin-bottom: 15%;
+			}
+			@media all and (max-width: 450px){
+				font-size:(32/16)+em;
+			}
+			margin-bottom: 12%;
 			font-weight: 700;
+			line-height: 1.2;
 		}
 
 		.social-lks a {

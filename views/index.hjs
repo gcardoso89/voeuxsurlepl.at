@@ -8,7 +8,7 @@
 <!--[if (gt IE 9)|!(IE)]><!-->
 <html lang="fr-FR"><!--<![endif]-->
 <head>
-	<title>{{ title }}</title>
+	<title>{{  }}</title>
 	<link rel='stylesheet' href='/css/style.css'/>
 </head>
 <body>
@@ -29,7 +29,8 @@
 	<div class="structure">
 		<aside>
 			<nav id="menu-type">
-				<h2><span>Choisissez le destinataire de vos vœux</span><i class="icon-arrow-right"></i></h2>
+				<h2><span>Choisissez le destinataire de vos vœux</span><i class="icon-arrow-right"></i><i
+					class="icon-arrow-bottom"></i></h2>
 				<a href="/?type=client" data-type="client" class="ic-client"><span>Client</span></a>
 				<a href="/?type=agence" data-type="agence" class="ic-agence"><span>Agence</span></a>
 				<a href="/?type=prospect" data-type="prospect" class="ic-prospect"><span>Prospect</span></a>
