@@ -3,6 +3,7 @@ var router = express.Router();
 var postcardModel = require('../models/postcard');
 var jwt = require('jwt-simple');
 var shortid = require('shortid');
+var onSaveErrorCallback = function(ipAddress, token){};
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -10,9 +11,6 @@ router.get('/', function (req, res, next) {
 	var token = jwt.encode({
 		ip: req.headers["x-forwarded-for"] || req.connection.remoteAddress
 	}, process.env.VOEUX_FORM_SECRET);
-
-	console.log(req.headers["x-forwarded-for"]);
-	console.log(req.connection.remoteAddress);
 
 	postcardModel.getAllMessages(function(messages, err){
 		if (err || messages.length === 0) {
@@ -31,9 +29,6 @@ router.post('/savePostcard', function (req, res, next) {
 		ip: req.headers["x-forwarded-for"] || req.connection.remoteAddress
 	}, process.env.VOEUX_FORM_SECRET);
 
-	console.log("SAVING:" + req.headers["x-forwarded-for"]);
-	console.log("SAVING:" + req.connection.remoteAddress);
-
 	if (req.body.token == token) {
 
 		var id = shortid.generate();
@@ -45,6 +40,7 @@ router.post('/savePostcard', function (req, res, next) {
 				res.status(200).json({ success: true, cardId: id });
 			}
 			else {
+				onSaveErrorCallback(req.headers["x-forwarded-for"], token);
 				res.status(403).end();
 			}
 
@@ -99,4 +95,7 @@ router.param('postcardid_static', function (req, res, next, postcardid) {
 
 
 
-module.exports = router;
+module.exports = function( onSaveError ){
+	onSaveErrorCallback = onSaveError;
+	return router;
+};

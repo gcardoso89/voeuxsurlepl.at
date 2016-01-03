@@ -15,7 +15,20 @@ if (!production) {
 	require("./voeux/env-variables")();
 }
 
-var index = require('./routes/index');
+function onSavePostcardError(ipAddress, token){
+	if (enviromnent !== 'development') {
+		slack.send({
+			text: "@gcardoso Saving postcard error: IP Address - " + ipAddress + " ------- Token - " + token,
+			channel: '#voeux-4aout',
+			username: 'Voeux 4août',
+			link_names: 1
+		}, function (err) {
+			console.log("Slack error access")
+		});
+	}
+}
+
+var index = require('./routes/index')(onSavePostcardError);
 var sharedimages = require('./routes/sharedimages')(enviromnent);
 var postcardModel = require('./models/postcard');
 
@@ -78,5 +91,7 @@ postcardModel.onError(function (err) {
 		});
 	}
 });
+
+
 
 module.exports = app;
