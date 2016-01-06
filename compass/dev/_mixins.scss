@@ -16,9 +16,10 @@
 
 }
 
-@mixin base-background($transitionDuration) {
+@mixin base-background($transitionDuration, $mainBackgroundColor) {
 
 	&:after {
+		background:$mainBackgroundColor;
 		content: ".";
 		display: block;
 		font-size: 0;
@@ -40,9 +41,15 @@
 	}
 
 	main {
+		background-color: $mainBackgroundColor;
 		@if ($transitionDuration){
 			@include transition(color $transitionDuration ease-out,background-color $transitionDuration ease-out);
 		}
+	}
+
+	#start-screen{
+		@include transition(opacity $transitionDuration ease-out)
+
 	}
 
 	#footer{
@@ -88,6 +95,9 @@
 			main {
 				color: $fontColour;
 				background-color: $colour;
+			}
+			#start-screen{
+				opacity: 0;
 			}
 			#footer{
 				color:$fontColour;
