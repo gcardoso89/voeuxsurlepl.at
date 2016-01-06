@@ -485,6 +485,7 @@ var voeuxApp = {
 		this._previousId = null;
 		this._currentId = null;
 		this._cont = $('#message-container');
+		this._msgCont = $('.msg-cont', this._cont);
 		this._navCont = $('.msg-nav', this._cont);
 		this._slideLeft = $('#message-left');
 		this._slideRight = $('#message-right');
@@ -492,6 +493,18 @@ var voeuxApp = {
 
 		this._items.bind('click', function (e) {
 			that._onItemsClick(e, $(this));
+		});
+
+		this._cont.swipe({
+
+			swipe : function(event, direction, distance, duration, fingerCount, fingerData) {
+				if ( direction == 'left'){
+					that._slideCount(null, 1);
+				} else if ( direction == 'right') {
+					that._slideCount(null, -1);
+				}
+			}
+
 		});
 
 		this._slideLeft.bind('click', function(e){
@@ -507,8 +520,7 @@ var voeuxApp = {
 	MessageSlider.prototype = {
 
 		_slideCount : function(e, count){
-
-			e.preventDefault();
+			if ( e ) e.preventDefault();
 			var totalItems = this._items.length;
 			if ( this._currentId + count === totalItems ){
 				this.activateItem(0)
