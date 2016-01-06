@@ -288,9 +288,9 @@ var voeuxApp = {
 		},
 
 		_onItemsHover: function (evt, element) {
-
-			this.selectBaseBackground(element.data('type'));
-
+			if ( this._itemLocked === null || this._itemLocked === '' ){
+				this.selectBaseBackground(element.data('type'));
+			}
 		},
 
 		_onItemsOut: function (evt, element) {
@@ -484,12 +484,26 @@ var voeuxApp = {
 
 		this._previousId = null;
 		this._currentId = null;
+		this._flexslider = $('.flexslider');
 		this._cont = $('#message-container');
 		this._navCont = $('.msg-nav', this._cont);
 		this._slideLeft = $('#message-left');
 		this._slideRight = $('#message-right');
 		this._items = $('a', this._navCont);
 
+		this._flexslider.flexslider({
+			slideshow : false,
+			namespace : '',
+			customDirectionNav : $('.msg-slide'),
+			start : function(){
+
+			},
+			before : function(slider, ola, ola1){
+				console.log(slider,ola,ola1);
+			}
+		});
+
+		/*
 		this._items.bind('click', function (e) {
 			that._onItemsClick(e, $(this));
 		});
@@ -501,6 +515,7 @@ var voeuxApp = {
 		this._slideRight.bind('click', function(e){
 			that._slideCount(e, 1);
 		});
+		*/
 
 	}
 

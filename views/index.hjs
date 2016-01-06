@@ -11,6 +11,25 @@
 	<title>{{  }}</title>
 	<link rel='stylesheet' href='/css/style.css'/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="images/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="images/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="images/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+	<link rel="manifest" href="images/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="images/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+
 </head>
 <body>
 <input name="token" type="hidden" id="ipt-token" value="{{token}}"/>
@@ -68,19 +87,18 @@
 					<div class="msg-receiver">
 						Cher <span id="receiver-zone"></span>,
 					</div>
-					<div class="msg-cont" id="message-typed-container">
-						<span id="message-typed"></span>
-						<textarea name="hid-message" id="message-edit"></textarea>
-					</div>
-					<div class="msg-nav">
-						<ul>
-							<li><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
+					<div class="flexslider">
+						<ul class="msg-cont slides" id="message-typed-container">
+							<li>
+								<span class="message-typed"></span>
+								<textarea name="hid-message" id="message-edit"></textarea>
+							</li>
+							<li></li>
+							<li></li>
 						</ul>
+						<a href="#" class="msg-slide next"><i class="icon-arrow-right"></i>message<br />suiv.</a>
+						<a href="#" class="msg-slide prev"><i class="icon-arrow-left"></i>message<br />préc.</a>
 					</div>
-					<a href="#" id="message-right" class="msg-slide right"><i class="icon-arrow-right"></i>message<br />préc.</a>
-					<a href="#" id="message-left" class="msg-slide left"><i class="icon-arrow-left"></i>message<br />suiv.</a>
 					<div class="button-cont">
 						<a href="#" data-action="edit" class="btn">Modifier</a>
 						<a href="#" data-target="sender" class="btn">Valider</a>
@@ -128,6 +146,7 @@
 </div>
 
 <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="/js/jquery.flexslider-min.js"></script>
 <script type="text/javascript" src="/js/typed.min.js"></script>
 <script type="text/javascript" src="/js/clientApp.js"></script>
 <script>

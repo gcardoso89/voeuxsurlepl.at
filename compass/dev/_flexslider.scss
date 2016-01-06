@@ -1,0 +1,54 @@
+/* ====================================================================================================================
+ * RESETS
+ * ====================================================================================================================*/
+.flex-container a:hover,
+.flex-slider a:hover {
+	outline: none;
+}
+.slides,
+.slides > li,
+.flex-control-nav,
+.flex-direction-nav {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.flex-pauseplay span {
+	text-transform: capitalize;
+}
+/* ====================================================================================================================
+ * BASE STYLES
+ * ====================================================================================================================*/
+.flexslider {
+	margin: 0;
+	padding: 0;
+
+	.slides {
+		> li{
+		display: none;
+		-webkit-backface-visibility: hidden;
+		}
+		img {
+			width: 100%;
+			display: block;
+		}
+		&:after{
+			content: "\0020";
+			display: block;
+			clear: both;
+			visibility: hidden;
+			line-height: 0;
+			height: 0;
+		}
+	}
+
+}
+html[xmlns] .flexslider .slides {
+	display: block;
+}
+* html .flexslider .slides {
+	height: 1%;
+}
+.no-js .flexslider .slides > li:first-child {
+	display: block;
+}
