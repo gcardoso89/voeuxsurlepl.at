@@ -289,17 +289,17 @@ var voeuxApp = {
 
 		_onItemsHover: function (evt, element) {
 
-			this.selectBaseBackground(element.data('type'));
+			//this.selectBaseBackground(element.data('type'));
 
 		},
 
 		_onItemsOut: function (evt, element) {
 
-			if (this._itemLocked !== null && this._itemLocked !== '') {
+			/*if (this._itemLocked !== null && this._itemLocked !== '') {
 				this.selectBaseBackground(this._itemLocked);
 			} else {
 				this._base.removeAttr('class');
-			}
+			}*/
 
 		},
 
