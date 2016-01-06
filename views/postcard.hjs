@@ -1,26 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Cher {{ receiver }}</title>
+	<title>{{ receiver }}</title>
 	<link rel='stylesheet' href='/css/postcard.css'/>
 
-	<meta name="title" content="Cher {{ receiver }}" />
+	<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="/manifest.json">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#2d89ef">
+	<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+
+	<meta name="title" content="{{ receiver }}" />
 	<meta name="description" content="{{ message }}" />
 
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@4aout">
 	<meta name="twitter:creator" content="@4aout">
-	<meta name="twitter:title" content="Cher {{ receiver }}">
+	<meta name="twitter:title" content="{{ receiver }}">
 	<meta name="twitter:description" content="{{ message }}">
 	<meta name="twitter:image" content="http://voeux-4aout.rhcloud.com/sharedimages/twitter/{{ cardid }}">
 
 	<meta property="og:url" content="http://voeux-4aout.rhcloud.com/{{ cardid }}" />
 	<meta property="og:type" content="website" />
-	<meta property="og:title" content="Cher {{ receiver }}" />
+	<meta property="og:title" content="{{ receiver }}" />
 	<meta property="og:description" content="{{ message }}" />
 	<meta property="og:image" content="http://voeux-4aout.rhcloud.com/sharedimages/facebook/{{ cardid }}" />
 
-	<meta itemprop="name" content="Cher {{ receiver }}">
+	<meta itemprop="name" content="{{ receiver }}">
 	<meta itemprop="description" content="{{ message }}">
 	<meta itemprop="image" content="http://voeux-4aout.rhcloud.com/sharedimages/gplus/{{ cardid }}">
 
@@ -59,7 +78,7 @@
 <script type="text/javascript">
 	$(function () {
 		voeuxCard.init( {
-			receiver : 'Cher {{{receiver}}},',
+			receiver : '{{{receiver}}},',
 			message : '{{ message }}'
 		} );
 	});

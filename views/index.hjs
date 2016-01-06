@@ -67,6 +67,14 @@
 		</aside>
 
 		<main>
+			<div id="start-screen">
+				<div>
+					<div>
+						<h2>Quitte à envoyer des vœux que personne ne va lire, autant les sous-traiter.<br /><br />
+							Vous pourrez même dire que ça vient de vous, promis on ne dira rien.</h2>
+					</div>
+				</div>
+			</div>
 			<header id="head-nav">
 				<span data-action="restart" class="icon-restart"></span>
 				<a href="#" data-target="receiver">destinataire</a>
@@ -86,7 +94,7 @@
 				</section>
 				<section data-section="message" id="message-container">
 					<div class="msg-receiver">
-						Cher <span id="receiver-zone"></span>,
+						<span id="receiver-zone"></span>,
 					</div>
 					<div class="msg-cont" id="message-typed-container">
 						<span id="message-typed"></span>
@@ -117,20 +125,18 @@
 				</section>
 				<section id="final-block" data-section="final">
 					<div class="box-success">
-						<p class="tit">Votre carte de vœux</p>
+						<p class="tit">Votre carte de vœux est prête!</p>
 						<div class="sep">
 							<p class="sub-tit">SUIVEZ LE LIEN CI-DESSUS</p>
 							<a href="#" id="final-link" target="_blank" class="lk">voeuxsurlepl.at/<span></span></a>
 						</div>
-						<div class="sep">
-							<p class="sub-tit">PARTAGEZ VOS VŒUX</p>
-							<div class="social-lks">
-								<a href="#" id="social-mail" class="icon-mail"></a>
-								<a href="#" id="social-facebook" class="icon-facebook"></a>
-								<a href="#" id="social-twitter" class="icon-twitter"></a>
-								<a href="#" id="social-gplus" class="icon-googleplus"></a>
-								<a href="#" id="social-tumblr" class="icon-tumblr"></a>
-							</div>
+						<p class="sub-tit">PARTAGEZ VOS VŒUX</p>
+						<div class="social-lks">
+							<a href="#" id="social-mail" class="icon-mail"></a>
+							<a href="#" id="social-facebook" class="icon-facebook"></a>
+							<a href="#" id="social-twitter" class="icon-twitter"></a>
+							<a href="#" id="social-gplus" class="icon-googleplus"></a>
+							<a href="#" id="social-tumblr" class="icon-tumblr"></a>
 						</div>
 					</div>
 				</section>
