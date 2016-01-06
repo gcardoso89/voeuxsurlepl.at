@@ -583,6 +583,7 @@ p {
   min-height: 100%;
 }
 #base:after {
+  background: #1200ff;
   content: ".";
   display: block;
   font-size: 0;
@@ -604,10 +605,17 @@ p {
   }
 }
 #base main {
+  background-color: #1200ff;
   -moz-transition: color 0.4s ease-out, background-color 0.4s ease-out;
   -o-transition: color 0.4s ease-out, background-color 0.4s ease-out;
   -webkit-transition: color 0.4s ease-out, background-color 0.4s ease-out;
   transition: color 0.4s ease-out, background-color 0.4s ease-out;
+}
+#base #start-screen {
+  -moz-transition: opacity 0.4s ease-out;
+  -o-transition: opacity 0.4s ease-out;
+  -webkit-transition: opacity 0.4s ease-out;
+  transition: opacity 0.4s ease-out;
 }
 #base #footer {
   opacity: 0;
@@ -652,6 +660,9 @@ p {
   color: #7e94a5;
   background-color: #b8d4ec;
 }
+#base.bg-client #start-screen {
+  opacity: 0;
+}
 #base.bg-client #footer {
   color: #7e94a5;
   opacity: 1;
@@ -679,6 +690,9 @@ p {
 #base.bg-agence main {
   color: #9ebaa0;
   background-color: #b9dabb;
+}
+#base.bg-agence #start-screen {
+  opacity: 0;
 }
 #base.bg-agence #footer {
   color: #9ebaa0;
@@ -708,6 +722,9 @@ p {
   color: #b42372;
   background-color: #d52685;
 }
+#base.bg-prospect #start-screen {
+  opacity: 0;
+}
 #base.bg-prospect #footer {
   color: #b42372;
   opacity: 1;
@@ -735,6 +752,9 @@ p {
 #base.bg-boss main {
   color: #98bbb8;
   background-color: #b2dbd7;
+}
+#base.bg-boss #start-screen {
+  opacity: 0;
 }
 #base.bg-boss #footer {
   color: #98bbb8;
@@ -764,6 +784,9 @@ p {
   color: #e3a7bf;
   background-color: #f4b7d1;
 }
+#base.bg-comptable-banquier #start-screen {
+  opacity: 0;
+}
 #base.bg-comptable-banquier #footer {
   color: #e3a7bf;
   opacity: 1;
@@ -791,6 +814,9 @@ p {
 #base.bg-famille main {
   color: #b9b9b9;
   background-color: #d9d7d8;
+}
+#base.bg-famille #start-screen {
+  opacity: 0;
 }
 #base.bg-famille #footer {
   color: #b9b9b9;
@@ -820,6 +846,9 @@ p {
   color: #eab61a;
   background-color: #f8d500;
 }
+#base.bg-enfants #start-screen {
+  opacity: 0;
+}
 #base.bg-enfants #footer {
   color: #eab61a;
   opacity: 1;
@@ -847,6 +876,9 @@ p {
 #base.bg-belle-famille main {
   color: #45387d;
   background-color: #4f4291;
+}
+#base.bg-belle-famille #start-screen {
+  opacity: 0;
 }
 #base.bg-belle-famille #footer {
   color: #45387d;
@@ -876,6 +908,9 @@ p {
   color: #c32f27;
   background-color: #ea332f;
 }
+#base.bg-cible-amoureuse #start-screen {
+  opacity: 0;
+}
 #base.bg-cible-amoureuse #footer {
   color: #c32f27;
   opacity: 1;
@@ -903,6 +938,9 @@ p {
 #base.bg-ex main {
   color: #10342b;
   background-color: #164164;
+}
+#base.bg-ex #start-screen {
+  opacity: 0;
 }
 #base.bg-ex #footer {
   color: #10342b;
@@ -960,7 +998,7 @@ p {
   }
 }
 .structure main {
-  background-color: #f1ebe5;
+  position: relative;
   vertical-align: middle;
 }
 @media all and (max-width: 749px) {
@@ -977,6 +1015,33 @@ p {
     vertical-align: top;
     display: block;
   }
+}
+
+#start-screen {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+#start-screen > div {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+#start-screen > div > div {
+  display: table-cell;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  padding: 0 10%;
+  text-align: center;
+}
+#start-screen > div > div h2 {
+  font-family: "Playfair Display", "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 2.5em;
+  color: #fff;
 }
 
 #menu-type {
@@ -1550,7 +1615,7 @@ main .wrapper section input[type='text']:focus {
 #final-block .box-success {
   background: #fff;
   width: 73%;
-  padding: 80px 7px 0;
+  padding: 60px 10px 0;
   min-height: 430px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1578,7 +1643,7 @@ main .wrapper section input[type='text']:focus {
 #final-block .box-success .sub-tit {
   font-size: 1.0em;
   text-transform: uppercase;
-  margin-bottom: 4%;
+  min-height: 40px;
   font-weight: bold;
 }
 #final-block .box-success .lk {
@@ -1591,24 +1656,25 @@ main .wrapper section input[type='text']:focus {
   text-decoration: underline;
 }
 #final-block .box-success .sep {
-  margin-bottom: 15%;
+  margin-bottom: 40px;
 }
 #final-block .box-success .tit {
   font-family: "Playfair Display", "Times New Roman", serif;
   font-size: 2.25em;
-  margin-bottom: 12%;
+  min-height: 149px;
   font-weight: 700;
   line-height: 1.2;
 }
 @media all and (max-width: 910px) and (min-width: 750px) {
   #final-block .box-success .tit {
     font-size: 2em;
-    margin-bottom: 15%;
+    min-height: 134px;
   }
 }
 @media all and (max-width: 450px) {
   #final-block .box-success .tit {
     font-size: 2em;
+    min-height: 134px;
   }
 }
 #final-block .box-success .social-lks a {
