@@ -150,19 +150,27 @@
 	}
 
 	::-webkit-input-placeholder {
-		@extend .placeholder;
+		color:rgba(255,255,255,0.6);
+		font-family: $playfairFontFamily;
+		font-weight: 700;
 	}
 
 	:-moz-placeholder { /* Firefox 18- */
-
+		color:rgba(255,255,255,0.6);
+		font-family: $playfairFontFamily;
+		font-weight: 700;
 	}
 
 	::-moz-placeholder {  /* Firefox 19+ */
-
+		color:rgba(255,255,255,0.6);
+		font-family: $playfairFontFamily;
+		font-weight: 700;
 	}
 
 	:-ms-input-placeholder {
-
+		color:rgba(255,255,255,0.6);
+		font-family: $playfairFontFamily;
+		font-weight: 700;
 	}
 
 }
