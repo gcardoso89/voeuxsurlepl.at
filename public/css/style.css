@@ -740,18 +740,18 @@ p {
   border-color: #98bbb8;
 }
 #base.bg-comptable-banquier:after {
-  background: #f1ccde;
+  background: #f4b7d1;
 }
 #base.bg-comptable-banquier main {
   color: #e3a7bf;
-  background-color: #f1ccde;
+  background-color: #f4b7d1;
 }
 #base.bg-comptable-banquier #footer {
   color: #e3a7bf;
   opacity: 1;
 }
 #base.bg-comptable-banquier #final-block {
-  color: #f1ccde;
+  color: #f4b7d1;
 }
 #base.bg-comptable-banquier #message-container .message-nav a {
   background: #e3a7bf;
@@ -1163,7 +1163,7 @@ p {
 }
 #menu-type > a.ic-comptable-banquier.sel, #menu-type > a.ic-comptable-banquier:hover {
   background-image: url("/images/03_banquier_sel.svg");
-  background-color: #f1ccde;
+  background-color: #f4b7d1;
   background-position: center 5px;
 }
 #menu-type > a.ic-famille {
