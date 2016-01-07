@@ -54,8 +54,8 @@
 		<div>
 			<section id="first-step">
 				<div class="type ic-{{ type }}"></div>
-				<p>{{ sender }} sent you a message.</p>
-				<a href="#" class="btn">Play message</a>
+				<p>{{ sender }} vous a envoyé ses <voeux></voeux></p>
+				<a href="#" class="btn">Afficher le message</a>
 			</section>
 			<section id="second-step">
 				<div>
@@ -65,8 +65,16 @@
 					<div class="message">
 						<span id="greetings-message"></span>
 					</div>
+					<div class="website">
+						<a href="http://www.voeuxsurleplat.fr" id="greetings-website"></a>
+					</div>
 				</div>
 			</section>
+			<footer>
+				<div>
+
+				</div>
+			</footer>
 		</div>
 	</div>
 </main>
@@ -79,7 +87,8 @@
 	$(function () {
 		voeuxCard.init( {
 			receiver : '{{{receiver}}},',
-			message : '{{ message }}'
+			message : '{{ message }}',
+			website : 'www.vœuxsurleplat.fr'
 		} );
 	});
 </script>
