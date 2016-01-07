@@ -1683,6 +1683,9 @@ main .wrapper section input[type='text']:focus {
   font-size: 1.625em;
   padding: 0 7px;
 }
+#final-block .box-success .social-lks a:hover {
+  opacity: 0.4;
+}
 
 #footer {
   color: #f1ebe5;
