@@ -239,6 +239,8 @@ var voeuxApp = {
 		this._scrollable = $('html,body');
 		this._win = $(window);
 
+		this._tabletPortrait = 768;
+
 		this._items.bind('click', function (e) {
 			that._onItemsClick(e, $(this));
 		});
@@ -271,7 +273,7 @@ var voeuxApp = {
 			this.selectBaseBackground(type);
 			this._itemLocked = type;
 			this._resizeHandler();
-			if ( this._win.width() < 750 ){
+			if ( this._win.width() <= this._tabletPortrait ){
 				this._scrollable.stop(true, false);
 				this._scrollable.animate({scrollTop : this._main.offset().top }, this._scrollToDuration);
 			}
@@ -279,7 +281,7 @@ var voeuxApp = {
 		},
 
 		_resizeHandler : function(){
-			if (this._win.width() < 750 && this._itemLocked){
+			if (this._win.width() <= this._tabletPortrait && this._itemLocked){
 				this._main.addClass('show');
 				this._scrollToDuration = 1200;
 			} else {

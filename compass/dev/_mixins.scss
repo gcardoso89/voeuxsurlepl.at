@@ -34,7 +34,7 @@
 			@include transition(background $transitionDuration ease-out);
 		}
 
-		@media all and (max-width: 749px) {
+		@media all and (max-width: $tabletPortrait) {
 			display: none;
 		}
 

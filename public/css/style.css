@@ -599,7 +599,7 @@ p {
   -webkit-transition: background 0.4s ease-out;
   transition: background 0.4s ease-out;
 }
-@media all and (max-width: 749px) {
+@media all and (max-width: 768px) {
   #base:after {
     display: none;
   }
@@ -973,7 +973,7 @@ p {
   position: relative;
   z-index: 2;
 }
-@media all and (max-width: 749px) {
+@media all and (max-width: 768px) {
   .structure {
     display: block;
   }
@@ -983,7 +983,7 @@ p {
   display: table-cell;
   height: 100%;
 }
-@media all and (max-width: 749px) {
+@media all and (max-width: 768px) {
   .structure main, .structure aside {
     width: auto;
     height: auto;
@@ -1001,7 +1001,7 @@ p {
   position: relative;
   vertical-align: middle;
 }
-@media all and (max-width: 749px) {
+@media all and (max-width: 768px) {
   .structure main {
     display: none;
     vertical-align: top;
@@ -1010,7 +1010,7 @@ p {
 .structure aside {
   vertical-align: middle;
 }
-@media all and (max-width: 749px) {
+@media all and (max-width: 768px) {
   .structure aside {
     vertical-align: top;
     display: block;
@@ -1046,9 +1046,12 @@ p {
 
 #menu-type {
   width: 100%;
-  margin-left: -3.3333%;
+  padding-right: 3.3333%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
-@media all and (max-width: 749px) {
+@media all and (max-width: 768px) {
   #menu-type {
     padding-top: 3.3333%;
     padding-right: 3.3333%;
@@ -1092,12 +1095,12 @@ p {
   display: block;
   line-height: 1.4;
 }
-@media all and (max-width: 970px) and (min-width: 750px) {
+@media all and (max-width: 970px) and (min-width: 769px) {
   #menu-type > h2:after {
     font-size: 0.6875em;
   }
 }
-@media all and (max-width: 770px) and (min-width: 750px) {
+@media all and (max-width: 800px) and (min-width: 769px) {
   #menu-type > h2:after {
     font-size: 0.625em;
   }
@@ -1122,12 +1125,12 @@ p {
   box-sizing: border-box;
   padding: 7% 22% 8% 6%;
 }
-@media all and (max-width: 970px) and (min-width: 750px) {
+@media all and (max-width: 970px) and (min-width: 769px) {
   #menu-type > h2 span {
     font-size: 1.625em;
   }
 }
-@media all and (max-width: 749px) and (min-width: 420px) {
+@media all and (max-width: 768px) and (min-width: 420px) {
   #menu-type > h2 span {
     font-size: 2.25em;
   }
@@ -1311,12 +1314,12 @@ p {
   -webkit-transition: -webkit-transform 0.2s ease-out;
   transition: transform 0.2s ease-out;
 }
-@media all and (max-width: 970px) and (min-width: 750px) {
+@media all and (max-width: 970px) and (min-width: 769px) {
   #menu-type > a > span {
     font-size: 0.6875em;
   }
 }
-@media all and (max-width: 770px) and (min-width: 750px) {
+@media all and (max-width: 800px) and (min-width: 769px) {
   #menu-type > a > span {
     font-size: 0.625em;
   }
@@ -1334,7 +1337,7 @@ p {
   text-align: center;
   margin-top: 5%;
 }
-@media all and (max-width: 749px) {
+@media all and (max-width: 768px) {
   #head-nav {
     margin-top: 0;
   }
@@ -1376,7 +1379,7 @@ p {
   margin-bottom: 0;
 }
 
-@media all and (max-width: 749px) {
+@media all and (max-width: 768px) {
   main {
     padding-top: 40px;
     display: none;
@@ -1391,7 +1394,7 @@ main .wrapper {
   padding-bottom: 39%;
   min-height: 430px;
 }
-@media all and (max-width: 749px) {
+@media all and (max-width: 768px) {
   main .wrapper {
     margin: 6% 5% 0;
     padding-bottom: 30%;
@@ -1452,7 +1455,7 @@ main .wrapper section input[type='text']:focus {
   min-height: 130px;
   line-height: 1.1em;
 }
-@media all and (max-width: 749px) {
+@media all and (max-width: 768px) {
   #message-container .msg-receiver {
     padding-top: 4%;
   }
@@ -1471,7 +1474,7 @@ main .wrapper section input[type='text']:focus {
   text-align: center;
   padding: 0 10%;
 }
-@media all and (max-width: 1024px) and (min-width: 750px) {
+@media all and (max-width: 1024px) and (min-width: 769px) {
   #message-container .msg-cont {
     font-size: 1.375em;
   }
@@ -1665,7 +1668,7 @@ main .wrapper section input[type='text']:focus {
   font-weight: 700;
   line-height: 1.2;
 }
-@media all and (max-width: 910px) and (min-width: 750px) {
+@media all and (max-width: 910px) and (min-width: 769px) {
   #final-block .box-success .tit {
     font-size: 2em;
     min-height: 134px;

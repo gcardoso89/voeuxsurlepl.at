@@ -36,7 +36,7 @@ p{
 	position: relative;
 	z-index: 2;
 
-	@media all and (max-width: 749px) {
+	@media all and (max-width: $tabletPortrait) {
 		display: block;
 	}
 
@@ -44,7 +44,7 @@ p{
 		width: 50%;
 		display: table-cell;
 		height: 100%;
-		@media all and (max-width: 749px) {
+		@media all and (max-width: $tabletPortrait) {
 			width:auto;
 			height: auto;
 			&:after{
@@ -62,7 +62,7 @@ p{
 	main{
 		position: relative;
 		vertical-align: middle;
-		@media all and (max-width: 749px) {
+		@media all and (max-width: $tabletPortrait) {
 			display: none;
 			vertical-align: top;
 		}
@@ -70,7 +70,7 @@ p{
 
 	aside{
 		vertical-align: middle;
-		@media all and (max-width: 749px) {
+		@media all and (max-width: $tabletPortrait) {
 			vertical-align: top;
 			display: block;
 		}
@@ -111,8 +111,11 @@ p{
 
 #menu-type {
 	width: 100%;
-	margin-left: -3.3333%;
-	@media all and (max-width: 749px) {
+	padding-right:3.3333%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;;
+	@media all and (max-width: $tabletPortrait) {
 		padding-top: 3.3333%;
 		padding-right: 3.3333%;
 		-webkit-box-sizing: border-box;
@@ -145,10 +148,10 @@ p{
 		&:after{
 			content:".";
 			font-size:0.8125em;
-			@media all and (max-width: 970px) and (min-width: 750px) {
+			@media all and (max-width: 970px) and (min-width: $tabletPortrait+1) {
 				font-size:0.6875em;
 			}
-			@media all and (max-width: 770px) and (min-width: 750px) {
+			@media all and (max-width: 800px) and (min-width: $tabletPortrait+1) {
 				font-size:0.625em;
 			}
 			@media all and (max-width: 465px) and (min-width: 420px) {
@@ -161,10 +164,10 @@ p{
 		}
 		span{
 			font-size:2em;
-			@media all and (max-width: 970px) and (min-width: 750px) {
+			@media all and (max-width: 970px) and (min-width: $tabletPortrait+1) {
 				font-size:1.625em;
 			}
-			@media all and (max-width: 749px) and (min-width: 420px){
+			@media all and (max-width: $tabletPortrait) and (min-width: 420px){
 				font-size:2.25em;
 			}
 			@media all and (max-width: 600px) and (min-width: 420px){
@@ -243,10 +246,10 @@ p{
 		>span{
 			line-height: 1.4;
 			font-size:0.8125em;
-			@media all and (max-width: 970px) and (min-width: 750px) {
+			@media all and (max-width: 970px) and (min-width: $tabletPortrait+1) {
 				font-size:0.6875em;
 			}
-			@media all and (max-width: 770px) and (min-width: 750px) {
+			@media all and (max-width: 800px) and (min-width: $tabletPortrait+1) {
 				font-size:0.625em;
 			}
 			@media all and (max-width: 465px) and (min-width: 420px){
@@ -271,7 +274,7 @@ p{
 	text-align: center;
 	margin-top:5%;
 
-	@media all and (max-width: 749px){
+	@media all and (max-width: $tabletPortrait){
 		margin-top:0;
 	}
 
@@ -322,7 +325,7 @@ p{
 
 main {
 
-	@media all and (max-width: 749px){
+	@media all and (max-width: $tabletPortrait){
 		padding-top:40px;
 		display: none;
 		&.show{
@@ -337,7 +340,7 @@ main {
 		padding-bottom:39%;
 		min-height: $sectionMinHeight;
 
-		@media all and (max-width: 749px){
+		@media all and (max-width: $tabletPortrait){
 			margin:6% 5% 0;
 			padding-bottom:30%;
 		}
@@ -404,7 +407,7 @@ main {
 		color:#fff;
 		min-height: $msgReceiverHeight+px;
 		line-height: 1.1em;
-		@media all and (max-width:749px){
+		@media all and (max-width:$tabletPortrait){
 			padding-top: 4%;
 		}
 		@media all and (max-width:450px){
@@ -417,7 +420,7 @@ main {
 		font-family: $circularFontFamily;
 		font-weight: 700;
 		font-size:1.625em;
-		@media all and (max-width:1024px) and (min-width: 750px){
+		@media all and (max-width:1024px) and (min-width: $tabletPortrait+1){
 			font-size:1.375em;
 		}
 		@media all and (max-width:450px){
@@ -587,7 +590,7 @@ main {
 		.tit{
 			font-family: $playfairFontFamily;
 			font-size:(36/16)+em;
-			@media all and (max-width: 910px) and (min-width:750px){
+			@media all and (max-width: 910px) and (min-width:$tabletPortrait+1){
 				font-size:(32/16)+em;
 				min-height:(114+$marginBottom)+px;
 			}
