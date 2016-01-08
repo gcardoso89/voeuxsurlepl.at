@@ -10,6 +10,21 @@ var ImageGenerator = {
 		'facebook' : {
 			width : 1200,
 			height : 630
+		},
+
+		'twitter' : {
+			width : 1024,
+			height : 512
+		},
+
+		'gplus' : {
+			width : 800,
+			height : 1200
+		},
+
+		'tumblr' : {
+			width : 1024,
+			height : 512
 		}
 
 	},
