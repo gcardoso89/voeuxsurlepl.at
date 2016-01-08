@@ -15,6 +15,7 @@ voeuxCard.init = function(data){
 		var that = this;
 
 		this._data = data;
+		this._footer = $('#footer');
 		this._firstStep = $('#first-step');
 		this._secondStep = $('#second-step');
 		this._btnFirstStep = $('.btn', this._firstStep);
@@ -104,6 +105,7 @@ voeuxCard.init = function(data){
 
 					setTimeout(function(){
 						that._greetingsWebsite.addClass('hide-cursor');
+						that._footer.addClass('show');
 					}, 500);
 				}
 			});

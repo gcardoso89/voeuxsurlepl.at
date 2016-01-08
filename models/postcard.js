@@ -96,9 +96,9 @@ var PostcardModel = {
 				type : body.type
 			}, function (err, result) {
 				if (err === null && result.result.n === 1) {
-					cb(true, err);
+					cb(true, result.ops[0], err);
 				} else {
-					cb(false, err);
+					cb(false, null, err);
 				}
 				db.close();
 			});

@@ -688,21 +688,21 @@ p {
   background: #b9dabb;
 }
 #base.bg-agence main {
-  color: #9ebaa0;
+  color: #889e8a;
   background-color: #b9dabb;
 }
 #base.bg-agence #start-screen {
   opacity: 0;
 }
 #base.bg-agence #footer {
-  color: #9ebaa0;
+  color: #889e8a;
   opacity: 1;
 }
 #base.bg-agence #final-block {
   color: #b9dabb;
 }
 #base.bg-agence #message-container .message-nav a {
-  background: #9ebaa0;
+  background: #889e8a;
 }
 #base.bg-agence #head-nav {
   opacity: 1;
@@ -712,28 +712,28 @@ p {
   transform: translate3d(0, 0, 0);
 }
 #base.bg-agence #head-nav a {
-  color: #9ebaa0;
-  border-color: #9ebaa0;
+  color: #889e8a;
+  border-color: #889e8a;
 }
 #base.bg-prospect:after {
   background: #d52685;
 }
 #base.bg-prospect main {
-  color: #b42372;
+  color: #a01e65;
   background-color: #d52685;
 }
 #base.bg-prospect #start-screen {
   opacity: 0;
 }
 #base.bg-prospect #footer {
-  color: #b42372;
+  color: #a01e65;
   opacity: 1;
 }
 #base.bg-prospect #final-block {
   color: #d52685;
 }
 #base.bg-prospect #message-container .message-nav a {
-  background: #b42372;
+  background: #a01e65;
 }
 #base.bg-prospect #head-nav {
   opacity: 1;
@@ -743,28 +743,28 @@ p {
   transform: translate3d(0, 0, 0);
 }
 #base.bg-prospect #head-nav a {
-  color: #b42372;
-  border-color: #b42372;
+  color: #a01e65;
+  border-color: #a01e65;
 }
 #base.bg-boss:after {
   background: #b2dbd7;
 }
 #base.bg-boss main {
-  color: #98bbb8;
+  color: #86a19f;
   background-color: #b2dbd7;
 }
 #base.bg-boss #start-screen {
   opacity: 0;
 }
 #base.bg-boss #footer {
-  color: #98bbb8;
+  color: #86a19f;
   opacity: 1;
 }
 #base.bg-boss #final-block {
   color: #b2dbd7;
 }
 #base.bg-boss #message-container .message-nav a {
-  background: #98bbb8;
+  background: #86a19f;
 }
 #base.bg-boss #head-nav {
   opacity: 1;
@@ -774,28 +774,28 @@ p {
   transform: translate3d(0, 0, 0);
 }
 #base.bg-boss #head-nav a {
-  color: #98bbb8;
-  border-color: #98bbb8;
+  color: #86a19f;
+  border-color: #86a19f;
 }
 #base.bg-comptable-banquier:after {
   background: #f4b7d1;
 }
 #base.bg-comptable-banquier main {
-  color: #e3a7bf;
+  color: #c992a8;
   background-color: #f4b7d1;
 }
 #base.bg-comptable-banquier #start-screen {
   opacity: 0;
 }
 #base.bg-comptable-banquier #footer {
-  color: #e3a7bf;
+  color: #c992a8;
   opacity: 1;
 }
 #base.bg-comptable-banquier #final-block {
   color: #f4b7d1;
 }
 #base.bg-comptable-banquier #message-container .message-nav a {
-  background: #e3a7bf;
+  background: #c992a8;
 }
 #base.bg-comptable-banquier #head-nav {
   opacity: 1;
@@ -805,8 +805,8 @@ p {
   transform: translate3d(0, 0, 0);
 }
 #base.bg-comptable-banquier #head-nav a {
-  color: #e3a7bf;
-  border-color: #e3a7bf;
+  color: #c992a8;
+  border-color: #c992a8;
 }
 #base.bg-famille:after {
   background: #d9d7d8;
@@ -874,21 +874,21 @@ p {
   background: #4f4291;
 }
 #base.bg-belle-famille main {
-  color: #45387d;
+  color: #372d62;
   background-color: #4f4291;
 }
 #base.bg-belle-famille #start-screen {
   opacity: 0;
 }
 #base.bg-belle-famille #footer {
-  color: #45387d;
+  color: #372d62;
   opacity: 1;
 }
 #base.bg-belle-famille #final-block {
   color: #4f4291;
 }
 #base.bg-belle-famille #message-container .message-nav a {
-  background: #45387d;
+  background: #372d62;
 }
 #base.bg-belle-famille #head-nav {
   opacity: 1;
@@ -898,28 +898,28 @@ p {
   transform: translate3d(0, 0, 0);
 }
 #base.bg-belle-famille #head-nav a {
-  color: #45387d;
-  border-color: #45387d;
+  color: #372d62;
+  border-color: #372d62;
 }
 #base.bg-cible-amoureuse:after {
   background: #ea332f;
 }
 #base.bg-cible-amoureuse main {
-  color: #c32f27;
+  color: #ad2c25;
   background-color: #ea332f;
 }
 #base.bg-cible-amoureuse #start-screen {
   opacity: 0;
 }
 #base.bg-cible-amoureuse #footer {
-  color: #c32f27;
+  color: #ad2c25;
   opacity: 1;
 }
 #base.bg-cible-amoureuse #final-block {
   color: #ea332f;
 }
 #base.bg-cible-amoureuse #message-container .message-nav a {
-  background: #c32f27;
+  background: #ad2c25;
 }
 #base.bg-cible-amoureuse #head-nav {
   opacity: 1;
@@ -929,28 +929,28 @@ p {
   transform: translate3d(0, 0, 0);
 }
 #base.bg-cible-amoureuse #head-nav a {
-  color: #c32f27;
-  border-color: #c32f27;
+  color: #ad2c25;
+  border-color: #ad2c25;
 }
 #base.bg-ex:after {
   background: #164164;
 }
 #base.bg-ex main {
-  color: #10342b;
+  color: #0e273b;
   background-color: #164164;
 }
 #base.bg-ex #start-screen {
   opacity: 0;
 }
 #base.bg-ex #footer {
-  color: #10342b;
+  color: #0e273b;
   opacity: 1;
 }
 #base.bg-ex #final-block {
   color: #164164;
 }
 #base.bg-ex #message-container .message-nav a {
-  background: #10342b;
+  background: #0e273b;
 }
 #base.bg-ex #head-nav {
   opacity: 1;
@@ -960,8 +960,8 @@ p {
   transform: translate3d(0, 0, 0);
 }
 #base.bg-ex #head-nav a {
-  color: #10342b;
-  border-color: #10342b;
+  color: #0e273b;
+  border-color: #0e273b;
 }
 
 .structure {

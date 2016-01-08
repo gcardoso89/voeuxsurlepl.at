@@ -536,39 +536,57 @@ body.bg-client {
   background: #b8d4ec;
   color: #7e94a5;
 }
+body.bg-client #footer {
+  color: #7e94a5;
+}
 body .ic-client {
   background-image: url("../images/02_client_sel.svg");
 }
 body.bg-agence {
   background: #b9dabb;
-  color: #9ebaa0;
+  color: #889e8a;
+}
+body.bg-agence #footer {
+  color: #889e8a;
 }
 body .ic-agence {
   background-image: url("../images/01_agence_sel.svg");
 }
 body.bg-prospect {
   background: #d52685;
-  color: #b42372;
+  color: #a01e65;
+}
+body.bg-prospect #footer {
+  color: #a01e65;
 }
 body .ic-prospect {
   background-image: url("../images/09_prospect_sel.svg");
 }
 body.bg-boss {
   background: #b2dbd7;
-  color: #98bbb8;
+  color: #86a19f;
+}
+body.bg-boss #footer {
+  color: #86a19f;
 }
 body .ic-boss {
   background-image: url("../images/05_boss_sel.svg");
 }
 body.bg-comptable-banquier {
   background: #f4b7d1;
-  color: #e3a7bf;
+  color: #c992a8;
+}
+body.bg-comptable-banquier #footer {
+  color: #c992a8;
 }
 body .ic-comptable-banquier {
   background-image: url("../images/03_banquier_sel.svg");
 }
 body.bg-famille {
   background: #d9d7d8;
+  color: #b9b9b9;
+}
+body.bg-famille #footer {
   color: #b9b9b9;
 }
 body .ic-famille {
@@ -578,26 +596,38 @@ body.bg-enfants {
   background: #f8d500;
   color: #eab61a;
 }
+body.bg-enfants #footer {
+  color: #eab61a;
+}
 body .ic-enfants {
   background-image: url("../images/07_enfants_sel.svg");
 }
 body.bg-belle-famille {
   background: #4f4291;
-  color: #45387d;
+  color: #372d62;
+}
+body.bg-belle-famille #footer {
+  color: #372d62;
 }
 body .ic-belle-famille {
   background-image: url("../images/06_belle-famille_sel.svg");
 }
 body.bg-cible-amoureuse {
   background: #ea332f;
-  color: #c32f27;
+  color: #ad2c25;
+}
+body.bg-cible-amoureuse #footer {
+  color: #ad2c25;
 }
 body .ic-cible-amoureuse {
   background-image: url("../images/08_cible amoureuse_sel.svg");
 }
 body.bg-ex {
   background: #164164;
-  color: #10342b;
+  color: #0e273b;
+}
+body.bg-ex #footer {
+  color: #0e273b;
 }
 body .ic-ex {
   background-image: url("../images/04_ex_sel.svg");
@@ -645,6 +675,11 @@ main .wrapper > div {
   height: 100%;
   text-align: center;
 }
+@media all and (max-height: 650px) {
+  main .wrapper > div {
+    vertical-align: top;
+  }
+}
 
 #first-step {
   -moz-transition: opacity 0.8s ease-out;
@@ -670,7 +705,7 @@ main .wrapper > div {
   background-color: transparent;
   margin: -250px auto 0;
 }
-@media all and (max-height: 500px) {
+@media all and (max-height: 650px) {
   #first-step .type {
     margin: 0 auto;
   }
@@ -704,7 +739,7 @@ main .wrapper > div {
   width: 100%;
   height: 100%;
   vertical-align: middle;
-  padding: 170px 20px 50px;
+  padding: 170px 20px 80px;
 }
 #second-step .title {
   font-family: "Playfair Display", "Times New Roman", serif;
@@ -782,4 +817,51 @@ main .wrapper > div {
 }
 #second-step #greetings-title.hide-cursor + .typed-cursor, #second-step #greetings-message.hide-cursor + .typed-cursor, #second-step #greetings-website.hide-cursor + .typed-cursor {
   visibility: hidden;
+}
+
+#footer {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  left: 50%;
+  max-width: 500px;
+  padding: 0 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  opacity: 0;
+  -moz-transition: opacity 0.7s ease-out;
+  -o-transition: opacity 0.7s ease-out;
+  -webkit-transition: opacity 0.7s ease-out;
+  transition: opacity 0.7s ease-out;
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}
+#footer.show {
+  opacity: 1;
+}
+#footer > a {
+  float: left;
+  font-size: 0.75em;
+  line-height: 1.825em;
+  font-family: "Circular Std", Helvetica, sans-serif;
+}
+#footer > a:hover {
+  border-bottom: 2px solid;
+  margin-bottom: -2px;
+}
+#footer .footer-lks {
+  float: right;
+  font-size: 1.25em;
+}
+#footer .footer-lks a {
+  padding: 2px 3px;
+  margin: 0 2px;
+}
+#footer a {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
 }
