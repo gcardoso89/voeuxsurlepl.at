@@ -184,7 +184,7 @@ var voeuxApp = {
 			var url = 'http://' + location.host + '/' + data.cardId;
 			var text = 'voeuxsurlepl.at/' + data.cardId;
 
-			this._socialLinks.setSocialLinks(data.cardId);
+			this._socialLinks.setSocialLinks(data.cardId, data.sender, data.receiver);
 
 			this._finalLink.attr('href', url);
 			this._finalLink.text(text);
@@ -591,7 +591,7 @@ var voeuxApp = {
 
 	SocialLinks.prototype = {
 
-		_setTwitterLink : function(){
+		_setTwitterLink : function(receiver){
 
 			/*var width = 575,
 				height = 400,
@@ -609,7 +609,7 @@ var voeuxApp = {
 			var baseUrl = 'https://twitter.com/intent/tweet';
 			var shareUrl = encodeURIComponent(this._shareUrl);
 			baseUrl += '?url=' + shareUrl;
-			baseUrl += "&text=" + encodeURIComponent("Teste");
+			baseUrl += "&text=" + encodeURIComponent("Voici un petit message de ma part pour " + receiver + " - " + receiver + " > ");
 
 			this._twitter.bind('click', function(e){
 
@@ -652,8 +652,16 @@ var voeuxApp = {
 
 		},
 
-		_setMailLink : function(){
-			this._mail.attr('href','mailto:?subject=Voeux&body=' + this._shareUrl );
+		_setMailLink : function(sender, receiver){
+
+			var subject = receiver + '%20vous%20souhaite%20ses%20meilleurs%20voeux';
+
+			var bodyText = 'Bonjour%20' + receiver + ',%0D%0A%0D%0A';
+			bodyText += 'Voici%20mes%20voeux%20pour%20la%20nouvelle%20année.%0D%0A';
+			bodyText += 'Ils%20sont%20disponibles%20ici%20:%20' + this._shareUrl + '%0D%0A%0D%0A';
+			bodyText += sender;
+
+			this._mail.attr('href','mailto:?subject=' + subject + '&body=' + bodyText );
 		},
 
 		_setGPlusLink : function(){
@@ -716,11 +724,11 @@ var voeuxApp = {
 
 		},
 
-		setSocialLinks : function(shareId){
+		setSocialLinks : function(shareId, sender, receiver){
 			this._shareUrl = this._baseUrl + shareId;
-			this._setTwitterLink();
+			this._setTwitterLink(receiver);
 			this._setFacebookLink();
-			this._setMailLink();
+			this._setMailLink(sender, receiver);
 			this._setGPlusLink();
 			this._setTumblrLink();
 		}

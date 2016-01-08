@@ -34,10 +34,10 @@ router.post('/savePostcard', function (req, res, next) {
 		var id = shortid.generate();
 		req.body.cardid = id;
 
-		postcardModel.addNewCard(req.body, function (success, err) {
+		postcardModel.addNewCard(req.body, function (success, data, err) {
 
-			if (success) {
-				res.status(200).json({ success: true, cardId: id });
+			if (success && data) {
+				res.status(200).json({ success: true, cardId: id, sender : data.sender, receiver : data.receiver });
 			}
 			else {
 				onSaveErrorCallback(req.headers["x-forwarded-for"], token);
