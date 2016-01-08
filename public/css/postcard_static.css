@@ -82,7 +82,7 @@ body .ic-ex {
 .btn {
   display: inline-block;
   color: #fff;
-  font-size: 1em;
+  font-size: 1.4em;
   font-family: "Playfair Display", "Times New Roman", serif;
   white-space: nowrap;
   padding: 4px 17px;
@@ -121,7 +121,7 @@ main .wrapper > div {
   height: 100%;
   text-align: center;
 }
-@media all and (max-height: 650px) {
+@media all and (max-height: 930px) {
   main .wrapper > div {
     vertical-align: top;
   }
@@ -144,14 +144,14 @@ main .wrapper > div {
   cursor: default;
 }
 #first-step .type {
-  max-width: 250px;
+  max-width: 400px;
   background-size: 100% auto;
   background-position: center center;
   background-repeat: no-repeat;
   background-color: transparent;
-  margin: -250px auto 0;
+  margin: -400px auto 0;
 }
-@media all and (max-height: 650px) {
+@media all and (max-height: 930px) {
   #first-step .type {
     margin: 0 auto;
   }
@@ -168,6 +168,6 @@ main .wrapper > div {
 #first-step p {
   font-family: "Playfair Display", "Times New Roman", serif;
   font-weight: bold;
-  font-size: 2.25em;
+  font-size: 3em;
   margin: 0 auto 30px 0;
 }
