@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>{{ receiver }}</title>
+	<title>{{ sender }} vous souhaite ses meilleurs voeux</title>
 	<link rel='stylesheet' href='/css/postcard.css'/>
 
 	<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
@@ -23,24 +23,24 @@
 	<meta name="msapplication-TileImage" content="/mstile-144x144.png">
 	<meta name="theme-color" content="#ffffff">
 
-	<meta name="title" content="{{ receiver }}" />
-	<meta name="description" content="{{ message }}" />
+	<meta name="title" content="{{ sender }} vous souhaite ses meilleurs voeux" />
+	<meta name="description" content="Voici un petit message de ma part pour la nouvelle année." />
 
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@4aout">
 	<meta name="twitter:creator" content="@4aout">
-	<meta name="twitter:title" content="{{ receiver }}">
-	<meta name="twitter:description" content="{{ message }}">
+	<meta name="twitter:title" content="{{ sender }} vous souhaite ses meilleurs voeux">
+	<meta name="twitter:description" content="Voici un petit message de ma part pour">
 	<meta name="twitter:image" content="http://voeux-4aout.rhcloud.com/sharedimages/twitter/{{ cardid }}">
 
 	<meta property="og:url" content="http://voeux-4aout.rhcloud.com/{{ cardid }}" />
 	<meta property="og:type" content="website" />
-	<meta property="og:title" content="{{ receiver }}" />
-	<meta property="og:description" content="{{ message }}" />
+	<meta property="og:title" content="{{ sender }} vous souhaite ses meilleurs voeux" />
+	<meta property="og:description" content="Voici un petit message de ma part pour la nouvelle année." />
 	<meta property="og:image" content="http://voeux-4aout.rhcloud.com/sharedimages/facebook/{{ cardid }}" />
 
-	<meta itemprop="name" content="{{ receiver }}">
-	<meta itemprop="description" content="{{ message }}">
+	<meta itemprop="name" content="{{ sender }} vous souhaite ses meilleurs voeux">
+	<meta itemprop="description" content="Voici un petit message de ma part pour la nouvelle année.">
 	<meta itemprop="image" content="http://voeux-4aout.rhcloud.com/sharedimages/gplus/{{ cardid }}">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -66,15 +66,19 @@
 						<span id="greetings-message"></span>
 					</div>
 					<div class="website">
-						<a href="http://www.voeuxsurleplat.fr" id="greetings-website"></a>
+						<a href="http://www.voeuxsurlepl.at" id="greetings-website"></a>
 					</div>
+					<footer id="footer">
+						<a href="http://4aout.fr/" target="_blank">©4aout</a>
+						<div class="footer-lks">
+							<a href="mailto:bonjour@4aout.fr" target="_blank" class="icon-mail"></a>
+							<a href="https://www.facebook.com/4aout" target="_blank" class="icon-facebook"></a>
+							<a href="https://twitter.com/4aout" target="_blank" class="icon-twitter"></a>
+						</div>
+					</footer>
 				</div>
 			</section>
-			<footer>
-				<div>
 
-				</div>
-			</footer>
 		</div>
 	</div>
 </main>
@@ -88,7 +92,7 @@
 		voeuxCard.init( {
 			receiver : '{{{receiver}}},',
 			message : '{{ message }}',
-			website : 'www.vœuxsurleplat.fr'
+			website : 'www.vœuxsurlepl.at'
 		} );
 	});
 </script>
