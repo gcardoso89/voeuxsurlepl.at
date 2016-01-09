@@ -1113,6 +1113,7 @@ p {
 
 #menu-type {
   width: 100%;
+  paddi: 3.3333%;
   padding-right: 3.3333%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
