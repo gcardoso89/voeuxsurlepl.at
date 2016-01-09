@@ -28,7 +28,7 @@ p{
 }
 
 .structure {
-	max-width: 1170px;
+	max-width: 1800px;
 	width: 100%;
 	display: table;
 	height: 100%;
@@ -163,7 +163,19 @@ p{
 			line-height: 1.4;
 		}
 		span{
-			font-size:2em;
+			font-size:3em;
+			@media all and (max-width: 1670px) and (min-width: $tabletPortrait+1) {
+				font-size:2.75em;
+			}
+			@media all and (max-width: 1530px) and (min-width: $tabletPortrait+1) {
+				font-size:2.5em;
+			}
+			@media all and (max-width: 1330px) and (min-width: $tabletPortrait+1) {
+				font-size:2.125em;
+			}
+			@media all and (max-width: 1170px) and (min-width: $tabletPortrait+1) {
+				font-size:2em;
+			}
 			@media all and (max-width: 970px) and (min-width: $tabletPortrait+1) {
 				font-size:1.625em;
 			}
@@ -245,7 +257,17 @@ p{
 
 		>span{
 			line-height: 1.4;
-			font-size:0.8125em;
+			font-size:1em;
+			@media all and (max-width: 1670px) and (min-width: $tabletPortrait+1) {
+				font-size:0.9375em;
+			}
+			@media all and (max-width: 1300px) and (min-width: $tabletPortrait+1) {
+				font-size:0.875em;
+			}
+
+			@media all and (max-width: 1170px) and (min-width: $tabletPortrait+1) {
+				font-size:0.8125em;
+			}
 			@media all and (max-width: 970px) and (min-width: $tabletPortrait+1) {
 				font-size:0.6875em;
 			}
@@ -550,6 +572,7 @@ main {
 	.box-success{
 		background: #fff;
 		width: 73%;
+		max-width: 390px;
 		@media all and (max-width: 540px){
 			width: 80%;
 		}

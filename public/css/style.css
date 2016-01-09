@@ -1032,7 +1032,7 @@ p {
 }
 
 .structure {
-  max-width: 1170px;
+  max-width: 1800px;
   width: 100%;
   display: table;
   height: 100%;
@@ -1178,7 +1178,7 @@ p {
   }
 }
 #menu-type > h2 span {
-  font-size: 2em;
+  font-size: 3em;
   font-family: "Playfair Display", "Times New Roman", serif;
   line-height: 1.1;
   display: block;
@@ -1191,6 +1191,26 @@ p {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 7% 22% 8% 6%;
+}
+@media all and (max-width: 1670px) and (min-width: 769px) {
+  #menu-type > h2 span {
+    font-size: 2.75em;
+  }
+}
+@media all and (max-width: 1530px) and (min-width: 769px) {
+  #menu-type > h2 span {
+    font-size: 2.5em;
+  }
+}
+@media all and (max-width: 1330px) and (min-width: 769px) {
+  #menu-type > h2 span {
+    font-size: 2.125em;
+  }
+}
+@media all and (max-width: 1170px) and (min-width: 769px) {
+  #menu-type > h2 span {
+    font-size: 2em;
+  }
 }
 @media all and (max-width: 970px) and (min-width: 769px) {
   #menu-type > h2 span {
@@ -1370,7 +1390,7 @@ p {
 }
 #menu-type > a > span {
   line-height: 1.4;
-  font-size: 0.8125em;
+  font-size: 1em;
   display: block;
   width: 100%;
   text-align: center;
@@ -1380,6 +1400,21 @@ p {
   -o-transition: -o-transform 0.2s ease-out;
   -webkit-transition: -webkit-transform 0.2s ease-out;
   transition: transform 0.2s ease-out;
+}
+@media all and (max-width: 1670px) and (min-width: 769px) {
+  #menu-type > a > span {
+    font-size: 0.9375em;
+  }
+}
+@media all and (max-width: 1300px) and (min-width: 769px) {
+  #menu-type > a > span {
+    font-size: 0.875em;
+  }
+}
+@media all and (max-width: 1170px) and (min-width: 769px) {
+  #menu-type > a > span {
+    font-size: 0.8125em;
+  }
 }
 @media all and (max-width: 970px) and (min-width: 769px) {
   #menu-type > a > span {
@@ -1684,6 +1719,7 @@ main .wrapper section input[type='text']:focus {
 #final-block .box-success {
   background: #fff;
   width: 73%;
+  max-width: 390px;
   padding: 60px 10px 0;
   min-height: 430px;
   -webkit-box-sizing: border-box;
