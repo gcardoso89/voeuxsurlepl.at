@@ -134,8 +134,8 @@
 							<li><a href="#">3</a></li>
 						</ul>
 					</div>
-					<a href="#" id="message-right" class="msg-slide right"><i class="icon-arrow-right"></i>message<br />préc.</a>
-					<a href="#" id="message-left" class="msg-slide left"><i class="icon-arrow-left"></i>message<br />suiv.</a>
+					<a href="#" id="message-right" class="msg-slide right"><i class="icon-arrow-right"></i>message<br />suiv.</a>
+					<a href="#" id="message-left" class="msg-slide left"><i class="icon-arrow-left"></i>message<br />préc.</a>
 					<div class="button-cont">
 						<a href="#" data-action="edit" class="btn">Modifier</a>
 						<a href="#" data-target="sender" class="btn">Valider</a>
