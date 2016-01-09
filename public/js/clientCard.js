@@ -16,18 +16,41 @@ voeuxCard.init = function(data){
 
 		this._data = data;
 		this._footer = $('#footer');
+		this._body = $('body');
 		this._firstStep = $('#first-step');
 		this._secondStep = $('#second-step');
 		this._btnFirstStep = $('.btn', this._firstStep);
+		this._4aoutLk = $('#credits-lk');
 
 		this._greetingsTitle = $('#greetings-title');
 		this._greetingsMessage = $('#greetings-message');
 		this._greetingsWebsite = $('#greetings-website');
 
 		this._firstBtnBlocked = false;
+		this._creditsOpened = false;
+
+		function bodyCreditsClick(){
+			if ( that._creditsOpened ){
+				that._4aoutLk.removeClass('show');
+				that._creditsOpened = false;
+				$(this).unbind('click.credits');
+			}
+		}
 
 		this._btnFirstStep.bind('click', function(e){
 			that._onBtnFirstStepClick(e);
+		});
+
+
+		this._4aoutLk.bind('click', function(e){
+			e.preventDefault();
+			if ( !that._creditsOpened ) {
+				that._4aoutLk.addClass('show');
+				that._creditsOpened = true;
+				setTimeout(function(){
+					that._body.bind('click.credits', bodyCreditsClick);
+				},0);
+			}
 		});
 
 	}

@@ -25,17 +25,20 @@ var voeuxApp = {
 		this._isSubmiting = false;
 		this._submited = false;
 
+		this._creditsOpened = false;
 		this._typedSelector = '#message-typed';
 		this._typeMenu = new voeuxApp.TypeMenu();
 		this._menu = new voeuxApp.Menu();
 		this._msgSlider = new voeuxApp.MessageSlider();
 		this._socialLinks = new voeuxApp.SocialLinks();
 
+		this._body = $('body');
 		this._formSender = $('#form-sender');
 		this._iptSender = $('#ipt-sender');
 		this._formReceiver = $('#form-receiver');
 		this._iptReceiver = $('#ipt-receiver');
 		this._iptToken = $('#ipt-token');
+		this._4aoutLk = $('#credits-lk');
 
 		this._typedContainer = $('#message-typed-container');
 		this._msgReceiverZone = $('#receiver-zone');
@@ -57,6 +60,14 @@ var voeuxApp = {
 
 		this._finalBlock = $('#final-block');
 		this._finalLink = $('#final-link');
+
+		function bodyCreditsClick(){
+			if ( that._creditsOpened ){
+				that._4aoutLk.removeClass('show');
+				that._creditsOpened = false;
+				$(this).unbind('click.credits');
+			}
+		}
 
 		this._menu.onShowMessageSection(function () {
 			that._onShowMessageSection();
@@ -90,6 +101,19 @@ var voeuxApp = {
 			that._iptReceiver.blur();
 			return false;
 		});
+
+		this._4aoutLk.bind('click', function(e){
+			e.preventDefault();
+			if ( !that._creditsOpened ) {
+				that._4aoutLk.addClass('show');
+				that._creditsOpened = true;
+				setTimeout(function(){
+					that._body.bind('click.credits', bodyCreditsClick);
+				},0);
+			}
+		});
+
+
 
 	}
 

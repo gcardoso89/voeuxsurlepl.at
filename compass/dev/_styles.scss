@@ -648,14 +648,41 @@ main {
 	bottom: 10px;
 	width: 100%;
 	left: 0;
-	> a{
-		font-size:0.75em;
-		line-height: 1.825em;
-		font-family: $textFontFamily;
 
+	.footer-credits{
+		font-size:0.75em;
+		height: 34px;
+		font-family: $textFontFamily;
+		float: left;
+	}
+
+	#credits-lk {
+		line-height: 34px;
+		display: inline-block;
 		&:hover{
 			border-bottom: 2px solid;
 			margin-bottom: -2px;
+		}
+		&.show + #credits-text{
+			opacity: 1;
+		}
+	}
+
+	#credits-text{
+		opacity: 0;
+		position: absolute;
+		bottom:40px;
+		padding:10px 15px;
+		background: #fff;
+		left:0;
+		color:#1200ff;
+		font-size: 1.125em;
+		max-width: 300px;
+		a{
+			text-decoration: underline;
+			&:hover{
+				text-decoration: none;
+			}
 		}
 	}
 

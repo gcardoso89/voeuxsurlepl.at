@@ -573,12 +573,24 @@ body.bg-client {
   background: #b8d4ec;
   color: #7e94a5;
 }
+body.bg-client #footer {
+  color: #7e94a5;
+}
+body.bg-client #credits-text {
+  color: #b8d4ec;
+}
 body .ic-client {
   background-image: url("../images/02_client_sel.svg");
 }
 body.bg-agence {
   background: #b9dabb;
   color: #889e8a;
+}
+body.bg-agence #footer {
+  color: #889e8a;
+}
+body.bg-agence #credits-text {
+  color: #b9dabb;
 }
 body .ic-agence {
   background-image: url("../images/01_agence_sel.svg");
@@ -587,12 +599,24 @@ body.bg-prospect {
   background: #d52685;
   color: #a01e65;
 }
+body.bg-prospect #footer {
+  color: #a01e65;
+}
+body.bg-prospect #credits-text {
+  color: #d52685;
+}
 body .ic-prospect {
   background-image: url("../images/09_prospect_sel.svg");
 }
 body.bg-boss {
   background: #b2dbd7;
   color: #86a19f;
+}
+body.bg-boss #footer {
+  color: #86a19f;
+}
+body.bg-boss #credits-text {
+  color: #b2dbd7;
 }
 body .ic-boss {
   background-image: url("../images/05_boss_sel.svg");
@@ -601,12 +625,24 @@ body.bg-comptable-banquier {
   background: #f4b7d1;
   color: #c992a8;
 }
+body.bg-comptable-banquier #footer {
+  color: #c992a8;
+}
+body.bg-comptable-banquier #credits-text {
+  color: #f4b7d1;
+}
 body .ic-comptable-banquier {
   background-image: url("../images/03_banquier_sel.svg");
 }
 body.bg-famille {
   background: #d9d7d8;
   color: #b9b9b9;
+}
+body.bg-famille #footer {
+  color: #b9b9b9;
+}
+body.bg-famille #credits-text {
+  color: #d9d7d8;
 }
 body .ic-famille {
   background-image: url("../images/10_famille_sel.svg");
@@ -615,12 +651,24 @@ body.bg-enfants {
   background: #f8d500;
   color: #eab61a;
 }
+body.bg-enfants #footer {
+  color: #eab61a;
+}
+body.bg-enfants #credits-text {
+  color: #f8d500;
+}
 body .ic-enfants {
   background-image: url("../images/07_enfants_sel.svg");
 }
 body.bg-belle-famille {
   background: #4f4291;
   color: #372d62;
+}
+body.bg-belle-famille #footer {
+  color: #372d62;
+}
+body.bg-belle-famille #credits-text {
+  color: #4f4291;
 }
 body .ic-belle-famille {
   background-image: url("../images/06_belle-famille_sel.svg");
@@ -629,12 +677,24 @@ body.bg-cible-amoureuse {
   background: #ea332f;
   color: #ad2c25;
 }
+body.bg-cible-amoureuse #footer {
+  color: #ad2c25;
+}
+body.bg-cible-amoureuse #credits-text {
+  color: #ea332f;
+}
 body .ic-cible-amoureuse {
   background-image: url("../images/08_cible amoureuse_sel.svg");
 }
 body.bg-ex {
   background: #164164;
   color: #0e273b;
+}
+body.bg-ex #footer {
+  color: #0e273b;
+}
+body.bg-ex #credits-text {
+  color: #164164;
 }
 body .ic-ex {
   background-image: url("../images/04_ex_sel.svg");
@@ -842,21 +902,44 @@ main .wrapper > div {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  color: #fff;
   -moz-transform: translate(-50%, 0);
   -ms-transform: translate(-50%, 0);
   -webkit-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
 }
-#footer > a {
-  float: left;
+#footer .footer-credits {
   font-size: 0.75em;
-  line-height: 1.825em;
+  height: 34px;
   font-family: "HK Grotesk", Helvetica, sans-serif;
+  float: left;
 }
-#footer > a:hover {
+#footer #credits-lk {
+  line-height: 34px;
+  display: inline-block;
+}
+#footer #credits-lk:hover {
   border-bottom: 2px solid;
   margin-bottom: -2px;
+}
+#footer #credits-lk.show + #credits-text {
+  opacity: 1;
+}
+#footer #credits-text {
+  opacity: 0;
+  position: absolute;
+  bottom: 40px;
+  padding: 10px 15px;
+  background: #fff;
+  left: 30px;
+  font-size: 1.125em;
+  max-width: 300px;
+  text-align: left;
+}
+#footer #credits-text a {
+  text-decoration: underline;
+}
+#footer #credits-text a:hover {
+  text-decoration: none;
 }
 #footer .footer-lks {
   float: right;

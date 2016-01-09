@@ -69,7 +69,12 @@
 						<a href="http://www.voeuxsurlepl.at" id="greetings-website"></a>
 					</div>
 					<footer id="footer">
-						<a href="http://4aout.fr/" target="_blank">©4aout</a>
+						<div class="footer-credits">
+							<a id="credits-lk" href="credits-text" target="_blank">©4aout</a>
+							<div id="credits-text">Conception et réalisation : <a href="http://4aout.fr/" target="_blank">Agence 4août</a>.<br />
+								Icons from the Noun project : Dima Lagunov Sitara Shah Jon Trillana Renee Ramsey-Passmore
+								Ed Harrison</div>
+						</div>
 						<div class="footer-lks">
 							<a href="mailto:bonjour@4aout.fr" target="_blank" class="icon-mail"></a>
 							<a href="https://www.facebook.com/4aout" target="_blank" class="icon-facebook"></a>
