@@ -9,9 +9,6 @@ body{
 		&.bg-#{$type} {
 			background: $colour;
 			color: $fontColour;
-			#footer{
-				color:$fontColour;
-			}
 		}
 
 		.ic-#{$type} {
@@ -84,7 +81,7 @@ main{
 		}
 	}
 	p {
-		font-family: $playfairFontFamily;
+		font-family: $titleFontFamily;
 		font-weight: bold;
 		font-size:2.25em;
 		margin: 0 auto 30px 0;
@@ -105,11 +102,11 @@ main{
 		width: 100%;
 		height: 100%;
 		vertical-align: middle;
-		padding:170px 20px 80px;
+		padding:190px 20px 80px;
 	}
 
 	.title{
-		font-family: $playfairFontFamily;
+		font-family: $titleFontFamily;
 		font-size:(50/16)+em;
 		@media all and (max-width: 380px ){
 			font-size: (40/16)+em;
@@ -117,15 +114,22 @@ main{
 		color:#fff;
 		text-align: center;
 		font-weight: 700;
-		position: absolute;
+		/*position: absolute;
 		left:0;
 		top:50%;
 		width: 100%;
-		@include transform(translate(0,-50%));
-		@include transition(transform 0.8s ease-out, top 0.8s ease-out);
+		@include transform(translate(0,-50%));*/
+		@include transition(padding-bottom 0.8s ease-out, margin-top 0.8s ease-out);
+		padding-bottom:0;
+		margin-top:0;
 		&.go-up{
-			@include transform(translate(0,0));
-			top:60px;
+			/*@include transform(translate(0,0));*/
+			padding-bottom:120px;
+			margin-top: -187px;
+			@media all and (max-width: 380px ){
+				padding-bottom:120px;
+				margin-top: -173px;
+			}
 			.typed-cursor{
 				opacity: 0;
 				visibility: hidden;
@@ -134,19 +138,22 @@ main{
 	}
 
 	.message{
-		font-family: $circularFontFamily;
+		font-family: $textFontFamily;
 		font-size: (36/16)+em;
 		font-weight: bold;
+		min-height: 46px;
 		@media all and (max-width: 550px ){
 			font-size: (30/16)+em;
+			min-height: 38px;
 		}
 		@media all and (max-width: 380px ){
 			font-size: (24/16)+em;
+			min-height: 30px;
 		}
 	}
 
 	.website{
-		font-family: $playfairFontFamily;
+		font-family: $titleFontFamily;
 		font-size: 1em;
 		font-weight: bold;
 		a {
@@ -185,20 +192,14 @@ main{
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	opacity: 0;
-
-	@include transition(opacity 0.7s ease-out);
+	color:#fff;
 	@include transform(translate(-50%,0));
-
-	&.show{
-		opacity: 1;
-	}
 
 	> a{
 		float: left;
 		font-size:0.75em;
 		line-height: 1.825em;
-		font-family: $circularFontFamily;
+		font-family: $textFontFamily;
 
 		&:hover{
 			border-bottom: 2px solid;

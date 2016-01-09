@@ -508,25 +508,62 @@ th {
   font-weight: normal;
   font-style: normal;
 }
+/*
 @font-face {
-  font-family: 'Circular Std Book';
-  src: url("../fonts/CircularStd-Book.eot");
-  src: url("../fonts/CircularStd-Book.eot?#iefix") format("embedded-opentype"), url("../fonts/CircularStd-Book.woff") format("woff"), url("../fonts/CircularStd-Book.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+	font-family: 'Circular Std Book';
+	src: url('../fonts/CircularStd-Book.eot');
+	src: url('../fonts/CircularStd-Book.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/CircularStd-Book.woff') format('woff'),
+	url('../fonts/CircularStd-Book.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
 }
+
 @font-face {
-  font-family: 'Circular Std';
-  src: url("../fonts/CircularStd-Black.eot");
-  src: url("../fonts/CircularStd-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/CircularStd-Black.woff") format("woff"), url("../fonts/CircularStd-Black.ttf") format("truetype");
-  font-weight: 900;
-  font-style: normal;
+	font-family: 'Circular Std';
+	src: url('../fonts/CircularStd-Black.eot');
+	src: url('../fonts/CircularStd-Black.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/CircularStd-Black.woff') format('woff'),
+	url('../fonts/CircularStd-Black.ttf') format('truetype');
+	font-weight: 900;
+	font-style: normal;
 }
+
 @font-face {
-  font-family: 'Circular Std';
-  src: url("../fonts/CircularStd-Bold.eot");
-  src: url("../fonts/CircularStd-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/CircularStd-Bold.woff") format("woff"), url("../fonts/CircularStd-Bold.ttf") format("truetype");
+	font-family: 'Circular Std';
+	src: url('../fonts/CircularStd-Bold.eot');
+	src: url('../fonts/CircularStd-Bold.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/CircularStd-Bold.woff') format('woff'),
+	url('../fonts/CircularStd-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}*/
+@font-face {
+  font-family: 'HK Grotesk';
+  src: url("../fonts/hkgrotesk-bold-webfont.eot");
+  src: url("../fonts/hkgrotesk-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/hkgrotesk-bold-webfont.woff2") format("woff2"), url("../fonts/hkgrotesk-bold-webfont.woff") format("woff"), url("../fonts/hkgrotesk-bold-webfont.ttf") format("truetype"), url("../fonts/hkgrotesk-bold-webfont.svg#hk_groteskbold") format("svg");
   font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'HK Grotesk';
+  src: url("../fonts/hkgrotesk-medium-webfont.eot");
+  src: url("../fonts/hkgrotesk-medium-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/hkgrotesk-medium-webfont.woff2") format("woff2"), url("../fonts/hkgrotesk-medium-webfont.woff") format("woff"), url("../fonts/hkgrotesk-medium-webfont.ttf") format("truetype"), url("../fonts/hkgrotesk-medium-webfont.svg#hk_groteskmedium") format("svg");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'HK Grotesk';
+  src: url("../fonts/hkgrotesk-light-webfont.eot");
+  src: url("../fonts/hkgrotesk-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/hkgrotesk-light-webfont.woff2") format("woff2"), url("../fonts/hkgrotesk-light-webfont.woff") format("woff"), url("../fonts/hkgrotesk-light-webfont.ttf") format("truetype"), url("../fonts/hkgrotesk-light-webfont.svg#hk_grotesklight") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'HK Grotesk';
+  src: url("../fonts/hkgrotesk-regular-webfont.eot");
+  src: url("../fonts/hkgrotesk-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/hkgrotesk-regular-webfont.woff2") format("woff2"), url("../fonts/hkgrotesk-regular-webfont.woff") format("woff"), url("../fonts/hkgrotesk-regular-webfont.ttf") format("truetype"), url("../fonts/hkgrotesk-regular-webfont.svg#hk_groteskregular") format("svg");
+  font-weight: normal;
   font-style: normal;
 }
 .placeholder {
@@ -684,6 +721,9 @@ p {
   color: #7e94a5;
   border-color: #7e94a5;
 }
+#base.bg-client #head-nav a.inactive {
+  color: #a0bad0;
+}
 #base.bg-agence:after {
   background: #b9dabb;
 }
@@ -714,6 +754,9 @@ p {
 #base.bg-agence #head-nav a {
   color: #889e8a;
   border-color: #889e8a;
+}
+#base.bg-agence #head-nav a.inactive {
+  color: #a1bda3;
 }
 #base.bg-prospect:after {
   background: #d52685;
@@ -746,6 +789,9 @@ p {
   color: #a01e65;
   border-color: #a01e65;
 }
+#base.bg-prospect #head-nav a.inactive {
+  color: #bd2377;
+}
 #base.bg-boss:after {
   background: #b2dbd7;
 }
@@ -776,6 +822,9 @@ p {
 #base.bg-boss #head-nav a {
   color: #86a19f;
   border-color: #86a19f;
+}
+#base.bg-boss #head-nav a.inactive {
+  color: #9dbfbc;
 }
 #base.bg-comptable-banquier:after {
   background: #f4b7d1;
@@ -808,6 +857,9 @@ p {
   color: #c992a8;
   border-color: #c992a8;
 }
+#base.bg-comptable-banquier #head-nav a.inactive {
+  color: #e2a7c0;
+}
 #base.bg-famille:after {
   background: #d9d7d8;
 }
@@ -838,6 +890,9 @@ p {
 #base.bg-famille #head-nav a {
   color: #b9b9b9;
   border-color: #b9b9b9;
+}
+#base.bg-famille #head-nav a.inactive {
+  color: #c6c5c6;
 }
 #base.bg-enfants:after {
   background: #f8d500;
@@ -870,6 +925,9 @@ p {
   color: #eab61a;
   border-color: #eab61a;
 }
+#base.bg-enfants #head-nav a.inactive {
+  color: #eec012;
+}
 #base.bg-belle-famille:after {
   background: #4f4291;
 }
@@ -900,6 +958,9 @@ p {
 #base.bg-belle-famille #head-nav a {
   color: #372d62;
   border-color: #372d62;
+}
+#base.bg-belle-famille #head-nav a.inactive {
+  color: #44387b;
 }
 #base.bg-cible-amoureuse:after {
   background: #ea332f;
@@ -932,6 +993,9 @@ p {
   color: #ad2c25;
   border-color: #ad2c25;
 }
+#base.bg-cible-amoureuse #head-nav a.inactive {
+  color: #cf302a;
+}
 #base.bg-ex:after {
   background: #164164;
 }
@@ -962,6 +1026,9 @@ p {
 #base.bg-ex #head-nav a {
   color: #0e273b;
   border-color: #0e273b;
+}
+#base.bg-ex #head-nav a.inactive {
+  color: #123551;
 }
 
 .structure {
@@ -1307,7 +1374,7 @@ p {
   display: block;
   width: 100%;
   text-align: center;
-  font-family: "Circular Std", Helvetica, sans-serif;
+  font-family: "HK Grotesk", Helvetica, sans-serif;
   font-weight: bold;
   -moz-transition: -moz-transform 0.2s ease-out;
   -o-transition: -o-transform 0.2s ease-out;
@@ -1331,7 +1398,7 @@ p {
 }
 
 #head-nav {
-  font-family: "Circular Std", Helvetica, sans-serif;
+  font-family: "HK Grotesk", Helvetica, sans-serif;
   font-size: 0.75em;
   font-weight: 900;
   text-align: center;
@@ -1357,7 +1424,6 @@ p {
   margin-bottom: -2px;
 }
 #head-nav a.inactive {
-  opacity: 0.4;
   cursor: default;
 }
 #head-nav a.inactive:hover {
@@ -1467,7 +1533,7 @@ main .wrapper section input[type='text']:focus {
   }
 }
 #message-container .msg-cont {
-  font-family: "Circular Std", Helvetica, sans-serif;
+  font-family: "HK Grotesk", Helvetica, sans-serif;
   font-weight: 700;
   font-size: 1.625em;
   color: #fff;
@@ -1605,7 +1671,7 @@ main .wrapper section input[type='text']:focus {
 }
 
 #final-block {
-  font-family: "Circular Std", Helvetica, sans-serif;
+  font-family: "HK Grotesk", Helvetica, sans-serif;
   text-align: center;
   background: url("../images/voeux_loader.gif") no-repeat center center;
 }
@@ -1700,7 +1766,7 @@ main .wrapper section input[type='text']:focus {
 #footer > a {
   font-size: 0.75em;
   line-height: 1.825em;
-  font-family: "Circular Std", Helvetica, sans-serif;
+  font-family: "HK Grotesk", Helvetica, sans-serif;
 }
 #footer > a:hover {
   border-bottom: 2px solid;

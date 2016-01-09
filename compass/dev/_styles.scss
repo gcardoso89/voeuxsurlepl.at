@@ -99,7 +99,7 @@ p{
 			padding:0 10%;
 			text-align: center;
 			h2 {
-				font-family: $playfairFontFamily;
+				font-family: $titleFontFamily;
 				font-weight: 700;
 				font-size:(40/16)+em;
 				color:#fff;
@@ -179,7 +179,7 @@ p{
 			@media all and (max-width: 465px) and (min-width: 420px){
 				font-size:1.625em;
 			}
-			font-family:$playfairFontFamily;
+			font-family:$titleFontFamily;
 			line-height: 1.1;
 			display: block;
 			position: absolute;
@@ -258,7 +258,7 @@ p{
 			display: block;
 			width: 100%;
 			text-align: center;
-			font-family:$circularFontFamily;
+			font-family:$textFontFamily;
 			font-weight: bold;
 			@include transition(transform 0.2s ease-out);
 		}
@@ -268,7 +268,7 @@ p{
 }
 
 #head-nav{
-	font-family: $circularFontFamily;
+	font-family: $textFontFamily;
 	font-size: 0.75em;
 	font-weight: 900;
 	text-align: center;
@@ -294,7 +294,6 @@ p{
 		}
 
 		&.inactive{
-			opacity:0.4;
 			cursor: default;
 
 			&:hover{
@@ -365,7 +364,7 @@ main {
 				text-align: center;
 				border:none;
 				background: none;
-				font-family: $playfairFontFamily;
+				font-family: $titleFontFamily;
 				font-weight: 700;
 				margin: ($sectionMinHeight - 70)/2 auto 0;
 				font-size: 2.8125em;
@@ -400,7 +399,7 @@ main {
 	box-sizing: border-box;
 
 	.msg-receiver{
-		font-family: $playfairFontFamily;
+		font-family: $titleFontFamily;
 		font-weight: 700;
 		font-size: $fontSizeEm+em;
 		text-align: center;
@@ -417,7 +416,7 @@ main {
 	}
 
 	.msg-cont{
-		font-family: $circularFontFamily;
+		font-family: $textFontFamily;
 		font-weight: 700;
 		font-size:1.625em;
 		@media all and (max-width:1024px) and (min-width: $tabletPortrait+1){
@@ -538,7 +537,7 @@ main {
 
 	$marginBottom: 20;
 
-	font-family: $circularFontFamily;
+	font-family: $textFontFamily;
 	text-align: center;
 	background: url('../images/voeux_loader.gif') no-repeat center center;
 
@@ -588,7 +587,7 @@ main {
 		}
 
 		.tit{
-			font-family: $playfairFontFamily;
+			font-family: $titleFontFamily;
 			font-size:(36/16)+em;
 			@media all and (max-width: 910px) and (min-width:$tabletPortrait+1){
 				font-size:(32/16)+em;
@@ -628,7 +627,7 @@ main {
 	> a{
 		font-size:0.75em;
 		line-height: 1.825em;
-		font-family: $circularFontFamily;
+		font-family: $textFontFamily;
 
 		&:hover{
 			border-bottom: 2px solid;

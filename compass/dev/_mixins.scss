@@ -86,6 +86,7 @@
 		$type: nth($types, $i);
 		$colour: nth($colours, $i);
 		$fontColour: nth($fontColours, $i);
+		$fontColourInactive: nth($fontColoursInactive, $i);
 
 		&.bg-#{$type}:after {
 			background: $colour;
@@ -117,6 +118,9 @@
 				a {
 					color:$fontColour;
 					border-color:$fontColour;
+					&.inactive{
+						color:$fontColourInactive;
+					}
 				}
 			}
 
@@ -155,31 +159,31 @@
 
 	.placeholder{
 		color:rgba(255,255,255,0.6);
-		font-family: $playfairFontFamily;
+		font-family: $titleFontFamily;
 		font-weight: 700;
 	}
 
 	::-webkit-input-placeholder {
 		color:rgba(255,255,255,0.6);
-		font-family: $playfairFontFamily;
+		font-family: $titleFontFamily;
 		font-weight: 700;
 	}
 
 	:-moz-placeholder { /* Firefox 18- */
 		color:rgba(255,255,255,0.6);
-		font-family: $playfairFontFamily;
+		font-family: $titleFontFamily;
 		font-weight: 700;
 	}
 
 	::-moz-placeholder {  /* Firefox 19+ */
 		color:rgba(255,255,255,0.6);
-		font-family: $playfairFontFamily;
+		font-family: $titleFontFamily;
 		font-weight: 700;
 	}
 
 	:-ms-input-placeholder {
 		color:rgba(255,255,255,0.6);
-		font-family: $playfairFontFamily;
+		font-family: $titleFontFamily;
 		font-weight: 700;
 	}
 
