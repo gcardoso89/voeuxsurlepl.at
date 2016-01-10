@@ -31,17 +31,17 @@
 	<meta name="twitter:creator" content="@4aout">
 	<meta name="twitter:title" content="{{ sender }} vous souhaite ses meilleurs voeux">
 	<meta name="twitter:description" content="Voici un petit message de ma part pour">
-	<meta name="twitter:image" content="http://voeux-4aout.rhcloud.com/sharedimages/twitter/{{ cardid }}">
+	<meta name="twitter:image" content="http://voeuxsurlepl.at/sharedimages/twitter/{{ cardid }}">
 
-	<meta property="og:url" content="http://voeux-4aout.rhcloud.com/{{ cardid }}" />
+	<meta property="og:url" content="http://voeuxsurlepl.at/{{ cardid }}" />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="{{ sender }} vous souhaite ses meilleurs voeux" />
 	<meta property="og:description" content="Voici un petit message de ma part pour la nouvelle année." />
-	<meta property="og:image" content="http://voeux-4aout.rhcloud.com/sharedimages/facebook/{{ cardid }}" />
+	<meta property="og:image" content="http://voeuxsurlepl.at/sharedimages/facebook/{{ cardid }}" />
 
 	<meta itemprop="name" content="{{ sender }} vous souhaite ses meilleurs voeux">
 	<meta itemprop="description" content="Voici un petit message de ma part pour la nouvelle année.">
-	<meta itemprop="image" content="http://voeux-4aout.rhcloud.com/sharedimages/gplus/{{ cardid }}">
+	<meta itemprop="image" content="http://voeuxsurlepl.at/sharedimages/gplus/{{ cardid }}">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 

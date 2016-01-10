@@ -42,7 +42,7 @@ var ImageGenerator = {
 		if ( this._environment === 'development' ){
 			url = 'http://localhost:3000/static/';
 		} else {
-			url = 'http://voeux-4aout.rhcloud.com/static/';
+			url = 'http://voeuxsurlepl.at/static/';
 		}
 
 		url += id;
