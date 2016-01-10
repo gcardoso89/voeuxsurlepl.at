@@ -207,9 +207,6 @@ var voeuxApp = {
 
 		_onSaveCardSuccess: function (data) {
 
-			var image = new Image();
-			image.src = 'http://' + location.host + '/sharedimages/facebook/' + data.cardId;
-
 			var url = 'http://' + location.host + '/' + data.cardId;
 			var text = 'voeuxsurlepl.at/' + data.cardId;
 
