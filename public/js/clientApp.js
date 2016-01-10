@@ -193,13 +193,9 @@ var voeuxApp = {
 				data: card,
 				success: function (data) {
 
-					var image = new Image();
-					image.url = 'http://' + location.host + '/sharedimages/facebook/' + data.cardId;
-					image.onload = function(){
-						that._onSaveCardSuccess(data);
-						that._isSubmiting = false;
-						that._submited = true;
-					};
+					that._onSaveCardSuccess(data);
+					that._isSubmiting = false;
+					that._submited = true;
 
 				},
 				error: function () {
@@ -210,6 +206,10 @@ var voeuxApp = {
 		},
 
 		_onSaveCardSuccess: function (data) {
+
+			var image = new Image();
+			image.url = 'http://' + location.host + '/sharedimages/facebook/' + data.cardId;
+			this._body.append(image);
 
 			var url = 'http://' + location.host + '/' + data.cardId;
 			var text = 'voeuxsurlepl.at/' + data.cardId;
