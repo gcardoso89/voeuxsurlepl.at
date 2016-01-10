@@ -39,12 +39,8 @@ var ImageGenerator = {
 		var imageUrl = path.join(__dirname, '../images/' + type + '/' + id + '.jpg');
 		var url = '';
 
-		if ( this._environment === 'development' ){
-			url = 'http://localhost:3000/static/';
-		} else {
-			url = 'http://voeuxsurlepl.at/static/';
-		}
-
+		url = 'http://' + (process.env.OPENSHIFT_NODEJS_IP || '192.168.1.65') + ':' + (process.env.OPENSHIFT_NODEJS_PORT || '3000');
+		url += '/static/';
 		url += id;
 
 		var options = {
