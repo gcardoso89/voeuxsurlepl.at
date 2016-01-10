@@ -192,9 +192,15 @@ var voeuxApp = {
 				url: "/savePostcard",
 				data: card,
 				success: function (data) {
-					that._onSaveCardSuccess(data);
-					that._isSubmiting = false;
-					that._submited = true;
+
+					var image = new Image();
+					image.url = 'http://' + location.host + '/sharedimages/facebook/' + data.cardId;
+					image.onload = function(){
+						that._onSaveCardSuccess(data);
+						that._isSubmiting = false;
+						that._submited = true;
+					};
+
 				},
 				error: function () {
 					that._isSubmiting = false;
