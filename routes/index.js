@@ -3,7 +3,7 @@ var router = express.Router();
 var postcardModel = require('../models/postcard');
 var jwt = require('jwt-simple');
 var shortid = require('shortid');
-var onSaveErrorCallback = function(ipAddress, token){};
+var onSaveErrorCallback = function(ipAddress, token, reason){};
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -34,14 +34,20 @@ router.post('/savePostcard', function (req, res, next) {
 		var id = shortid.generate();
 		req.body.cardid = id;
 
+		if ( req.body.message && req.body.message.length > 512 ) {
+			res.status(403).end();
+			onSaveErrorCallback(req.headers["x-forwarded-for"], token, 'Message with more than 512');
+			return;
+		}
+
 		postcardModel.addNewCard(req.body, function (success, data, err) {
 
 			if (success && data) {
 				res.status(200).json({ success: true, cardId: id, sender : data.sender, receiver : data.receiver });
 			}
 			else {
-				onSaveErrorCallback(req.headers["x-forwarded-for"], token);
 				res.status(403).end();
+				onSaveErrorCallback(req.headers["x-forwarded-for"], token, 'Double ip');
 			}
 
 		});

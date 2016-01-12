@@ -210,6 +210,8 @@ var voeuxApp = {
 				},
 				error: function () {
 					that._isSubmiting = false;
+					that._submited = true;
+					alert("Something went wrong during your card creation. Please, try again later.");
 				}
 			});
 

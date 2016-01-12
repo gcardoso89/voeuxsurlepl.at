@@ -125,7 +125,7 @@
 					</div>
 					<div class="msg-cont" id="message-typed-container">
 						<span id="message-typed"></span>
-						<textarea name="hid-message" id="message-edit"></textarea>
+						<textarea name="hid-message" id="message-edit" maxlength="510"></textarea>
 					</div>
 					<div class="msg-nav">
 						<ul>

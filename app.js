@@ -15,10 +15,10 @@ if (!production) {
 	require("./voeux/env-variables")();
 }
 
-function onSavePostcardError(ipAddress, token){
+function onSavePostcardError(ipAddress, token, reason){
 	if (enviromnent !== 'development') {
 		slack.send({
-			text: "@gcardoso Saving postcard error: IP Address - " + ipAddress + " ------- Token - " + token,
+			text: "@gcardoso Saving postcard error: IP Address - " + ipAddress + " ---\n--- Token - " + token + " ---\n--- Reason - " + reason,
 			channel: '#voeux-4aout',
 			username: 'Voeux 4août',
 			link_names: 1
