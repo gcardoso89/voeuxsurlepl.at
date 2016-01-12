@@ -68,6 +68,16 @@
 					<div class="website">
 						<a href="http://www.voeuxsurlepl.at" id="greetings-website"></a>
 					</div>
+					<div class="share" id="greetings-share">
+						<p class="sub-tit">PARTAGEZ VOS VŒUX</p>
+						<div class="social-lks">
+							<a href="#" id="social-mail" class="icon-mail"></a>
+							<a href="#" id="social-facebook" class="icon-facebook"></a>
+							<a href="#" id="social-twitter" class="icon-twitter"></a>
+							<a href="#" id="social-gplus" class="icon-googleplus"></a>
+							<a href="#" id="social-tumblr" class="icon-tumblr"></a>
+						</div>
+					</div>
 					<footer id="footer">
 						<div class="footer-credits">
 							<a id="credits-lk" href="credits-text" target="_blank">©4aout</a>
@@ -95,11 +105,28 @@
 <script type="text/javascript">
 	$(function () {
 		voeuxCard.init( {
+			cardid : '{{ cardid }}',
 			receiver : '{{{ receiver }}},',
 			message : '{{{ message }}}',
 			website : 'www.vœuxsurlepl.at'
 		} );
 	});
+
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId      : '882255391895782',
+			xfbml      : true,
+			version    : 'v2.5'
+		});
+	};
+
+	(function(d, s, id){
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) {return;}
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_US/sdk.js";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
 
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
