@@ -101,7 +101,7 @@ voeuxCard.init = function(data){
 			this._greetingsMessage.typed({
 				startDelay : 1000,
 				strings : [this._data['message']],
-				typeSpeed: -10,
+				typeSpeed: -5,
 				callback : function(){
 
 					setTimeout(function(){

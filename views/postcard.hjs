@@ -95,8 +95,8 @@
 <script type="text/javascript">
 	$(function () {
 		voeuxCard.init( {
-			receiver : '{{{receiver}}},',
-			message : '{{ message }}',
+			receiver : '{{{ receiver }}},',
+			message : '{{{ message }}}',
 			website : 'www.vœuxsurlepl.at'
 		} );
 	});

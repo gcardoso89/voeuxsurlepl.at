@@ -75,7 +75,7 @@ router.param('postcardid', function (req, res, next, postcardid) {
 			if ( postcard.sender === '' ){
 				postcard.sender = 'Anonymous';
 			}
-			res.render('postcard', postcard);
+			res.render('postcard', { cardid : postcard.cardid, type : postcard.type, sender  : postcard.sender, receiver : postcard.receiver, message : postcard.message.replace(/\n|\r/g,'<br />') } );
 		}
 	});
 

@@ -25,6 +25,7 @@ var voeuxApp = {
 		this._isSubmiting = false;
 		this._submited = false;
 
+		this._alreadyTyped = false;
 		this._creditsOpened = false;
 		this._typedSelector = '#message-typed';
 		this._typeMenu = new voeuxApp.TypeMenu();
@@ -127,6 +128,8 @@ var voeuxApp = {
 
 		_onTypeSelection: function (evt, element) {
 			this._menu.showSection('receiver', this._typeMenu.getScrollDuration());
+			this._alreadyTyped = false;
+			this._resetEditMessageArea();
 		},
 
 		_onShowMessageSection: function () {
@@ -145,10 +148,14 @@ var voeuxApp = {
 			evt.preventDefault();
 			this._customMessageActive = true;
 			$(this._typedSelector).typed('reset');
-			this._editMessageArea.val(this._messages[ this._typeMenu.getCurrentType() ][ this._currentId ]);
+			this._editMessageArea.val( this._getMessageText() );
 			this._editMessageArea.css("display", "block");
 			this._editMessageArea.focus();
 
+		},
+
+		_getMessageText : function(){
+			return this._messages[this._typeMenu.getCurrentType() ][ this._currentId ].replace(/<br \/>/g,'\n');
 		},
 
 		_resetEditMessageArea: function () {
@@ -233,13 +240,22 @@ var voeuxApp = {
 			location.reload(true);
 		},
 
+
+
 		showTypedMessage: function (id) {
 			this._currentId = id;
 			this._resetEditMessageArea();
-			$(this._typedSelector).typed('reset');
-			$(this._typedSelector).typed({
-				strings: [this._messages[ this._typeMenu.getCurrentType() ][ this._currentId ]]
-			});
+			if ( !this._alreadyTyped ){
+				$(this._typedSelector).typed('reset');
+				$(this._typedSelector).typed({
+					strings : [this._messages[ this._typeMenu.getCurrentType() ][ this._currentId ]],
+					typeSpeed : -10
+				});
+				this._alreadyTyped = true;
+			} else {
+				$(this._typedSelector).typed('reset');
+				$(this._typedSelector).html( this._messages[ this._typeMenu.getCurrentType() ][ this._currentId ] );
+			}
 		}
 
 	};
