@@ -28,7 +28,7 @@ function onSavePostcardError(ipAddress, token, reason){
 	}
 }
 
-var index = require('./routes/index')(onSavePostcardError);
+var index = require('./routes/index')(onSavePostcardError, production);
 var sharedimages = require('./routes/sharedimages')(enviromnent);
 var postcardModel = require('./models/postcard');
 

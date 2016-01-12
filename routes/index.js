@@ -4,6 +4,7 @@ var postcardModel = require('../models/postcard');
 var jwt = require('jwt-simple');
 var shortid = require('shortid');
 var onSaveErrorCallback = function(ipAddress, token, reason){};
+var prod = false;
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -16,7 +17,7 @@ router.get('/', function (req, res, next) {
 		if (err || messages.length === 0) {
 			res.status(500).render('error');
 		} else {
-			res.render('index', { title: "Express", token: token, messages:JSON.stringify(messages) });
+			res.render('index', { token: token, messages:JSON.stringify(messages), production : prod });
 		}
 	});
 
@@ -101,7 +102,8 @@ router.param('postcardid_static', function (req, res, next, postcardid) {
 
 
 
-module.exports = function( onSaveError ){
+module.exports = function( onSaveError, isProduction ){
 	onSaveErrorCallback = onSaveError;
+	prod = isProduction;
 	return router;
 };
