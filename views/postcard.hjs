@@ -106,7 +106,8 @@
 	$(function () {
 		voeuxCard.init( {
 			cardid : '{{ cardid }}',
-			receiver : '{{{ receiver }}},',
+			sender : '{{{ sender }}}',
+			receiver : '{{{ receiver }}}',
 			message : '{{{ message }}}',
 			website : 'www.vœuxsurlepl.at'
 		} );

@@ -31,7 +31,7 @@ voeuxCard.init = function(data){
 		this._creditsOpened = false;
 
 		this._socialLinks = new voeuxCard.SocialLinks();
-		this._socialLinks.setSocialLinks(this._data.cardid);
+		this._socialLinks.setSocialLinks(this._data.cardid, this._data.sender, this._data.receiver);
 
 		function bodyCreditsClick(){
 			if ( that._creditsOpened ){
@@ -85,7 +85,7 @@ voeuxCard.init = function(data){
 
 			this._greetingsTitle.typed({
 				startDelay : 1000,
-				strings : [this._data['receiver']],
+				strings : [this._data['receiver'] + ","],
 				callback : function(){
 
 					setTimeout(function(){
