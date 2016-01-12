@@ -10,7 +10,7 @@
 		<div>
 			<section id="first-step">
 				<div class="type ic-{{ type }}"></div>
-				<p>{{ sender }} vous a envoyé ses <voeux></voeux></p>
+				<p>{{ sender }} vous a envoyé ses voeux</p>
 				<a href="#" class="btn">Afficher le message</a>
 			</section>
 		</div>
