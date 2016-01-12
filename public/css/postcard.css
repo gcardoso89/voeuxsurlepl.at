@@ -800,6 +800,7 @@ main .wrapper > div {
   top: 0;
   height: 100%;
   display: table;
+  min-height: 550px;
 }
 #second-step > div {
   display: table-cell;
