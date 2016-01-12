@@ -25,6 +25,7 @@ var PostcardModel = {
 	getAllMessages : function(cb){
 
 		var messages = [];
+		var that = this;
 
 		mongo.connect(this._mongoURL, function (err, db) {
 
