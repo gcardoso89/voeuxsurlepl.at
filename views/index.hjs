@@ -154,7 +154,7 @@
 					<div class="box-success">
 						<p class="tit">Votre carte de vœux est prête!</p>
 						<div class="sep">
-							<p class="sub-tit">SUIVEZ LE LIEN CI-DESSUS</p>
+							<p class="sub-tit">SUIVEZ LE LIEN CI-DESSOUS</p>
 							<a href="#" id="final-link" target="_blank" class="lk">voeuxsurlepl.at/<span></span></a>
 						</div>
 						<p class="sub-tit">PARTAGEZ VOS VŒUX</p>
