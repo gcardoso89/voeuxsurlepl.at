@@ -77,7 +77,7 @@
 	<div class="structure">
 		<aside>
 			<nav id="menu-type">
-				<h2><span>Choisissez le destinataire de vos vœux</span><i class="icon-arrow-right"></i><i
+				<h2><span>Choisissez<br />le destinataire<br />de vos vœux</span><i class="icon-arrow-right"></i><i
 					class="icon-arrow-bottom"></i></h2>
 				<a href="/?type=client" data-type="client" class="ic-client"><span>Client</span></a>
 				<a href="/?type=agence" data-type="agence" class="ic-agence"><span>Agence</span></a>

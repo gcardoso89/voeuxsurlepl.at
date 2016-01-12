@@ -1246,7 +1246,7 @@ p {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 7% 22% 8% 6%;
+  padding: 7% 6% 8% 6%;
 }
 @media all and (max-width: 1670px) and (min-width: 769px) {
   #menu-type > h2 span {
