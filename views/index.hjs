@@ -9,8 +9,8 @@
 <html lang="fr-FR"><!--<![endif]-->
 <head>
 
-	<title>Voeux sur le plat - Générateur de voeux original à votre disposition</title>
-	<meta name="description" content="En janvier, faites vos voeux sans vous préoccuper du message. Il vous suffit de cliquer, on s’occupe du reste." />
+	<title>Voeux sur le plat</title>
+	<meta name="description" content="Générateur de voeux original à votre disposition" />
 	<meta name="keywords" content="" />
 	<meta name="author" content="4août">
 	<meta name="robots" content="index, follow">
@@ -205,6 +205,15 @@
 		js.src = "//connect.facebook.net/en_US/sdk.js";
 		fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));
+
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-72247239-1', 'auto');
+	ga('send', 'pageview');
+
 </script>
 <script type="text/javascript">
 	$(function () {
