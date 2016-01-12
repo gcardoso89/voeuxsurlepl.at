@@ -1208,9 +1208,29 @@ p {
     font-size: 0.625em;
   }
 }
+@media all and (max-width: 600px) and (min-width: 420px) {
+  #menu-type > h2:after {
+    font-size: 0.875em;
+  }
+}
+@media all and (max-width: 500px) and (min-width: 420px) {
+  #menu-type > h2:after {
+    font-size: 0.75em;
+  }
+}
 @media all and (max-width: 465px) and (min-width: 420px) {
   #menu-type > h2:after {
     font-size: 0.6875em;
+  }
+}
+@media all and (max-width: 380px) {
+  #menu-type > h2:after {
+    font-size: 0.875em;
+  }
+}
+@media all and (max-width: 340px) {
+  #menu-type > h2:after {
+    font-size: 0.8125em;
   }
 }
 #menu-type > h2 span {
@@ -1463,9 +1483,29 @@ p {
     font-size: 0.625em;
   }
 }
+@media all and (max-width: 600px) and (min-width: 420px) {
+  #menu-type > a > span {
+    font-size: 0.875em;
+  }
+}
+@media all and (max-width: 500px) and (min-width: 420px) {
+  #menu-type > a > span {
+    font-size: 0.75em;
+  }
+}
 @media all and (max-width: 465px) and (min-width: 420px) {
   #menu-type > a > span {
     font-size: 0.6875em;
+  }
+}
+@media all and (max-width: 380px) {
+  #menu-type > a > span {
+    font-size: 0.875em;
+  }
+}
+@media all and (max-width: 340px) {
+  #menu-type > a > span {
+    font-size: 0.8125em;
   }
 }
 

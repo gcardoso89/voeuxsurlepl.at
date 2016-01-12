@@ -155,9 +155,22 @@ p{
 			@media all and (max-width: 800px) and (min-width: $tabletPortrait+1) {
 				font-size:0.625em;
 			}
-			@media all and (max-width: 465px) and (min-width: 420px) {
+			@media all and (max-width: 600px) and (min-width: 420px){
+				font-size:0.875em;
+			}
+			@media all and (max-width: 500px) and (min-width: 420px){
+				font-size:0.75em;
+			}
+			@media all and (max-width: 465px) and (min-width: 420px){
 				font-size:0.6875em;
 			}
+			@media all and (max-width: 380px){
+				font-size:0.875em;
+			}
+			@media all and (max-width: 340px){
+				font-size:0.8125em;
+			}
+			
 			overflow: hidden;
 			text-indent: -9999px;
 			display: block;
@@ -276,8 +289,20 @@ p{
 			@media all and (max-width: 800px) and (min-width: $tabletPortrait+1) {
 				font-size:0.625em;
 			}
+			@media all and (max-width: 600px) and (min-width: 420px){
+				font-size:0.875em;
+			}
+			@media all and (max-width: 500px) and (min-width: 420px){
+				font-size:0.75em;
+			}
 			@media all and (max-width: 465px) and (min-width: 420px){
 				font-size:0.6875em;
+			}
+			@media all and (max-width: 380px){
+				font-size:0.875em;
+			}
+			@media all and (max-width: 340px){
+				font-size:0.8125em;
 			}
 			display: block;
 			width: 100%;
