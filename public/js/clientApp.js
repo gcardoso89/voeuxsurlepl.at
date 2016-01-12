@@ -127,6 +127,9 @@ var voeuxApp = {
 		},
 
 		_onTypeSelection: function (evt, element) {
+			if ( this._submited ){
+				location.reload(true);
+			}
 			this._menu.showSection('receiver', this._typeMenu.getScrollDuration());
 			this._alreadyTyped = false;
 			this._resetEditMessageArea();
