@@ -804,7 +804,7 @@ p {
   border-color: #a01e65;
 }
 #base.bg-prospect #head-nav a.inactive {
-  color: #bd2377;
+  color: #ab206c;
 }
 #base.bg-boss:after {
   background: #b2dbd7;
@@ -989,7 +989,7 @@ p {
   border-color: #372d62;
 }
 #base.bg-belle-famille #head-nav a.inactive {
-  color: #44387b;
+  color: #352c60;
 }
 #base.bg-cible-amoureuse:after {
   background: #ea332f;
@@ -1026,7 +1026,7 @@ p {
   border-color: #ad2c25;
 }
 #base.bg-cible-amoureuse #head-nav a.inactive {
-  color: #cf302a;
+  color: #b32a24;
 }
 #base.bg-ex:after {
   background: #164164;
@@ -1063,7 +1063,7 @@ p {
   border-color: #0e273b;
 }
 #base.bg-ex #head-nav a.inactive {
-  color: #123551;
+  color: #102e46;
 }
 
 .structure {
