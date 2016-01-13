@@ -544,17 +544,20 @@ var voeuxApp = {
 			that._onItemsClick(e, $(this));
 		});
 
+		/*
 		this._cont.swipe({
-
-			swipe : function(event, direction, distance, duration, fingerCount, fingerData) {
+			allowPageScroll : 'vertical',
+			swipeLeft : function(event, direction, distance, duration, fingerCount, fingerData) {
 				if ( direction == 'left'){
 					that._slideCount(null, 1);
-				} else if ( direction == 'right') {
+				}
+			},
+			swipeRight : function(event, direction, distance, duration, fingerCount, fingerData) {
+				if ( direction == 'right'){
 					that._slideCount(null, -1);
 				}
 			}
-
-		});
+		});*/
 
 		this._slideLeft.bind('click', function(e){
 			that._slideCount(e, -1);
