@@ -926,6 +926,8 @@ main .wrapper > div {
   box-sizing: border-box;
   background: #fff;
   opacity: 0;
+  position: relative;
+  z-index: 2;
   -moz-transition: opacity 0.8s ease-out, height 0.8s ease-out;
   -o-transition: opacity 0.8s ease-out, height 0.8s ease-out;
   -webkit-transition: opacity 0.8s ease-out, height 0.8s ease-out;
