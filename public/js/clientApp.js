@@ -701,7 +701,7 @@ var voeuxApp = {
 
 		_setMailLink : function(sender, receiver){
 
-			var subject = receiver + '%20vous%20souhaite%20ses%20meilleurs%20voeux';
+			var subject = sender + '%20vous%20souhaite%20ses%20meilleurs%20voeux';
 
 			var bodyText = 'Bonjour%20' + receiver + ',%0D%0A%0D%0A';
 			bodyText += 'Voici%20mes%20voeux%20pour%20la%20nouvelle%20année.%0D%0A';
