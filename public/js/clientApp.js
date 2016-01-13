@@ -546,7 +546,7 @@ var voeuxApp = {
 
 		this._cont.swipe({
 
-			//allowPageScroll : 'vertical',
+			allowPageScroll : 'vertical',
 			swipeLeft : function(event, direction, distance, duration, fingerCount, fingerData) {
 				if ( direction == 'left'){
 					that._slideCount(null, 1);
