@@ -551,6 +551,8 @@ var voeuxApp = {
 					that._slideCount(null, 1);
 				} else if ( direction == 'right') {
 					that._slideCount(null, -1);
+				} else {
+					return true;
 				}
 			}
 
