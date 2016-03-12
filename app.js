@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var Slack = require('node-slack');
-var slack = new Slack('https://hooks.slack.com/services/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');
+var slack = new Slack(process.env.VOEUX_SLACK_INCOMING_WOOK);
 
 var app = express();
 var enviromnent = app.get('env');
