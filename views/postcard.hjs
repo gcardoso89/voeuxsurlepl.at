@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ sender }} vous souhaite ses meilleurs voeux</title>
+	<link rel='stylesheet' href='/css/postcard.css'/>
+
+	<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="/manifest.json">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#2d89ef">
+	<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+
+	<meta name="title" content="{{ sender }} vous souhaite ses meilleurs voeux" />
+	<meta name="description" content="Voici un petit message de ma part pour la nouvelle année." />
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@4aout">
+	<meta name="twitter:creator" content="@4aout">
+	<meta name="twitter:title" content="{{ sender }} vous souhaite ses meilleurs voeux">
+	<meta name="twitter:description" content="Voici un petit message de ma part pour">
+	<meta name="twitter:image" content="http://voeuxsurlepl.at/sharedimages/twitter/{{ cardid }}">
+
+	<meta property="og:url" content="http://voeuxsurlepl.at/{{ cardid }}" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="{{ sender }} vous souhaite ses meilleurs voeux" />
+	<meta property="og:description" content="Voici un petit message de ma part pour la nouvelle année." />
+	<meta property="og:image" content="http://voeuxsurlepl.at/sharedimages/facebook/{{ cardid }}" />
+
+	<meta itemprop="name" content="{{ sender }} vous souhaite ses meilleurs voeux">
+	<meta itemprop="description" content="Voici un petit message de ma part pour la nouvelle année.">
+	<meta itemprop="image" content="http://voeuxsurlepl.at/sharedimages/gplus/{{ cardid }}">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body class="bg-{{ type }}">
+
+<main>
+	<div class="wrapper">
+		<div>
+			<section id="first-step">
+				<div class="type ic-{{ type }}"></div>
+				<p>{{ sender }} vous a envoyé ses voeux</p>
+				<a href="#" class="btn">Afficher le message</a>
+			</section>
+			<section id="second-step">
+				<div>
+					<div class="title">
+						<span id="greetings-title"></span>
+					</div>
+					<div class="message">
+						<span id="greetings-message"></span>
+					</div>
+					<div class="website">
+						<a href="http://www.voeuxsurlepl.at" id="greetings-website"></a>
+					</div>
+					<div class="share" id="greetings-share">
+						<p class="sub-tit">PARTAGEZ VOS VŒUX</p>
+						<div class="social-lks">
+							<a href="#" id="social-mail" class="icon-mail"></a>
+							<a href="#" id="social-facebook" class="icon-facebook"></a>
+							<a href="#" id="social-twitter" class="icon-twitter"></a>
+							<a href="#" id="social-gplus" class="icon-googleplus"></a>
+							<a href="#" id="social-tumblr" class="icon-tumblr"></a>
+						</div>
+					</div>
+					<footer id="footer">
+						<div class="footer-credits">
+							<a id="credits-lk" href="credits-text" target="_blank">©4aout</a>
+							<div id="credits-text">Conception et réalisation : <a href="http://4aout.fr/" target="_blank">Agence 4août</a>.<br />
+								Icons from the Noun project : Dima Lagunov Sitara Shah Jon Trillana Renee Ramsey-Passmore
+								Ed Harrison</div>
+						</div>
+						<div class="footer-lks">
+							<a href="mailto:bonjour@4aout.fr" target="_blank" class="icon-mail"></a>
+							<a href="https://www.facebook.com/4aout" target="_blank" class="icon-facebook"></a>
+							<a href="https://twitter.com/4aout" target="_blank" class="icon-twitter"></a>
+						</div>
+					</footer>
+				</div>
+			</section>
+
+		</div>
+	</div>
+</main>
+
+<script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="/js/typed.min.js"></script>
+<script type="text/javascript" src="/js/clientCard.js"></script>
+
+<script type="text/javascript">
+	$(function () {
+		voeuxCard.init( {
+			cardid : '{{ cardid }}',
+			sender : '{{{ sender }}}',
+			receiver : '{{{ receiver }}}',
+			message : '{{{ message }}}',
+			website : 'www.vœuxsurlepl.at'
+		} );
+	});
+
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId      : '882255391895782',
+			xfbml      : true,
+			version    : 'v2.5'
+		});
+	};
+
+	(function(d, s, id){
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) {return;}
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_US/sdk.js";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-72247239-1', 'auto');
+	ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

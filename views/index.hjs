@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie-old no-anim" lang="fr-FR"><![endif]-->
+<!--[if IE 8]>
+<html class="ie-old no-anim" lang="fr-FR"><![endif]-->
+<!--[if IE 9]>
+<html class="ie-old no-anim" lang="fr-FR"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="fr-FR"><!--<![endif]-->
+<head>
+
+	<title>Voeux sur le plat</title>
+	<meta name="description" content="Générateur de voeux original à votre disposition" />
+	<meta name="keywords" content="" />
+	<meta name="author" content="4août">
+	<meta name="robots" content="index, follow">
+
+	<link rel=”publisher” href=”https://plus.google.com/+4aoutFr”/>
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@4aout">
+	<meta name="twitter:creator" content="@4aout">
+	<meta name="twitter:title" content="Voeux sur le plat - Générateur de voeux original à votre disposition">
+	<meta name="twitter:description" content="En janvier, faites vos voeux sans vous préoccuper du message. Il vous suffit de cliquer, on s’occupe du reste.">
+	<meta name="twitter:image" content="">
+
+	<meta property="og:url" content="http://voeuxsurlepl.at/" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Voeux sur le plat - Générateur de voeux original à votre disposition" />
+	<meta property="og:description" content="En janvier, faites vos voeux sans vous préoccuper du message. Il vous suffit de cliquer, on s’occupe du reste." />
+	<meta property="og:image" content="" />
+
+	<meta itemprop="name" content="Voeux sur le plat - Générateur de voeux original à votre disposition">
+	<meta itemprop="description" content="En janvier, faites vos voeux sans vous préoccuper du message. Il vous suffit de cliquer, on s’occupe du reste.">
+	<meta itemprop="image" content="">
+
+	<link rel='stylesheet' href='/css/style.css'/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="/manifest.json">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#2d89ef">
+	<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+
+
+	
+</head>
+<body>
+<input name="token" type="hidden" id="ipt-token" value="{{token}}"/>
+<div id="preload">
+	<img src="/images/01_agence_sel.svg" width="1" height="1"/>
+	<img src="/images/02_client_sel.svg" width="1" height="1"/>
+	<img src="/images/03_banquier_sel.svg" width="1" height="1"/>
+	<img src="/images/04_ex_sel.svg" width="1" height="1"/>
+	<img src="/images/05_boss_sel.svg" width="1" height="1"/>
+	<img src="/images/06_belle-famille_sel.svg" width="1" height="1"/>
+	<img src="/images/07_enfants_sel.svg" width="1" height="1"/>
+	<img src="/images/08_cible amoureuse_sel.svg" width="1" height="1"/>
+	<img src="/images/09_prospect_sel.svg" width="1" height="1"/>
+	<img src="/images/10_famille_sel.svg" width="1" height="1"/>
+</div>
+<div id="base">
+	<div class="structure">
+		<aside>
+			<nav id="menu-type">
+				<h2><span>Choisissez<br />le destinataire<br />de vos vœux</span><i class="icon-arrow-right"></i><i
+					class="icon-arrow-bottom"></i></h2>
+				<a href="/?type=client" data-type="client" class="ic-client"><span>Client</span></a>
+				<a href="/?type=agence" data-type="agence" class="ic-agence"><span>Agence</span></a>
+				<a href="/?type=prospect" data-type="prospect" class="ic-prospect"><span>Prospect</span></a>
+				<a href="/?type=boss" data-type="boss" class="ic-boss"><span>Boss</span></a>
+				<a href="/?type=comptable-banquier" data-type="comptable-banquier" class="ic-comptable-banquier"><span>Comptable / Banquier</span></a>
+				<a href="/?type=famille" data-type="famille" class="ic-famille"><span>Famille</span></a>
+				<a href="/?type=enfants" data-type="enfants" class="ic-enfants"><span>Enfants</span></a>
+				<a href="/?type=belle-famille" data-type="belle-famille" class="ic-belle-famille"><span>Belle famille</span></a>
+				<a href="/?type=cible-amoureuse" data-type="cible-amoureuse"
+				   class="ic-cible-amoureuse"><span>Cible amoureuse</span></a>
+				<a href="/?type=ex" data-type="ex" class="ic-ex"><span>Ex</span></a>
+			</nav>
+		</aside>
+
+		<main>
+			<div id="start-screen">
+				<div>
+					<div>
+						<h2>Quitte à envoyer des vœux que personne ne va lire, autant les sous-traiter.<br /><br />
+							Vous pourrez même dire que ça vient de vous, promis on ne dira rien.</h2>
+					</div>
+				</div>
+			</div>
+			<header id="head-nav">
+				<span data-action="restart" class="icon-restart"></span>
+				<a href="#" data-target="receiver">destinataire</a>
+				<a href="#" data-target="message">message</a>
+				<a href="#" data-target="sender">expéditeur</a>
+				<a href="#" data-action="create" data-target="final">ok !</a>
+			</header>
+			<div class="wrapper">
+				<section data-section="receiver">
+					<form action="?" id="form-receiver">
+						<input type="text" id="ipt-receiver" placeholder="Destinataire" autocomplete="off" />
+						<input type="submit" style="opacity: 0;" />
+					</form>
+					<div class="button-cont">
+						<a href="#" data-target="message" class="btn">Valider</a>
+					</div>
+				</section>
+				<section data-section="message" id="message-container">
+					<div class="msg-receiver">
+						<span id="receiver-zone"></span>,
+					</div>
+					<div class="msg-cont" id="message-typed-container">
+						<span id="message-typed"></span>
+						<textarea name="hid-message" id="message-edit" maxlength="510"></textarea>
+					</div>
+					<div class="msg-nav">
+						<ul>
+							<li><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+						</ul>
+					</div>
+					<a href="#" id="message-right" class="msg-slide right"><i class="icon-arrow-right"></i>message<br />suiv.</a>
+					<a href="#" id="message-left" class="msg-slide left"><i class="icon-arrow-left"></i>message<br />préc.</a>
+					<div class="button-cont">
+						<a href="#" data-action="edit" class="btn">Modifier</a>
+						<a href="#" data-target="sender" class="btn">Valider</a>
+					</div>
+				</section>
+				<section data-section="sender">
+					<form action="?" id="form-sender">
+						<input type="text" id="ipt-sender" placeholder="Expéditeur" autocomplete="off" />
+						<input type="submit" style="opacity: 0;" />
+					</form>
+					<div class="button-cont">
+						<a href="#" data-action="create" data-target="final" class="btn">Valider</a>
+					</div>
+				</section>
+				<section id="final-block" data-section="final">
+					<div class="box-success">
+						<p class="tit">Votre carte de vœux est prête!</p>
+						<div class="sep">
+							<p class="sub-tit">SUIVEZ LE LIEN CI-DESSOUS</p>
+							<a href="#" id="final-link" target="_blank" class="lk">voeuxsurlepl.at/<span></span></a>
+						</div>
+						<p class="sub-tit">PARTAGEZ VOS VŒUX</p>
+						<div class="social-lks">
+							<a href="#" id="social-mail" class="icon-mail"></a>
+							<a href="#" id="social-facebook" class="icon-facebook"></a>
+							<a href="#" id="social-twitter" class="icon-twitter"></a>
+							<a href="#" id="social-gplus" class="icon-googleplus"></a>
+							<a href="#" id="social-tumblr" class="icon-tumblr"></a>
+						</div>
+					</div>
+				</section>
+				<footer id="footer">
+					<div class="footer-credits">
+						<a id="credits-lk" href="credits-text" target="_blank">©4aout</a>
+						<div id="credits-text">Conception et réalisation : <a href="http://4aout.fr/" target="_blank">Agence 4août</a>.<br />
+							Icons from the Noun project : Dima Lagunov Sitara Shah Jon Trillana Renee Ramsey-Passmore
+							Ed Harrison</div>
+					</div>
+					<div class="footer-lks">
+						<a href="mailto:bonjour@4aout.fr" target="_blank" class="icon-mail"></a>
+						<a href="https://www.facebook.com/4aout" target="_blank" class="icon-facebook"></a>
+						<a href="https://twitter.com/4aout" target="_blank" class="icon-twitter"></a>
+					</div>
+				</footer>
+			</div>
+		</main>
+	</div>
+</div>
+
+<script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="/js/jquery.touchSwipe.min.js"></script>
+<script type="text/javascript" src="/js/typed.min.js"></script>
+<script type="text/javascript" src="/js/clientApp.js"></script>
+<script>
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId      : '882255391895782',
+			xfbml      : true,
+			version    : 'v2.5'
+		});
+	};
+
+
+
+	(function(d, s, id){
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) {return;}
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_US/sdk.js";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+
+	{{#production}}
+
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-72247239-1', 'auto');
+	ga('send', 'pageview');
+
+	{{/production}}
+
+</script>
+<script type="text/javascript">
+	$(function () {
+		voeuxApp.init( {{{messages}}} );
+	});
+</script>
+
+</body>
+</html>

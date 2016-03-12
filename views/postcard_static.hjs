@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Voeux | {{ receiver }}</title>
+	<link rel='stylesheet' href='/css/postcard_static.css'/>
+</head>
+<body class="bg-{{ type }}">
+<main>
+	<div class="wrapper">
+		<div>
+			<section id="first-step">
+				<div class="type ic-{{ type }}"></div>
+				<p>{{ sender }} vous a envoyé ses voeux</p>
+				<a href="#" class="btn">Afficher le message</a>
+			</section>
+		</div>
+	</div>
+</main>
+</body>
+</html>

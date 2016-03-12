@@ -1,0 +1,25 @@
+@mixin button($fontSize: 0.8125em, $marginLeft: 20px){
+	.btn {
+		display: inline-block;
+		color: #fff;
+		font-size: $fontSize;
+		font-family: $titleFontFamily;
+		white-space: nowrap;
+		padding: 4px 17px;
+		border: 2px solid #fff;
+		text-decoration: none;
+		text-transform: uppercase;
+		margin-left:$marginLeft;
+		font-weight:bold;
+		line-height:1.3;
+
+		&:hover{
+			background: rgba(255,255,255,0.25);
+		}
+
+		&:first-child{
+			margin-left:0;
+		}
+
+	}
+}

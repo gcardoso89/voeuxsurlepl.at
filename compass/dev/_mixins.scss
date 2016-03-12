@@ -1,0 +1,199 @@
+@mixin base-background-gradient() {
+
+	background: #f1ebe5;
+
+	@for $i from 1 through length($types) {
+		$type: nth($types, $i);
+		$colour: nth($colours, $i);
+
+		&.bg-#{$type} {
+			background: -moz-linear-gradient(left, #f1ebe5 0%, #f1ebe5 50%, $colour 50%, $colour 50%, $colour 100%);
+			background: -webkit-linear-gradient(left, #f1ebe5 0%, #f1ebe5 50%, $colour 50%, $colour 50%, $colour 100%);
+			background: linear-gradient(to right, #f1ebe5 0%, #f1ebe5 50%, $colour 50%, $colour 50%, $colour 100%);
+		}
+
+	}
+
+}
+
+@mixin base-background($transitionDuration, $mainBackgroundColor) {
+
+	&:after {
+		background:$mainBackgroundColor;
+		content: ".";
+		display: block;
+		font-size: 0;
+		text-indent: -9999px;
+		position: fixed;
+		z-index: 1;
+		top: 0;
+		width: 50%;
+		height: 100%;
+		left: 50%;
+		@if ($transitionDuration){
+			@include transition(background $transitionDuration ease-out);
+		}
+
+		@media all and (max-width: $tabletPortrait) {
+			display: none;
+		}
+
+	}
+
+	main {
+		background-color: $mainBackgroundColor;
+		@if ($transitionDuration){
+			@include transition(color $transitionDuration ease-out,background-color $transitionDuration ease-out);
+		}
+	}
+
+	#start-screen{
+		@include transition(opacity $transitionDuration ease-out)
+
+	}
+
+	#footer{
+		@if ($transitionDuration){
+			@include transition(opacity $transitionDuration ease-out, color $transitionDuration ease-out)
+		}
+	}
+
+	#credits-text{
+		@if ($transitionDuration){
+			@include transition(opacity $transitionDuration ease-out, color $transitionDuration ease-out)
+		}
+	}
+
+	#final-block {
+		@if ($transitionDuration){
+			@include transition(color $transitionDuration ease-out);
+		}
+	}
+
+	#message-container .message-nav a{
+		@if ($transitionDuration){
+			@include transition(background $transitionDuration ease-out);
+		}
+	}
+
+	#head-nav{
+		opacity:0;
+		@include transform(translate3d(0,-40px,0));
+		@include transition(opacity $transitionDuration ease-out, transform $transitionDuration ease-out);
+		a {
+			@if ($transitionDuration){
+				@include transition(color $transitionDuration ease-out,border-color $transitionDuration ease-out);
+			}
+		}
+	}
+
+	@for $i from 1 through length($types) {
+		$type: nth($types, $i);
+		$colour: nth($colours, $i);
+		$fontColour: nth($fontColours, $i);
+		$fontColourInactive: nth($fontColoursInactive, $i);
+
+		&.bg-#{$type}:after {
+			background: $colour;
+		}
+
+		&.bg-#{$type} {
+			main {
+				color: $fontColour;
+				background-color: $colour;
+			}
+			#start-screen{
+				opacity: 0;
+			}
+			#footer{
+				color:$fontColour;
+				opacity: 1;
+			}
+			#credits-text{
+				color:$colour;
+
+			}
+			#final-block {
+				color: $colour;
+			}
+
+			#message-container .message-nav a{
+				background: $fontColour;
+			}
+
+			#head-nav{
+				opacity:1;
+				@include transform(translate3d(0,0,0));
+				a {
+					color:$fontColour;
+					border-color:$fontColour;
+					&.inactive{
+						color:$fontColourInactive;
+					}
+				}
+			}
+
+		}
+
+	}
+
+}
+
+@mixin icon-background() {
+
+	-webkit-background-size: cover;
+	background-size: 80% auto;
+	background-repeat: no-repeat;
+	background-position: center top;
+
+	@for $i from 1 through length($types) {
+		$type: nth($types, $i);
+		$image: nth($bgImages, $i);
+		$colour: nth($colours, $i);
+
+		&.ic-#{$type} {
+			background-image: url('/images/' + $image + '.svg');
+			&.sel, &:hover {
+				background-image: url('/images/' + $image + '_sel.svg');
+				background-color: $colour;
+				background-position: center 5px;
+			}
+		}
+
+	}
+
+}
+
+@mixin placeholder(){
+
+	.placeholder{
+		color:rgba(255,255,255,0.6);
+		font-family: $titleFontFamily;
+		font-weight: 700;
+	}
+
+	::-webkit-input-placeholder {
+		color:rgba(255,255,255,0.6);
+		font-family: $titleFontFamily;
+		font-weight: 700;
+	}
+
+	:-moz-placeholder { /* Firefox 18- */
+		color:rgba(255,255,255,0.6);
+		font-family: $titleFontFamily;
+		font-weight: 700;
+	}
+
+	::-moz-placeholder {  /* Firefox 19+ */
+		color:rgba(255,255,255,0.6);
+		font-family: $titleFontFamily;
+		font-weight: 700;
+	}
+
+	:-ms-input-placeholder {
+		color:rgba(255,255,255,0.6);
+		font-family: $titleFontFamily;
+		font-weight: 700;
+	}
+
+}
